@@ -36,14 +36,17 @@
             letter-spacing: 0.1em;
         }
 
+        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
 
+        /* Custom Utilities */
         .text-brand-green { color: var(--brand-green); }
         .bg-brand-green { background-color: var(--brand-green); }
         .bg-brand-cream { background-color: var(--brand-cream); }
         
+        /* Dynamic Navigation Styles */
         .nav-blur {
             background: rgba(253, 251, 247, 0.9);
             backdrop-filter: blur(12px);
@@ -53,6 +56,7 @@
             padding-bottom: 1.5rem;
         }
 
+        /* Shrink effect on scroll */
         .nav-scrolled {
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
@@ -61,14 +65,15 @@
 
         .logo-container {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: scale(1.25);
+            transform: scale(1.25); /* Prominent size at start */
             transform-origin: left center;
         }
 
         .nav-scrolled .logo-container {
-            transform: scale(1);
+            transform: scale(1); /* Normal size on scroll */
         }
 
+        /* Animations */
         .fade-in-up {
             opacity: 0;
             transform: translateY(20px);
@@ -120,6 +125,7 @@
             transform: translateY(-2px);
         }
 
+        /* Custom Invert Button for Contact Section */
         .btn-invert {
             background-color: white;
             color: var(--brand-green);
@@ -133,14 +139,15 @@
             transform: translateY(-2px);
         }
 
+        /* Infinite Scroll Animation */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-320px * 7)); } 
+            100% { transform: translateX(calc(-320px * 9)); }
         }
 
         .slider {
             background: transparent;
-            height: 120px;
+            height: 160px;
             margin: auto;
             overflow: hidden;
             position: relative;
@@ -150,7 +157,7 @@
         .slider::before, .slider::after {
             background: linear-gradient(to right, var(--brand-cream) 10%, rgba(253, 251, 247, 0) 100%);
             content: "";
-            height: 120px;
+            height: 160px;
             position: absolute;
             width: 150px;
             z-index: 2;
@@ -168,10 +175,10 @@
         }
 
         .slide-track {
-            animation: scroll 40s linear infinite; 
+            animation: scroll 40s linear infinite;
             display: flex;
-            width: calc(320px * 14); 
-            padding: 10px 0;
+            width: calc(320px * 18);
+            padding: 20px 0;
         }
 
         .slide-track:hover {
@@ -179,30 +186,40 @@
         }
 
         .slide {
-            height: 100px;
+            height: 120px;
             width: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 30px;
+            padding: 0 15px;
         }
 
-        .logo-item {
+        /* Modern Logo Card Design */
+        .logo-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            filter: grayscale(100%) opacity(0.6);
             transition: all 0.4s ease;
+            filter: grayscale(100%) opacity(0.7);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            gap: 12px;
         }
 
-        .logo-item:hover {
+        .logo-card:hover {
             filter: grayscale(0%) opacity(1);
+            border-color: var(--brand-green);
             transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .logo-item img {
-            max-height: 55px;
+        .logo-card img {
+            max-height: 50px;
             max-width: 100%;
             object-fit: contain;
         }
@@ -215,7 +232,6 @@
             letter-spacing: -0.02em;
             text-align: left;
             line-height: 1.1;
-            white-space: nowrap;
         }
 
         .text-logo span {
@@ -234,6 +250,15 @@
             transform: translateX(0);
         }
 
+        .podcast-feed-item {
+            transition: all 0.2s ease;
+        }
+        .podcast-feed-item:hover {
+            background-color: #f8fafc;
+            border-color: var(--brand-sage);
+        }
+
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -243,7 +268,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(4px);
         }
 
         .modal.open {
@@ -264,25 +289,33 @@
         }
 
         @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .philosophy-trigger {
-            display: inline-flex;
+        /* Floating Tree Button */
+        .floating-action-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background-color: var(--brand-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--brand-green);
-            font-weight: 700;
+            justify-content: center;
             cursor: pointer;
-            transition: all 0.2s ease;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 2px;
+            z-index: 90;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .philosophy-trigger:hover {
-            color: var(--brand-gold);
-            border-bottom-color: var(--brand-gold);
+        .floating-action-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #1e3d1a;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -292,14 +325,17 @@
     <nav id="main-nav" class="fixed w-full z-50 nav-blur border-b border-gray-200/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center">
+                <!-- Left-aligned Logo (Centered Text Content) -->
                 <a href="#" class="logo-container flex flex-col items-center group text-center">
                     <span class="logo-text-main text-2xl font-bold text-brand-green leading-none">ROOTED</span>
                     <span class="text-[9px] uppercase tracking-[0.3em] text-brand-gold font-bold mt-1">K-12 Consulting</span>
                 </a>
                 
+                <!-- Right-aligned Links & Buttons -->
                 <div class="hidden md:flex items-center space-x-10">
                     <div class="flex items-center space-x-8 text-xs font-bold tracking-widest uppercase text-gray-500">
                         <a href="#services" class="hover:text-brand-green transition-colors">Services</a>
+                        <a href="#insights" class="hover:text-brand-green transition-colors">Insights</a>
                         <a href="#about" class="hover:text-brand-green transition-colors">About</a>
                     </div>
                     <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn-primary px-6 py-2.5 rounded-full shadow-md text-xs font-bold tracking-widest uppercase">
@@ -307,6 +343,7 @@
                     </button>
                 </div>
 
+                <!-- Mobile Trigger -->
                 <button class="md:hidden text-2xl text-brand-green" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -315,11 +352,12 @@
     </nav>
 
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-24 px-8 md:hidden">
-        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-2xl text-gray-500">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-2xl text-gray-500 hover:text-red-500">
             <i class="fas fa-times"></i>
         </button>
         <div class="flex flex-col space-y-6 text-center">
             <a href="#services" onclick="toggleMenu()" class="text-2xl font-serif text-gray-800">Services</a>
+            <a href="#insights" onclick="toggleMenu()" class="text-2xl font-serif text-gray-800">Insights</a>
             <a href="#about" onclick="toggleMenu()" class="text-2xl font-serif text-gray-800">About</a>
             <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'}); toggleMenu(); return false;" class="text-xl font-bold bg-brand-green text-white py-4 rounded-full mt-4">
                 Schedule a Meeting
@@ -348,7 +386,7 @@
 
             <div class="relative fade-in-up" style="transition-delay: 0.2s;">
                 <div class="aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
-                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern educational technology" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern educational technology in a classroom" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700">
                     <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-5 rounded-xl shadow-lg max-w-xs border-l-4 border-green-800 hidden md:block">
                         <p class="font-serif text-gray-800 text-md leading-snug">“Technology in the classroom is not the end goal. Enabling learning everywhere is the goal.”</p>
                         <p class="text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest">— Andrew Barras</p>
@@ -359,29 +397,46 @@
     </header>
 
     <!-- Partners Section -->
-    <section class="py-16 bg-brand-cream overflow-hidden border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 mb-8 text-center">
-            <span class="text-brand-green font-bold tracking-[0.3em] uppercase text-xs mb-2 text-center block">Our Network</span>
-            <h2 class="text-2xl font-bold text-gray-900 font-serif">Trusted Nationwide</h2>
+    <section id="partners" class="py-16 bg-brand-cream overflow-hidden border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 mb-8">
+            <div class="flex flex-col items-center text-center mb-6">
+                <span class="text-brand-green font-bold tracking-[0.3em] uppercase text-xs mb-2">Our Network</span>
+                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 font-serif">Trusted Nationwide</h2>
+                <div class="w-10 h-1 bg-brand-green mt-3 rounded-full"></div>
+            </div>
         </div>
+
         <div class="slider">
             <div class="slide-track">
-                <div class="slide"><div class="logo-item"><img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1737131794/schoolsamesburymagov/efhycahgvjfwcugj0nda/AHS_Redhawks_Hawk-A_RGB.jpg" alt="Amesbury"><div class="text-logo" style="color:#2a5a27">AMESBURY<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://www.bpsma.org/pics/school_logo.png" alt="Brockton"><div class="text-logo" style="color:#b22222">BROCKTON<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://pbs.twimg.com/profile_images/875820925924638720/5AE9zKSV_400x400.jpg" alt="Milwaukee"><div class="text-logo" style="color:#004a99">MILWAUKEE<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4u4oNzK_-suDoL9EnW9jm-7IEloWUeq7-lw&s" alt="Wakefield"><div class="text-logo" style="color:#003366">WAKEFIELD<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDV9cB58F4SPKQpoJax1e2ihF46VWKx6maeg&s" alt="Lunenburg"><div class="text-logo" style="color:#000080">LUNENBURG<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://vita-learn.org/wp-content/uploads/2024/08/cropped-K12TechPro-2.png.webp" alt="K12 Tech Pro"></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://www.clever.com/wp-content/themes/clever/assets/img/logo.png" alt="Clever"></div></div>
-                
-                <!-- Repeat for loop -->
-                <div class="slide"><div class="logo-item"><img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1737131794/schoolsamesburymagov/efhycahgvjfwcugj0nda/AHS_Redhawks_Hawk-A_RGB.jpg" alt="Amesbury"><div class="text-logo" style="color:#2a5a27">AMESBURY<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://www.bpsma.org/pics/school_logo.png" alt="Brockton"><div class="text-logo" style="color:#b22222">BROCKTON<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://pbs.twimg.com/profile_images/875820925924638720/5AE9zKSV_400x400.jpg" alt="Milwaukee"><div class="text-logo" style="color:#004a99">MILWAUKEE<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4u4oNzK_-suDoL9EnW9jm-7IEloWUeq7-lw&s" alt="Wakefield"><div class="text-logo" style="color:#003366">WAKEFIELD<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDV9cB58F4SPKQpoJax1e2ihF46VWKx6maeg&s" alt="Lunenburg"><div class="text-logo" style="color:#000080">LUNENBURG<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://vita-learn.org/wp-content/uploads/2024/08/cropped-K12TechPro-2.png.webp" alt="K12 Tech Pro"></div></div>
-                <div class="slide"><div class="logo-item"><img src="https://www.clever.com/wp-content/themes/clever/assets/img/logo.png" alt="Clever"></div></div>
+                <!-- 1. Amesbury Public Schools -->
+                <div class="slide"><div class="logo-card"><img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1737131794/schoolsamesburymagov/efhycahgvjfwcugj0nda/AHS_Redhawks_Hawk-A_RGB.jpg" alt="Amesbury Logo"><div class="text-logo" style="color:#2a5a27">AMESBURY<br><span>Public Schools</span></div></div></div>
+                <!-- 2. Brockton Public Schools -->
+                <div class="slide"><div class="logo-card"><img src="https://www.bpsma.org/pics/school_logo.png" alt="Brockton Logo"><div class="text-logo" style="color:#b22222">BROCKTON<br><span>Public Schools</span></div></div></div>
+                <!-- 3. Milwaukee Public Schools -->
+                <div class="slide"><div class="logo-card"><img src="https://pbs.twimg.com/profile_images/875820925924638720/5AE9zKSV_400x400.jpg" alt="Milwaukee"><div class="text-logo" style="color:#004a99">MILWAUKEE<br><span>Public Schools</span></div></div></div>
+                <!-- 4. Malden Public Schools -->
+                <div class="slide"><div class="logo-card"><img src="https://resources.finalsite.net/images/f_auto,q_auto/v1745585023/maldenpsorg/eionlmxgcef65bpbhqji/DraftLogo2025500x500px.png" alt="Malden Logo"><div class="text-logo" style="color:#004a99">MALDEN<br><span>Public Schools</span></div></div></div>
+                <!-- 5. Lunenburg Public Schools -->
+                <div class="slide"><div class="logo-card"><img src="https://s3-us-west-2.amazonaws.com/scorestream-team-profile-pictures/7185/20241220040027_452_mascotOrig.png" alt="Lunenburg Logo"><div class="text-logo" style="color:#005a32">LUNENBURG<br><span>Public Schools</span></div></div></div>
+                <!-- 6. Wakefield Public Schools -->
+                <div class="slide"><div class="logo-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4u4oNzK_-suDoL9EnW9jm-7IEloWUeq7-lw&s" alt="Wakefield Logo"><div class="text-logo" style="color:#222">WAKEFIELD<br><span>Public Schools</span></div></div></div>
+                <!-- 7. Day of AI -->
+                <div class="slide"><div class="logo-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWVa5ozvENTdH0EzmteFTdQFN093fXdunaA&s" alt="Day of AI Logo"></div></div>
+                <!-- 8. Clever -->
+                <div class="slide"><div class="logo-card"><img src="https://www.clever.com/wp-content/themes/clever/assets/img/logo.png" alt="Clever Logo"></div></div>
+                <!-- 9. Additional Partner (VITA-Learn) to fill the track -->
+                <div class="slide"><div class="logo-card"><img src="https://vita-learn.org/wp-content/uploads/2024/08/cropped-K12TechPro-2.png.webp" alt="K12 Tech Pro Logo"></div></div>
+
+                <!-- Duplicate for seamless looping -->
+                <div class="slide"><div class="logo-card"><img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1737131794/schoolsamesburymagov/efhycahgvjfwcugj0nda/AHS_Redhawks_Hawk-A_RGB.jpg" alt="Amesbury Logo"><div class="text-logo" style="color:#2a5a27">AMESBURY<br><span>Public Schools</span></div></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://www.bpsma.org/pics/school_logo.png" alt="Brockton Logo"><div class="text-logo" style="color:#b22222">BROCKTON<br><span>Public Schools</span></div></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://pbs.twimg.com/profile_images/875820925924638720/5AE9zKSV_400x400.jpg" alt="Milwaukee"><div class="text-logo" style="color:#004a99">MILWAUKEE<br><span>Public Schools</span></div></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://resources.finalsite.net/images/f_auto,q_auto/v1745585023/maldenpsorg/eionlmxgcef65bpbhqji/DraftLogo2025500x500px.png" alt="Malden Logo"><div class="text-logo" style="color:#004a99">MALDEN<br><span>Public Schools</span></div></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://s3-us-west-2.amazonaws.com/scorestream-team-profile-pictures/7185/20241220040027_452_mascotOrig.png" alt="Lunenburg Logo"><div class="text-logo" style="color:#005a32">LUNENBURG<br><span>Public Schools</span></div></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4u4oNzK_-suDoL9EnW9jm-7IEloWUeq7-lw&s" alt="Wakefield Logo"><div class="text-logo" style="color:#222">WAKEFIELD<br><span>Public Schools</span></div></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWVa5ozvENTdH0EzmteFTdQFN093fXdunaA&s" alt="Day of AI Logo"></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://www.clever.com/wp-content/themes/clever/assets/img/logo.png" alt="Clever Logo"></div></div>
+                <div class="slide"><div class="logo-card"><img src="https://vita-learn.org/wp-content/uploads/2024/08/cropped-K12TechPro-2.png.webp" alt="K12 Tech Pro Logo"></div></div>
             </div>
         </div>
     </section>
@@ -389,88 +444,160 @@
     <!-- Services Section -->
     <section id="services" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 fade-in-up">
-                <span class="text-brand-green font-bold tracking-widest uppercase text-sm mb-4 block">Our Expertise</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Comprehensive Support for <br><span class="text-brand-green italic font-serif">K-12 Technology Ecosystems.</span></h2>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 fade-in-up">
+                <div class="max-w-3xl">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="text-brand-green font-bold tracking-widest uppercase text-sm">Professional Excellence</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Comprehensive Support for <br><span class="text-brand-green italic font-serif">K-12 Technology Ecosystems.</span></h2>
+                </div>
             </div>
-            
-            <div class="grid lg:grid-cols-3 gap-8">
+
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Workshops & PD -->
                 <div class="service-card p-10 rounded-3xl fade-in-up flex flex-col">
                     <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fab fa-google text-2xl"></i>
+                        <i class="fas fa-layer-group text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-6">Workshops & PD</h3>
+                    <h3 class="text-2xl font-bold mb-4">Workshops & PD</h3>
                     <p class="text-gray-600 mb-8 leading-relaxed">Bridging the gap between school infrastructure and classroom impact through research-based professional learning.</p>
                     <ul class="space-y-4 text-sm font-medium text-gray-700 mt-auto border-t border-gray-100 pt-6">
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Google Workspace PD & Certification Paths</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Pedagogy-First Technology Integration</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Curriculum-Aligned Digital Tool Audits</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Executive Coaching for Academic Leaders</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Google Workspace PD & Certification Paths</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Pedagogy-First Technology Integration</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Curriculum-Aligned Digital Tool Audits</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Executive Coaching for IT Leaders</span></li>
                     </ul>
                 </div>
-
                 <!-- Strategy & Innovation -->
                 <div class="service-card p-10 rounded-3xl fade-in-up flex flex-col" style="transition-delay: 0.1s;">
                     <div class="w-14 h-14 bg-yellow-50 text-brand-gold rounded-2xl flex items-center justify-center mb-8">
                         <i class="fas fa-lightbulb text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-6">Strategy & Innovation</h3>
+                    <h3 class="text-2xl font-bold mb-4">Strategy & Innovation</h3>
                     <p class="text-gray-600 mb-8 leading-relaxed">Navigating emerging educational trends and technologies with safety, ethics, and future-ready goals at the forefront.</p>
                     <ul class="space-y-4 text-sm font-medium text-gray-700 mt-auto border-t border-gray-100 pt-6">
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>District AI Policy & Governance Frameworks</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Hands-on Innovation Workshops for Teachers</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Automating Admin Tasks to Reclaim Time</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Student Data Privacy & Modern Vendor Reviews</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>District AI Policy & Governance Frameworks</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Hands-on Innovation Workshops for Teachers</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Automating Admin Tasks to Reclaim Time</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Student Data Privacy & Modern Vendor Reviews</span></li>
                     </ul>
                 </div>
-
-                <!-- Strategic Operations -->
+                <!-- Strategic IT Operations -->
                 <div class="service-card p-10 rounded-3xl fade-in-up flex flex-col" style="transition-delay: 0.2s;">
                     <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8">
                         <i class="fas fa-chart-line text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-6">Strategic IT Operations</h3>
+                    <h3 class="text-2xl font-bold mb-4">Strategic IT Operations</h3>
                     <p class="text-gray-600 mb-8 leading-relaxed">Optimizing the foundational systems of school districts through expert technical leadership and long-term planning.</p>
                     <ul class="space-y-4 text-sm font-medium text-gray-700 mt-auto border-t border-gray-100 pt-6">
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Tech Department Audits & Restructuring</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Multi-Year Capital Planning & Budgeting</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Cybersecurity & Disaster Recovery Planning</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-green mt-1"></i> <span>Interim Technology Director Services</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Tech Department Audits & Restructuring</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Multi-Year Capital Planning & Budgeting</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Cybersecurity & Disaster Recovery Planning</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Interim Technology Director Services</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Insights Section: K-12 Tech Talk Podcast -->
+    <section id="insights" class="py-24 bg-slate-50 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-brand-green font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Insights & Community</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">K-12 Tech Talk Podcast</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Join the conversation with over 200 episodes covering the most pressing issues in educational technology. From cybersecurity to classroom AI.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-start" id="podcast-container">
+                <!-- Loading State -->
+                <div class="col-span-12 text-center py-12" id="podcast-loading">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-green"></div>
+                    <p class="mt-4 text-gray-500 font-medium">Fetching latest episodes...</p>
+                </div>
+                
+                <!-- Podcast Content -->
+                <div class="lg:col-span-7 fade-in-up hidden" id="podcast-main">
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 h-full flex flex-col">
+                        <div class="flex items-center space-x-4 mb-8">
+                            <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fas fa-podcast text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 leading-none">Latest Episode</h3>
+                                <p class="text-brand-sage font-medium text-sm mt-1 uppercase tracking-wide">Featured Discussion</p>
+                            </div>
+                        </div>
+                        
+                        <div id="latest-episode-info" class="mb-10 flex-grow">
+                            <!-- Title and Description injected via JS -->
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 pt-6 border-t border-gray-100">
+                            <a href="https://podcasts.apple.com/us/podcast/k12-tech-talk/id1493032539" target="_blank" class="flex items-center px-6 py-3 rounded-xl bg-gray-50 border border-gray-100 hover:border-brand-sage transition-all text-sm font-semibold text-gray-700">
+                                <i class="fab fa-apple text-xl mr-3"></i> Apple Podcasts
+                            </a>
+                            <a href="https://open.spotify.com/show/6l6QQjUgq25CLfjGtRk1Ss?si=91316bb6bc7040cb" target="_blank" class="flex items-center px-6 py-3 rounded-xl bg-gray-50 border border-gray-100 hover:border-brand-sage transition-all text-sm font-semibold text-gray-700">
+                                <i class="fab fa-spotify text-xl mr-3 text-green-500"></i> Spotify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 fade-in-up hidden" id="podcast-sidebar" style="transition-delay: 0.1s;">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-gray-800">Recent Feed</h3>
+                        <a href="https://k12techtalkpodcast.com" target="_blank" class="text-brand-green font-bold text-sm hover:underline">View All Episodes <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                    
+                    <div class="space-y-4" id="recent-episodes-list">
+                        <!-- List items injected via JS -->
+                    </div>
+
+                    <div class="mt-8 p-6 bg-brand-green rounded-2xl text-white relative overflow-hidden">
+                        <div class="relative z-10">
+                            <p class="font-bold text-lg mb-2">Want to be a guest?</p>
+                            <p class="text-sm text-green-100 mb-4 opacity-80">Share your district's story with thousands of tech leaders.</p>
+                            <a href="mailto:info@k12techtalkpodcast.com?subject=Guest%20Inquiry%20-%20K-12%20Tech%20Talk" class="inline-block bg-white text-brand-green px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all">Submit Request</a>
+                        </div>
+                        <i class="fas fa-microphone absolute -right-4 -bottom-4 text-7xl text-white/10 -rotate-12"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Philosophy & About -->
-    <section id="about" class="py-24 bg-brand-cream overflow-hidden">
+    <section id="about" class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative fade-in-up">
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg mt-8" alt="Learning">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg" alt="Teaching">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg mt-8" alt="Students engaged in collaborative learning">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg" alt="Teacher leading a classroom discussion">
                     </div>
                 </div>
                 <div class="fade-in-up">
                     <h2 class="text-4xl font-bold text-gray-900 mb-6">Expertise Driven by Experience.</h2>
                     <div class="space-y-6 text-gray-600 leading-relaxed">
                         <p>
-                            Based in Boston, Rooted K-12 is led by <strong>Mark Racine</strong>, who brings nearly 20 years of experience managing complex IT infrastructures in urban school environments.
+                            Based in Boston, our firm is built on a foundation of real-world district leadership. Rooted K-12 is led by <strong>Mark Racine</strong>, an experienced K-12 IT leader with nearly 20 years of experience managing technology in urban school environments. Mark is a frequent speaker at national conferences and co-host of the <i>K-12 Tech Talk</i> podcast, where he shares insights with thousands of technology leaders.
                         </p>
                         <p>
-                            <strong>Sarah Racine</strong> leads our instructional strategy. With over two decades in the classroom and school leadership, she ensures our technical recommendations always enhance the teacher-student connection.
+                            <strong>Sarah Racine</strong>, a passionate educator with over 20 years in the classroom, leads our pedagogical strategy. Her background in curriculum development and instructional coaching ensures that every technological solution we recommend is grounded in sound teaching practice.
                         </p>
                         <p>
-                            (And if you hear a bark during our remote calls, that's likely <strong>Milo</strong>, our unofficial Chief Morale Officer!)
+                            If you happen to hear a bark during our calls, that’s just <strong>Milo</strong>, our Chief Morale Officer, ensuring our spirits stay as high as our standards.
                         </p>
-                        
-                        <div class="pt-4 border-t border-gray-100">
-                            <button onclick="togglePhilosophyModal()" class="philosophy-trigger group">
-                                <i class="fas fa-tree"></i>
-                                <span>Why "Rooted"? Explore our philosophy</span>
-                                <i class="fas fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-opacity ml-1"></i>
+                        <p>
+                            Together, they lead a team dedicated to helping schools navigate the complexities of digital transformation while keeping their roots firmly planted in student success.
+                        </p>
+                        <div class="pt-4">
+                            <button onclick="togglePhilosophyModal()" class="group inline-flex items-center text-brand-green font-bold tracking-tight hover:text-brand-gold transition-all">
+                                <span class="border-b-2 border-brand-green group-hover:border-brand-gold pb-0.5">Learn more about the "Rooted" philosophy</span>
+                                <i class="fas fa-chevron-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                             </button>
                         </div>
                     </div>
@@ -479,65 +606,184 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact & Reach Out Section -->
     <section id="contact" class="py-24 bg-brand-green relative text-white">
         <div class="max-w-4xl mx-auto px-6 relative z-10 text-center fade-in-up">
             <h2 class="text-4xl md:text-5xl font-bold mb-8 font-serif">Let's Grow Together</h2>
+            <p class="text-xl text-green-50 mb-12 max-w-2xl mx-auto opacity-90">Ready to transform your district's digital landscape? Choose a way to connect with us below.</p>
+            
             <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <!-- Contact Button -->
                 <a href="mailto:info@rootedk12.com" class="btn-outline-white flex items-center justify-center space-x-3 px-8 py-5 rounded-2xl text-xl font-bold tracking-wide">
-                    <i class="fas fa-envelope text-2xl"></i><span>Contact</span>
+                    <i class="fas fa-envelope text-2xl"></i>
+                    <span>Contact</span>
                 </a>
+                
+                <!-- Schedule Button -->
                 <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn-invert flex items-center justify-center space-x-3 px-8 py-5 rounded-2xl text-xl font-bold tracking-wide shadow-xl">
-                    <i class="fas fa-calendar-alt text-2xl"></i><span>Schedule</span>
+                    <i class="fas fa-calendar-alt text-2xl"></i>
+                    <span>Schedule</span>
                 </button>
             </div>
         </div>
+        
+        <!-- Subtle decorative background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
+            <i class="fas fa-seedling absolute -top-10 -left-10 text-[15rem] rotate-12"></i>
+            <i class="fas fa-tree absolute -bottom-20 -right-20 text-[20rem] -rotate-12"></i>
+        </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12 text-center">
-        <p class="text-gray-500 text-sm">&copy; 2024 Rooted K-12 Educational Consulting.</p>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2024 Rooted K-12 Educational Consulting. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Floating Philosophy Button (Iconic trigger) -->
+    <button onclick="togglePhilosophyModal()" class="floating-action-btn" title="Our Philosophy">
+        <i class="fas fa-tree text-2xl"></i>
+    </button>
 
     <!-- Philosophy Modal -->
     <div id="philosophy-modal" class="modal" onclick="if(event.target === this) togglePhilosophyModal()">
         <div class="modal-content text-center">
-            <button onclick="togglePhilosophyModal()" class="absolute top-6 right-6 text-gray-400 hover:text-red-500">
+            <button onclick="togglePhilosophyModal()" class="absolute top-6 right-6 text-gray-400 hover:text-red-500 transition-colors">
                 <i class="fas fa-times text-xl"></i>
             </button>
+            
             <div class="w-16 h-16 bg-brand-green text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <i class="fas fa-seedling text-3xl"></i>
             </div>
+            
             <h3 class="text-3xl font-bold text-gray-900 mb-6 font-serif">The Rooted Philosophy</h3>
+            
             <div class="text-gray-600 leading-relaxed text-left space-y-4">
-                <p>Inspired by our family name, <strong>Racine</strong>—the French word for "root"—RootED K-12 is built on the philosophy that a healthy digital ecosystem requires a healthy foundation, starting from the roots.</p>
-                <p>Just as a tree cannot sustain a complex canopy without a deep and nourished base, an educational environment cannot truly flourish through devices alone; it requires a robust, intentional infrastructure of support and strategy.</p>
-                <p>By focusing on these essential "roots"—the foundational systems, equitable access, and purposeful implementation that power EdTech—we ensure that technology serves as a natural extension of growth, providing the stability and nourishment needed for innovation to reach new heights across our entire community.</p>
+                <p>
+                    Inspired by our family name, <strong>Racine</strong>—the French word for "root"—RootED K-12 is built on the philosophy that a healthy digital ecosystem requires a healthy foundation, starting from the roots. 
+                </p>
+                <p>
+                    Just as a tree cannot sustain a complex canopy without a deep and nourished base, an educational environment cannot truly flourish through devices alone; it requires a robust, intentional infrastructure of support and strategy.
+                </p>
+                <p>
+                    By focusing on these essential "roots"—the foundational systems, equitable access, and purposeful implementation that power EdTech—we ensure that technology serves as a natural extension of growth, providing the stability and nourishment needed for innovation to reach new heights across our entire community.
+                </p>
             </div>
-            <button onclick="togglePhilosophyModal()" class="mt-10 bg-gray-100 text-gray-700 font-bold px-8 py-3 rounded-full hover:bg-brand-green hover:text-white transition-all">Close</button>
+
+            <button onclick="togglePhilosophyModal()" class="mt-10 bg-gray-100 text-gray-700 font-bold px-8 py-3 rounded-full hover:bg-brand-green hover:text-white transition-all">
+                Close
+            </button>
         </div>
     </div>
 
     <script>
+        // Philosophy Modal Toggle
         function togglePhilosophyModal() {
             const modal = document.getElementById('philosophy-modal');
             modal.classList.toggle('open');
             document.body.style.overflow = modal.classList.contains('open') ? 'hidden' : 'auto';
         }
 
-        window.addEventListener('scroll', () => {
+        // Scroll Management for Logo & Navbar
+        window.addEventListener('scroll', function() {
             const nav = document.getElementById('main-nav');
-            window.scrollY > 50 ? nav.classList.add('nav-scrolled') : nav.classList.remove('nav-scrolled');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
         });
 
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('open');
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : 'auto';
+        }
+
+        async function fetchPodcastFeed() {
+            const rssUrl = 'https://k12techtalkpodcast.com/feed/podcast/';
+            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+            try {
+                const response = await fetch(proxyUrl);
+                const data = await response.json();
+                
+                if (data.status === 'ok') {
+                    const items = data.items;
+                    populatePodcastSection(items);
+                }
+            } catch (error) {
+                console.error('Error fetching podcast feed:', error);
+                const loadingEl = document.getElementById('podcast-loading');
+                if (loadingEl) {
+                    loadingEl.innerHTML = `
+                        <p class="text-red-500 font-medium">Failed to load podcast feed. <button onclick="fetchPodcastFeed()" class="underline">Retry</button></p>
+                    `;
+                }
+            }
+        }
+
+        function populatePodcastSection(episodes) {
+            const latest = episodes[0];
+            const recents = episodes.slice(1, 4);
+
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = latest.description;
+            let cleanDesc = tempDiv.textContent || tempDiv.innerText || "";
+            if (cleanDesc.length > 350) {
+                cleanDesc = cleanDesc.substring(0, 350).trim() + "...";
+            }
+
+            const latestInfoContainer = document.getElementById('latest-episode-info');
+            if (latestInfoContainer) {
+                latestInfoContainer.innerHTML = `
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold text-brand-green uppercase tracking-[0.2em]">Latest Release &bull; ${new Date(latest.pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                        <h4 class="text-3xl font-bold text-gray-900 leading-tight">${latest.title}</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed font-light">
+                            ${cleanDesc}
+                        </p>
+                        <a href="${latest.link}" target="_blank" class="inline-flex items-center text-brand-green font-bold hover:text-brand-gold transition-colors pt-2">
+                            Listen <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                `;
+            }
+
+            const recentListContainer = document.getElementById('recent-episodes-list');
+            if (recentListContainer) {
+                recentListContainer.innerHTML = recents.map((ep) => {
+                    const date = new Date(ep.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    return `
+                        <a href="${ep.link}" target="_blank" class="podcast-feed-item bg-white p-5 rounded-2xl border border-gray-100 flex items-start space-x-4 block">
+                            <div class="w-12 h-12 flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center text-brand-green">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 block">${date}</span>
+                                <h4 class="font-bold text-gray-900 text-sm mb-1 line-clamp-2">${ep.title}</h4>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            document.getElementById('podcast-loading')?.classList.add('hidden');
+            document.getElementById('podcast-main')?.classList.remove('hidden');
+            document.getElementById('podcast-sidebar')?.classList.remove('hidden');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            fetchPodcastFeed();
+
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
             }, { threshold: 0.1 });
+
             document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
         });
     </script>
