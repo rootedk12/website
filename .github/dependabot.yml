@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/" # Location of package.json
+    schedule:
+      interval: "weekly" # Check for updates every week
+    open-pull-requests-limit: 5 # Limit the number of open PRs to avoid noise
+
+  # Also keep your GitHub Actions updated
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
