@@ -1,0 +1,17 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# Text Editor / IDE Folders
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+tmp/
+temp/
