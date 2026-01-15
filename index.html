@@ -140,18 +140,41 @@
             transform: translateY(0);
         }
 
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: white;
-            border: 1px solid #e2e8f0;
-            height: 100%;
-        }
+       /* Enhanced Service Cards */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: var(--brand-green);
-        }
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(45, 90, 39, 0.15);
+    border-color: var(--brand-sage);
+}
+
+/* Icon Container Animation */
+.service-icon-box {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-box {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Custom bullet styling */
+.service-list li {
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-list li {
+    color: #000;
+}
 
         .btn-primary {
             background-color: var(--brand-green);
@@ -505,50 +528,61 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Workshops & PD -->
-                <div class="service-card p-10 rounded-3xl fade-in-up flex flex-col">
-                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fas fa-brands fa-google text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Workshops & PD</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Bridging the gap between school infrastructure and classroom impact through research-based professional learning.</p>
-                    <ul class="space-y-4 text-sm font-medium text-gray-700 mt-auto border-t border-gray-100 pt-6">
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Google Workspace PD & Certification Paths</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Pedagogy-First Technology Integration</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Curriculum-Aligned Digital Tool Audits</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Executive Coaching for IT Leaders</span></li>
-                    </ul>
-                </div>
-                <!-- Strategy & Innovation -->
-                <div class="service-card p-10 rounded-3xl fade-in-up flex flex-col" style="transition-delay: 0.1s;">
-                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fas fa-map-pin text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Strategy & Innovation</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Navigating emerging educational trends and technologies with safety, ethics, and future-ready goals at the forefront.</p>
-                    <ul class="space-y-4 text-sm font-medium text-gray-700 mt-auto border-t border-gray-100 pt-6">
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>District AI Policy & Governance Frameworks</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Hands-on Innovation Workshops for Teachers</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Automating Admin Tasks to Reclaim Time</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Student Data Privacy & Modern Vendor Reviews</span></li>
-                    </ul>
-                </div>
-                <!-- Strategic IT Operations -->
-                <div class="service-card p-10 rounded-3xl fade-in-up flex flex-col" style="transition-delay: 0.2s;">
-                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fas fa-gears text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Strategic IT Operations</h3>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Optimizing the foundational systems of school districts through expert technical leadership and long-term planning.</p>
-                    <ul class="space-y-4 text-sm font-medium text-gray-700 mt-auto border-t border-gray-100 pt-6">
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Tech Department Audits & Restructuring</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Multi-Year Capital Planning & Budgeting</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Cybersecurity & Disaster Recovery Planning</span></li>
-                        <li class="flex items-start"><i class="fas fa-check text-brand-green mr-3 mt-1"></i> <span>Interim Technology Director Services</span></li>
-                    </ul>
-                </div>
-            </div>
+           <div class="grid md:grid-cols-3 gap-10">
+    <div class="service-card p-10 rounded-[2.5rem] fade-in-up">
+        <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+            <i class="fas fa-brands fa-google text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Workshops & PD</h3>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+            Bridging the gap between school infrastructure and classroom impact through research-based professional learning.
+        </p>
+        <div class="mt-auto pt-6 border-t border-gray-100">
+            <ul class="service-list space-y-4 text-sm font-medium text-gray-700">
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Google Workspace PD & Certification Paths</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Pedagogy-First Technology Integration</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Curriculum-Aligned Digital Tool Audits</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Executive Coaching for IT Leaders</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card p-10 rounded-[2.5rem] fade-in-up" style="transition-delay: 0.1s;">
+        <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+            <i class="fas fa-map-pin text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Strategy & Innovation</h3>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+            Navigating emerging educational trends and technologies with safety, ethics, and future-ready goals at the forefront.
+        </p>
+        <div class="mt-auto pt-6 border-t border-gray-100">
+            <ul class="service-list space-y-4 text-sm font-medium text-gray-700">
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>District AI Policy & Governance</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Hands-on Innovation Workshops</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Automating Admin Tasks</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Modern Vendor Privacy Reviews</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card p-10 rounded-[2.5rem] fade-in-up" style="transition-delay: 0.2s;">
+        <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+            <i class="fas fa-gears text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Strategic IT Operations</h3>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+            Optimizing the foundational systems of school districts through expert technical leadership and long-term planning.
+        </p>
+        <div class="mt-auto pt-6 border-t border-gray-100">
+            <ul class="service-list space-y-4 text-sm font-medium text-gray-700">
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Tech Department Audits</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Multi-Year Capital Planning</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Cybersecurity Planning</span></li>
+                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Interim Technology Director Services</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
         </div>
     </section>
 
