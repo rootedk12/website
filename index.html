@@ -655,6 +655,37 @@
         </div>
     </section>
 
+    <!-- Substack Articles Section -->
+    <section class="py-24 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="text-brand-green font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Latest Articles</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Articles & Insights from Substack</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Deep dives into K-12 technology trends, leadership lessons, and practical strategies for district innovation.
+                </p>
+            </div>
+
+            <!-- Loading State -->
+            <div class="col-span-12 text-center py-12" id="substack-loading">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-green"></div>
+                <p class="mt-4 text-gray-500 font-medium">Loading articles...</p>
+            </div>
+
+            <!-- Articles Grid -->
+            <div id="substack-articles" class="grid md:grid-cols-3 gap-8 hidden">
+                <!-- Articles will be injected here via JS -->
+            </div>
+
+            <!-- View More CTA -->
+            <div class="text-center mt-12 fade-in-up hidden" id="substack-cta">
+                <a href="https://markracine.substack.com" target="_blank" class="inline-flex items-center justify-center btn-primary px-8 py-4 rounded-full shadow-lg text-sm font-bold tracking-widest uppercase hover:shadow-xl transition-all">
+                    Subscribe on Substack <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Philosophy & About -->
     <section id="about" class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
@@ -856,8 +887,66 @@
             document.getElementById('podcast-sidebar')?.classList.remove('hidden');
         }
 
+        async function fetchSubstackFeed() {
+            const rssUrl = 'https://markracine.substack.com/feed';
+            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+            try {
+                const response = await fetch(proxyUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok') {
+                    const articles = data.items.slice(0, 6);
+                    populateSubstackSection(articles);
+                }
+            } catch (error) {
+                console.error('Error fetching Substack feed:', error);
+                const loadingEl = document.getElementById('substack-loading');
+                if (loadingEl) {
+                    loadingEl.innerHTML = `
+                        <p class="text-red-500 font-medium">Failed to load articles. <button onclick="fetchSubstackFeed()" class="underline">Retry</button></p>
+                    `;
+                }
+            }
+        }
+
+        function populateSubstackSection(articles) {
+            const articlesContainer = document.getElementById('substack-articles');
+            if (articlesContainer) {
+                articlesContainer.innerHTML = articles.map((article) => {
+                    const date = new Date(article.pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                    let description = article.description || '';
+
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = description;
+                    let cleanDesc = tempDiv.textContent || tempDiv.innerText || '';
+                    if (cleanDesc.length > 150) {
+                        cleanDesc = cleanDesc.substring(0, 150).trim() + '...';
+                    }
+
+                    return `
+                        <a href="${article.link}" target="_blank" class="substack-article-card bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl border border-gray-100 hover:border-brand-green hover:shadow-lg transition-all block h-full flex flex-col">
+                            <div class="flex-grow">
+                                <span class="text-xs font-bold text-brand-green uppercase tracking-[0.2em] block mb-3">${date}</span>
+                                <h3 class="text-xl font-bold text-gray-900 leading-tight mb-4 line-clamp-2">${article.title}</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">${cleanDesc}</p>
+                            </div>
+                            <div class="flex items-center text-brand-green font-bold text-sm pt-4 border-t border-gray-100">
+                                Read Article <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            document.getElementById('substack-loading')?.classList.add('hidden');
+            document.getElementById('substack-articles')?.classList.remove('hidden');
+            document.getElementById('substack-cta')?.classList.remove('hidden');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             fetchPodcastFeed();
+            fetchSubstackFeed();
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
