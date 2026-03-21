@@ -140,6 +140,127 @@
             transform: translateY(0);
         }
 
+        /* Staggered fade-in for child elements */
+        .stagger-children.visible > * {
+            opacity: 0;
+            animation: staggerFadeIn 0.6s ease-out forwards;
+        }
+        .stagger-children.visible > *:nth-child(1) { animation-delay: 0.05s; }
+        .stagger-children.visible > *:nth-child(2) { animation-delay: 0.12s; }
+        .stagger-children.visible > *:nth-child(3) { animation-delay: 0.19s; }
+        .stagger-children.visible > *:nth-child(4) { animation-delay: 0.26s; }
+
+        @keyframes staggerFadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating animation for hero image */
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-float {
+            animation: heroFloat 6s ease-in-out infinite;
+        }
+
+        /* Rotating quote card */
+        .quote-card {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            max-width: 18rem;
+            border-left: 4px solid var(--brand-green);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .quote-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Subtle gradient animation for hero heading */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-gradient {
+            background-size: 200% 200%;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        /* Section divider line animation */
+        .section-line {
+            width: 0;
+            transition: width 0.8s ease-out 0.3s;
+        }
+
+        .section-line.visible {
+            width: 2.5rem;
+        }
+
+        /* Insights tab styles */
+        .insight-tab {
+            position: relative;
+            padding-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .insight-tab::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--brand-green);
+            transition: width 0.3s ease;
+        }
+
+        .insight-tab.active {
+            color: var(--brand-green);
+        }
+
+        .insight-tab.active::after {
+            width: 100%;
+        }
+
+        .insight-panel {
+            display: none;
+            animation: panelFadeIn 0.4s ease-out;
+        }
+
+        .insight-panel.active {
+            display: block;
+        }
+
+        @keyframes panelFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Substack article card */
+        .substack-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .substack-card:hover {
+            border-color: var(--brand-sage);
+            box-shadow: 0 10px 25px -5px rgba(45, 90, 39, 0.1);
+            transform: translateY(-4px);
+        }
+
        /* Enhanced Service Cards */
 .service-card {
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -446,7 +567,7 @@
 <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-none lg:leading-none">
     <span class="sr-only">Rooted K-12: Technology Consulting & Educational IT Strategy</span>
     Deep Roots, <br>
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-800 to-green-600">Digital Future.</span>
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-800 via-emerald-600 to-green-700 animated-gradient">Digital Future.</span>
 </h1>
                 <h2 class="text-lg lg:text-xl text-gray-600 max-w-lg leading-tight">
                     We partner with K-12 leaders to build sustainable IT systems, demystify emerging technologies, and bridge the gap between pedagogy and technology.
@@ -459,12 +580,27 @@
                 </div>
             </div>
 
-            <div class="relative fade-in-up" style="transition-delay: 0.2s;">
-                <div class="aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
-                    <img src="images/hero.png" alt="Modern educational technology in a classroom" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700">
-                    <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-5 rounded-xl shadow-lg max-w-xs border-l-4 border-green-800 hidden md:block">
-                        <p class="font-medium text-gray-800 text-md leading-snug">“Technology in the classroom is not the end goal. Enabling learning everywhere is the goal.”</p>
-                        <p class="text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest">— Andrew Barras</p>
+            <div class=”relative fade-in-up hero-float” style=”transition-delay: 0.2s;”>
+                <div class=”aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative”>
+                    <img src=”images/hero.png” alt=”Modern educational technology in a classroom” class=”object-cover w-full h-full transform hover:scale-105 transition-transform duration-700”>
+                    <!-- Rotating Quote Cards -->
+                    <div id=”hero-quotes” class=”hidden md:block”>
+                        <div class=”quote-card active” data-quote=”0”>
+                            <p class=”font-medium text-gray-800 text-md leading-snug”>”Technology in the classroom is not the end goal. Enabling learning everywhere is the goal.”</p>
+                            <p class=”text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest”>— Andrew Barras</p>
+                        </div>
+                        <div class=”quote-card” data-quote=”1”>
+                            <p class=”font-medium text-gray-800 text-md leading-snug”>”The function of education is to teach one to think intensively and to think critically.”</p>
+                            <p class=”text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest”>— Martin Luther King Jr.</p>
+                        </div>
+                        <div class=”quote-card” data-quote=”2”>
+                            <p class=”font-medium text-gray-800 text-md leading-snug”>”Technology is just a tool. In terms of getting the kids working together and motivating them, the teacher is the most important.”</p>
+                            <p class=”text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest”>— Bill Gates</p>
+                        </div>
+                        <div class=”quote-card” data-quote=”3”>
+                            <p class=”font-medium text-gray-800 text-md leading-snug”>”The best technology in a classroom is a great teacher who uses it to open minds and empower learners.”</p>
+                            <p class=”text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest”>— Rooted Philosophy</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -477,7 +613,7 @@
             <div class="flex flex-col items-center text-center mb-6">
                 <span class="text-brand-green font-medium tracking-[0.3em] uppercase text-xs mb-2">Our Network</span>
                 <h2 class="text-2xl lg:text-3xl text-gray-900">Trusted Nationwide</h2>
-                <div class="w-10 h-1 bg-brand-green mt-3 rounded-full"></div>
+                <div class="section-line h-1 bg-brand-green mt-3 rounded-full"></div>
             </div>
         </div>
 
@@ -528,7 +664,7 @@
                 </div>
             </div>
 
-           <div class="grid md:grid-cols-3 gap-10">
+           <div class="grid md:grid-cols-3 gap-10 stagger-children fade-in-up">
     <div class="service-card p-10 rounded-[2.5rem] fade-in-up">
         <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
             <i class="fas fa-brands fa-google text-2xl"></i>
@@ -586,69 +722,139 @@
         </div>
     </section>
 
-    <!-- Insights Section: K-12 Tech Talk Podcast -->
+    <!-- Insights Section -->
     <section id="insights" class="py-24 bg-slate-50 border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in-up">
+            <div class="text-center mb-12 fade-in-up">
                 <span class="text-brand-green font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Insights & Community</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">K-12 Tech Talk Podcast</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">Thought Leadership</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                    Join the conversation with over 200 episodes covering the most pressing issues in educational technology. From cybersecurity to classroom AI.
+                    Stay current with our podcast, articles, and perspectives on what's shaping K-12 technology.
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-12 items-start" id="podcast-container">
-                <!-- Loading State -->
-                <div class="col-span-12 text-center py-12" id="podcast-loading">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-green"></div>
-                    <p class="mt-4 text-gray-500 font-medium">Fetching latest episodes...</p>
-                </div>
-                
-                <!-- Podcast Content -->
-                <div class="lg:col-span-7 fade-in-up hidden" id="podcast-main">
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 h-full flex flex-col">
-                        <div class="flex items-center space-x-4 mb-8">
-                            <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center text-white shadow-lg">
-                                <i class="fas fa-podcast text-3xl"></i>
+            <!-- Tabs -->
+            <div class="flex justify-center gap-8 mb-12 fade-in-up">
+                <button onclick="switchInsightTab('podcast')" class="insight-tab active text-sm font-bold uppercase tracking-widest text-gray-500 cursor-pointer" id="tab-podcast">
+                    <i class="fas fa-podcast mr-2"></i>Podcast
+                </button>
+                <button onclick="switchInsightTab('substack')" class="insight-tab text-sm font-bold uppercase tracking-widest text-gray-500 cursor-pointer" id="tab-substack">
+                    <i class="fas fa-pen-nib mr-2"></i>Newsletter
+                </button>
+            </div>
+
+            <!-- Podcast Panel -->
+            <div class="insight-panel active" id="panel-podcast">
+                <div class="grid lg:grid-cols-12 gap-12 items-start" id="podcast-container">
+                    <!-- Loading State -->
+                    <div class="col-span-12 text-center py-12" id="podcast-loading">
+                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-green"></div>
+                        <p class="mt-4 text-gray-500 font-medium">Fetching latest episodes...</p>
+                    </div>
+
+                    <!-- Podcast Content -->
+                    <div class="lg:col-span-7 fade-in-up hidden" id="podcast-main">
+                        <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 h-full flex flex-col">
+                            <div class="flex items-center space-x-4 mb-8">
+                                <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center text-white shadow-lg">
+                                    <i class="fas fa-podcast text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900 leading-none">Latest Episode</h3>
+                                    <p class="text-brand-sage font-medium text-sm mt-1 uppercase tracking-wide">K-12 Tech Talk</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900 leading-none">Latest Episode</h3>
-                                <p class="text-brand-sage font-medium text-sm mt-1 uppercase tracking-wide">Featured Discussion</p>
+
+                            <div id="latest-episode-info" class="mb-10 flex-grow">
+                                <!-- Title and Description injected via JS -->
+                            </div>
+
+                            <div class="flex flex-wrap gap-6 pt-6 border-t border-gray-100">
+                                <a href="https://podcasts.apple.com/us/podcast/k12-tech-talk/id1493032539" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
+                                    <i class="fab fa-apple text-xl mr-2"></i> Listen on Apple
+                                </a>
+                                <a href="https://open.spotify.com/show/6l6QQjUgq25CLfjGtRk1Ss?si=91316bb6bc7040cb" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
+                                    <i class="fab fa-spotify text-xl mr-2 text-green-500"></i> Listen on Spotify
+                                </a>
                             </div>
                         </div>
-                        
-                        <div id="latest-episode-info" class="mb-10 flex-grow">
-                            <!-- Title and Description injected via JS -->
+                    </div>
+
+                    <div class="lg:col-span-5 fade-in-up hidden" id="podcast-sidebar" style="transition-delay: 0.1s;">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-gray-800">Recent Feed</h3>
+                            <a href="https://k12techtalkpodcast.com" target="_blank" class="text-brand-green font-bold text-sm hover:underline">View All Episodes <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
 
-                        <div class="flex flex-wrap gap-6 pt-6 border-t border-gray-100">
-                            <a href="https://podcasts.apple.com/us/podcast/k12-tech-talk/id1493032539" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
-                                <i class="fab fa-apple text-xl mr-2"></i> Listen on Apple
-                            </a>
-                            <a href="https://open.spotify.com/show/6l6QQjUgq25CLfjGtRk1Ss?si=91316bb6bc7040cb" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
-                                <i class="fab fa-spotify text-xl mr-2 text-green-500"></i> Listen on Spotify
-                            </a>
+                        <div class="space-y-4" id="recent-episodes-list">
+                            <!-- List items injected via JS -->
+                        </div>
+
+                        <div class="mt-8 p-6 bg-brand-green rounded-2xl text-white relative overflow-hidden">
+                            <div class="relative z-10">
+                                <p class="font-bold text-lg mb-2">Want to be a guest?</p>
+                                <p class="text-sm text-green-100 mb-4 opacity-80">Share your district's story with thousands of tech leaders.</p>
+                                <a href="mailto:info@k12techtalkpodcast.com?subject=Guest%20Inquiry%20-%20K-12%20Tech%20Talk" class="inline-block bg-white text-brand-green px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all">Submit Request</a>
+                            </div>
+                            <i class="fas fa-microphone absolute -right-4 -bottom-4 text-7xl text-white/10 -rotate-12"></i>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="lg:col-span-5 fade-in-up hidden" id="podcast-sidebar" style="transition-delay: 0.1s;">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-xl font-bold text-gray-800">Recent Feed</h3>
-                        <a href="https://k12techtalkpodcast.com" target="_blank" class="text-brand-green font-bold text-sm hover:underline">View All Episodes <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                    
-                    <div class="space-y-4" id="recent-episodes-list">
-                        <!-- List items injected via JS -->
+            <!-- Substack / Newsletter Panel -->
+            <div class="insight-panel" id="panel-substack">
+                <div class="grid lg:grid-cols-12 gap-12 items-start" id="substack-container">
+                    <!-- Loading State -->
+                    <div class="col-span-12 text-center py-12" id="substack-loading">
+                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-green"></div>
+                        <p class="mt-4 text-gray-500 font-medium">Fetching latest articles...</p>
                     </div>
 
-                    <div class="mt-8 p-6 bg-brand-green rounded-2xl text-white relative overflow-hidden">
-                        <div class="relative z-10">
-                            <p class="font-bold text-lg mb-2">Want to be a guest?</p>
-                            <p class="text-sm text-green-100 mb-4 opacity-80">Share your district's story with thousands of tech leaders.</p>
-                            <a href="mailto:info@k12techtalkpodcast.com?subject=Guest%20Inquiry%20-%20K-12%20Tech%20Talk" class="inline-block bg-white text-brand-green px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all">Submit Request</a>
+                    <!-- Substack Featured Article -->
+                    <div class="lg:col-span-7 fade-in-up hidden" id="substack-main">
+                        <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 h-full flex flex-col">
+                            <div class="flex items-center space-x-4 mb-8">
+                                <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center text-white shadow-lg">
+                                    <i class="fas fa-pen-nib text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900 leading-none">Latest Article</h3>
+                                    <p class="text-brand-sage font-medium text-sm mt-1 uppercase tracking-wide">From the Newsletter</p>
+                                </div>
+                            </div>
+
+                            <div id="latest-substack-info" class="mb-10 flex-grow">
+                                <!-- Injected via JS -->
+                            </div>
+
+                            <div class="flex flex-wrap gap-6 pt-6 border-t border-gray-100">
+                                <a href="https://markracine.substack.com" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
+                                    <i class="fas fa-arrow-up-right-from-square text-lg mr-2"></i> View on Substack
+                                </a>
+                            </div>
                         </div>
-                        <i class="fas fa-microphone absolute -right-4 -bottom-4 text-7xl text-white/10 -rotate-12"></i>
+                    </div>
+
+                    <!-- Substack Sidebar -->
+                    <div class="lg:col-span-5 fade-in-up hidden" id="substack-sidebar" style="transition-delay: 0.1s;">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-gray-800">Recent Articles</h3>
+                            <a href="https://markracine.substack.com" target="_blank" class="text-brand-green font-bold text-sm hover:underline">View All <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+
+                        <div class="space-y-4" id="recent-substack-list">
+                            <!-- Injected via JS -->
+                        </div>
+
+                        <div class="mt-8 p-6 bg-brand-green rounded-2xl text-white relative overflow-hidden">
+                            <div class="relative z-10">
+                                <p class="font-bold text-lg mb-2">Subscribe to the Newsletter</p>
+                                <p class="text-sm text-green-100 mb-4 opacity-80">Get insights on K-12 technology delivered to your inbox.</p>
+                                <a href="https://markracine.substack.com/subscribe" target="_blank" class="inline-block bg-white text-brand-green px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all">Subscribe Free</a>
+                            </div>
+                            <i class="fas fa-envelope absolute -right-4 -bottom-4 text-7xl text-white/10 -rotate-12"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -724,7 +930,7 @@
 
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-500 text-sm">&copy; 2025 Rooted K-12 Educational Consulting. All rights reserved.</p>
+            <p class="text-gray-500 text-sm">&copy; 2026 Rooted K-12 Educational Consulting. All rights reserved.</p>
         </div>
     </footer>
 
@@ -856,8 +1062,105 @@
             document.getElementById('podcast-sidebar')?.classList.remove('hidden');
         }
 
+        // Insight Tab Switching
+        function switchInsightTab(tab) {
+            document.querySelectorAll('.insight-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.insight-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            document.getElementById('panel-' + tab).classList.add('active');
+
+            // Lazy-load substack on first switch
+            if (tab === 'substack' && !window._substackLoaded) {
+                fetchSubstackFeed();
+                window._substackLoaded = true;
+            }
+        }
+
+        // Substack Feed
+        async function fetchSubstackFeed() {
+            const rssUrl = 'https://markracine.substack.com/feed';
+            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+            try {
+                const response = await fetch(proxyUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok') {
+                    populateSubstackSection(data.items);
+                }
+            } catch (error) {
+                console.error('Error fetching Substack feed:', error);
+                const loadingEl = document.getElementById('substack-loading');
+                if (loadingEl) {
+                    loadingEl.innerHTML = '<p class="text-red-500 font-medium">Failed to load articles. <button onclick="fetchSubstackFeed()" class="underline">Retry</button></p>';
+                }
+            }
+        }
+
+        function populateSubstackSection(articles) {
+            const latest = articles[0];
+            const recents = articles.slice(1, 4);
+
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = latest.description || latest.content || '';
+            let cleanDesc = tempDiv.textContent || tempDiv.innerText || '';
+            if (cleanDesc.length > 350) {
+                cleanDesc = cleanDesc.substring(0, 350).trim() + '...';
+            }
+
+            const latestContainer = document.getElementById('latest-substack-info');
+            if (latestContainer) {
+                latestContainer.innerHTML = `
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold text-brand-green uppercase tracking-[0.2em]">Latest &bull; ${new Date(latest.pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                        <h4 class="text-3xl font-bold text-gray-900 leading-tight">${latest.title}</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed font-light">${cleanDesc}</p>
+                        <a href="${latest.link}" target="_blank" class="inline-flex items-center text-brand-green font-bold hover:text-brand-gold transition-colors pt-2">
+                            Read Article <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                `;
+            }
+
+            const recentList = document.getElementById('recent-substack-list');
+            if (recentList) {
+                recentList.innerHTML = recents.map(article => {
+                    const date = new Date(article.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    return `
+                        <a href="${article.link}" target="_blank" class="substack-card bg-white p-5 rounded-2xl flex items-start space-x-4 block">
+                            <div class="w-12 h-12 flex-shrink-0 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-green">
+                                <i class="fas fa-file-lines"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 block">${date}</span>
+                                <h4 class="font-bold text-gray-900 text-sm mb-1 line-clamp-2">${article.title}</h4>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            document.getElementById('substack-loading')?.classList.add('hidden');
+            document.getElementById('substack-main')?.classList.remove('hidden');
+            document.getElementById('substack-sidebar')?.classList.remove('hidden');
+        }
+
+        // Hero Quote Rotation
+        function initQuoteRotation() {
+            const quotes = document.querySelectorAll('#hero-quotes .quote-card');
+            if (quotes.length === 0) return;
+            let current = 0;
+
+            setInterval(() => {
+                quotes[current].classList.remove('active');
+                current = (current + 1) % quotes.length;
+                quotes[current].classList.add('active');
+            }, 5000);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             fetchPodcastFeed();
+            initQuoteRotation();
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -867,7 +1170,7 @@
                 });
             }, { threshold: 0.1 });
 
-            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-in-up, .stagger-children, .section-line').forEach(el => observer.observe(el));
         });
     </script>
 </body>
