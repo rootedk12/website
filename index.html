@@ -1,874 +1,1765 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID_HERE"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RootED K12 Consulting — Strategic Technology Counsel for K–12 Districts</title>
+<meta name="description" content="RootED K12 partners with superintendents, principals, and IT directors to build resilient technology systems — grounded in classroom reality, not vendor hype.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS113RZG44"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZS113RZG44');
 </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Rooted K12",
-  "url": "https://www.rootedk12.com",
-  "description": "Innovative educational technology support for K-12 district leaders."
-}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"RootED K12 Consulting","url":"https://www.rootedk12.com","description":"Educational technology consulting for K-12 district leaders.","address":{"@type":"PostalAddress","addressLocality":"Boston","addressRegion":"MA"}}
 </script>
-<meta name="description" content="Rooted K12 provides innovative educational technology support for K-12 district leaders and IT Departments">
-<meta name="keywords" content="K12, Education, Coaching, Professional Development, Consulting, Artificial Intelligence">
-<meta name="author" content="Rooted K12 Solutions">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.rootedk12.com/">
-<meta property="og:title" content="Rooted K12 | Empowering Education">
-<meta property="og:description" content="Empowering the next generation through rooted educational foundations.">
-<meta property="og:image" content="https://www.rootedk12.com/images/hero.png">
+<meta property="og:title" content="RootED K12 Consulting">
+<meta property="og:description" content="Strategic technology counsel for K–12 districts.">
 <link rel="canonical" href="https://www.rootedk12.com/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooted K-12 | Educational Technology Consulting & Coaching</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Calendly link widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <!-- Calendly link widget end -->
-    <style>
-        /* Visually Hidden but SEO friendly */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Lexend:wght@300;400;500;600&display=swap');
 
-        :root {
-            --brand-green: #2D5A27;
-            --brand-sage: #8FBC8F;
-            --brand-cream: #FDFBF7;
-            --brand-gold: #D4AF37;
-        }
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-        body {
-            font-family: 'Lexend', sans-serif;
-            font-weight: 300;
-            background-color: var(--brand-cream);
-            color: #1e293b;
-            overflow-x: hidden;
-            line-height: 1.45;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-        h1 {
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 700;
-        }
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*  { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
 
-        h2, h3, h4 {
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 400;
-        }
+/* ─────────────────  TOKENS  ───────────────── */
+:root {
+  /* Surfaces */
+  --paper:   #f7f3e8;     /* warm cream — primary light background */
+  --paper-2: #ede8d8;     /* deeper warm — alternate panels */
+  --paper-3: #e2dcc6;     /* edge / divider on paper */
+  --white:   #fdfcf7;
+  --rule:    #d8d1ba;
+  --line:    #e3ddc9;
 
-        .logo-text-main {
-            font-family: 'Libre Baskerville', serif;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
+  /* Inks */
+  --ink:     #14201a;     /* near-black with warm green undertone */
+  --ink-2:   #2a362e;
+  --muted:   #5f6b5d;
+  --faint:   #8d9588;
 
-        .btn-primary, .btn-outline-white, .btn-invert, .btn-solutions {
-            font-family: 'Lexend', sans-serif;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+  /* Greens */
+  --deep:    #0c1a10;     /* hero / contact deepest */
+  --forest:  #15291a;     /* dark sections */
+  --green:   #1e3d22;     /* primary brand */
+  --moss:    #3d6637;     /* mid */
+  --sage:    #7d9974;     /* light accent on dark */
+  --brand-green: #82b275; /* ED + hero accent — slightly darker, reads strongly on dark bg */
+  --brand-green-on-light: #2e5a2a; /* darker version for light bg */
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom Utilities */
-        .text-brand-green { color: var(--brand-green); }
-        .bg-brand-green { background-color: var(--brand-green); }
-        .bg-brand-cream { background-color: var(--brand-cream); }
-        
-        /* Dynamic Navigation Styles */
-        .nav-blur {
-            background: rgba(253, 251, 247, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-
-        /* Shrink effect on scroll */
-        .nav-scrolled {
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo-container {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: scale(1.25); /* Prominent size at start */
-            transform-origin: left center;
-        }
-
-        .nav-scrolled .logo-container {
-            transform: scale(1); /* Normal size on scroll */
-        }
-
-        /* Animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-       /* Enhanced Service Cards */
-.service-card {
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  /* Accent */
+  --gold:    #b8932e;
+  --gold-lt: #d4ae54;
+  --cream:   #f7f3e8;     /* alias for use on dark */
 }
 
-.service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px -12px rgba(45, 90, 39, 0.15);
-    border-color: var(--brand-sage);
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv11";
 }
 
-/* Icon Container Animation */
-.service-icon-box {
-    transition: transform 0.3s ease;
+/* Subtle paper grain on light surfaces */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: ""; position: absolute; inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.grain > * { position: relative; z-index: 1; }
+
+/* ─────────────────  TYPE  ───────────────── */
+.serif    { font-family: 'Fraunces', serif; }
+.mono     { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 300; letter-spacing: -0.025em; line-height: 1.02; color: var(--ink); }
+h1 em, h2 em, h3 em { font-style: italic; font-weight: 400; }
+p  { line-height: 1.65; }
+
+/* Editorial chapter marker (Roman numeral + label) */
+.chapter {
+  display: flex; align-items: baseline; gap: 18px;
+  margin-bottom: 28px;
+}
+.chapter .roman {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.chapter .roman::after {
+  content: "·"; margin: 0 12px; color: var(--rule);
+}
+.chapter .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--ink-2);
+  text-transform: uppercase;
+}
+.chapter.on-dark .roman { color: rgba(247,243,232,0.5); }
+.chapter.on-dark .label { color: rgba(247,243,232,0.85); }
+.chapter.on-dark .roman::after { color: rgba(247,243,232,0.25); }
+
+/* Eyebrow (alternate to chapter) */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content:""; width:24px; height:1px; background:currentColor; flex-shrink:0; opacity:.6; }
+.eyebrow.on-dark { color: rgba(247,243,232,0.55); }
+
+/* ─────────────────  LAYOUT  ───────────────── */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+@media(max-width:640px){ .wrap { padding: 0 24px; } }
+.section { padding: 140px 0; position: relative; }
+@media(max-width:768px){ .section { padding: 84px 0; } }
+
+.hide-mobile { display: block; }
+@media(max-width:900px){ .hide-mobile { display: none; } }
+
+/* ─────────────────  BUTTONS  ───────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 16px 26px;
+  border-radius: 0;
+  cursor: pointer; white-space: nowrap; text-decoration: none;
+  transition: all .25s ease;
+  border: 1px solid transparent;
+  background: none;
+}
+.btn .arr { transition: transform .25s; font-size: 14px; }
+.btn:hover .arr { transform: translateX(4px); }
+
+.btn-light { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.btn-light:hover { background: var(--white); border-color: var(--white); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
+
+.btn-dark  { background: var(--green); color: var(--paper); border-color: var(--green); }
+.btn-dark:hover { background: var(--deep); border-color: var(--deep); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(20,40,18,.25); }
+
+.btn-outline-dark { color: var(--ink); border-color: var(--rule); }
+.btn-outline-dark:hover { border-color: var(--green); color: var(--green); }
+
+.btn-outline-light { color: var(--paper); border-color: rgba(247,243,232,0.25); }
+.btn-outline-light:hover { border-color: var(--paper); background: rgba(247,243,232,0.05); }
+
+/* Pseudo-link with underline */
+.linklike {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+  color: var(--ink); text-decoration: none; cursor: pointer; background: none; border: none;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--ink);
+  transition: color .2s, border-color .2s;
+}
+.linklike:hover { color: var(--green); border-color: var(--green); }
+.linklike.on-dark { color: var(--gold-lt); border-color: rgba(212,174,84,0.35); }
+.linklike.on-dark:hover { border-color: var(--gold-lt); }
+
+/* ─────────────────  NAV  ───────────────── */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+  height: 100px;
+  display: flex; align-items: center;
+  transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease, height .35s ease;
+  border-bottom: 1px solid transparent;
+}
+#nav.at-top { background: transparent; }
+#nav.scrolled-dark { background: rgba(12,26,16,0.86); backdrop-filter: blur(18px) saturate(1.2); border-color: rgba(255,255,255,0.06); height: 68px; }
+#nav.scrolled-light { background: rgba(247,243,232,0.92); backdrop-filter: blur(18px) saturate(1.1); border-color: var(--paper-3); height: 68px; }
+
+.nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+
+/* Logo */
+.logo { display: inline-flex; flex-direction: column; align-items: flex-start; text-decoration: none; line-height: 1; }
+.logo-name {
+  font-family: 'Fraunces', serif;
+  font-size: 24px; font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--paper);
+  transition: color .3s, font-size .35s ease;
+}
+.logo-name .ED { color: var(--brand-green); transition: color .3s; }
+.logo-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(247,243,232,0.55);
+  margin-top: 8px;
+  transition: color .3s;
+}
+#nav.scrolled-light .logo-name { color: var(--ink); }
+#nav.scrolled-light .logo-name .ED { color: var(--brand-green-on-light); }
+#nav.scrolled-light .logo-sub { color: var(--muted); }
+
+/* Logo grows at top of page, shrinks once scrolled */
+#nav .logo-name { font-size: 36px; }
+#nav .logo-sub { font-size: 14px; transition: color .3s, font-size .35s ease; }
+#nav.at-top .logo-name { font-size: 56px; }
+#nav.at-top .logo-sub { font-size: 14px; }
+
+/* Nav links */
+.nav-links { display: flex; align-items: center; gap: 36px; }
+@media(max-width:960px){ .nav-links { display: none; } }
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none; color: rgba(247,243,232,0.7);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--paper); }
+#nav.scrolled-light .nav-links a { color: var(--muted); }
+#nav.scrolled-light .nav-links a:hover { color: var(--ink); }
+/* Buttons in the nav keep their own contrast — override generic nav-link color */
+.nav-links a.btn-light,
+#nav.scrolled-light .nav-links a.btn-light,
+.nav-links a.btn-light:hover,
+#nav.scrolled-light .nav-links a.btn-light:hover { color: var(--ink); }
+
+/* Mobile menu */
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 36px; height: 36px;
+  align-items: center; justify-content: center;
+  color: var(--paper);
+}
+@media(max-width:960px){ .hamburger { display: flex; } }
+#nav.scrolled-light .hamburger { color: var(--ink); }
+
+#mobile-nav {
+  position: fixed; inset: 0; z-index: 95;
+  background: var(--deep);
+  transform: translateX(100%); transition: transform .35s ease;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 48px;
+}
+#mobile-nav.open { transform: translateX(0); }
+#mobile-nav a {
+  font-family: 'Fraunces', serif; font-size: 40px; font-weight: 300;
+  color: var(--paper); text-decoration: none; letter-spacing: -0.01em;
+  display: block; padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+#mobile-nav a:hover { color: var(--gold-lt); }
+#mobile-nav a.btn-light,
+#mobile-nav a.btn-light:hover { color: var(--ink); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; border-bottom: 0; padding: 18px 28px; }
+.mobile-close {
+  position: absolute; top: 28px; right: 28px;
+  background: none; border: none; color: var(--paper); cursor: pointer;
+  font-size: 22px;
 }
 
-.service-card:hover .service-icon-box {
-    transform: scale(1.1) rotate(-5deg);
+/* ═════════════════════  HERO  ═════════════════════ */
+#hero {
+  background: var(--deep);
+  min-height: 100dvh;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+@media(max-width:900px){ #hero { min-height: auto; } }
+
+/* Full-bleed background image */
+.hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.55) saturate(0.7) contrast(1.04);
+  transform: scale(1.0);
+  transition: transform 16s ease;
+}
+#hero.loaded .hero-bg { transform: scale(1.06); }
+
+/* Soft-edged dark box behind the hero text */
+.hero-backdrop {
+  position: absolute;
+  z-index: 1;
+  top: 130px; bottom: 50px;
+  left: max(0px, calc(50vw - 640px));
+  width: min(820px, 62%);
+  background: rgba(12, 26, 16, 0.82);
+  -webkit-mask-image: radial-gradient(ellipse 70% 75% at 38% 50%, #000 18%, rgba(0,0,0,0.7) 45%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 75% at 38% 50%, #000 18%, rgba(0,0,0,0.7) 45%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  pointer-events: none;
+}
+@media(max-width:1100px){
+  .hero-backdrop { width: 72%; }
+}
+@media(max-width:900px){
+  .hero-backdrop {
+    width: 100%; top: 0; bottom: 0;
+    left: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.85) 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.85) 75%, transparent 100%);
+  }
 }
 
-/* Custom bullet styling */
-.service-list li {
-    transition: color 0.3s ease;
+.hero-wrap {
+  position: relative;
+  z-index: 2;
 }
 
-.service-card:hover .service-list li {
-    color: #000;
+.hero-left {
+  padding: 220px 0 60px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+@media(max-width:1100px){ .hero-left { padding: 200px 0 60px; } }
+@media(max-width:900px){ .hero-left { padding: 180px 0 64px; min-height: 80vh; } }
+
+/* Vertical green rule on the very left, decorative */
+.hero-left::before {
+  content: ""; position: absolute;
+  left: -28px; top: 220px; bottom: 60px;
+  width: 1px; background: linear-gradient(to bottom, rgba(212,174,84,0.4), transparent 60%);
+}
+@media(max-width:1100px){ .hero-left::before { left: -20px; top: 200px; } }
+@media(max-width:900px){ .hero-left::before { display: none; } }
+
+.hero-meta-row {
+  display: flex; gap: 28px; align-items: center; flex-wrap: wrap;
+  margin-bottom: 56px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(247,243,232,0.45);
+}
+.hero-meta-row .sep { color: rgba(247,243,232,0.2); }
+.hero-meta-row .live-dot {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(247,243,232,0.65);
+}
+.hero-meta-row .live-dot::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold-lt);
+  box-shadow: 0 0 0 4px rgba(212,174,84,0.15);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 4px rgba(212,174,84,0.15); }
+  50% { box-shadow: 0 0 0 7px rgba(212,174,84,0.04); }
 }
 
-        .btn-primary {
-            background-color: var(--brand-green);
-            color: white;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
+.hero-headline {
+  font-size: clamp(38px, 4.8vw, 72px);
+  font-weight: 200;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  color: var(--paper);
+  margin-bottom: 36px;
+}
+.hero-headline em { color: var(--brand-green); font-style: italic; font-weight: 300; }
+.hero-headline strong { font-weight: 400; }
+.hero-headline .by { display: block; font-size: 0.65em; font-weight: 300; letter-spacing: -0.025em; color: rgba(247,243,232,0.85); margin-top: 4px; }
 
-        .btn-primary:hover {
-            background-color: #1e3d1a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(45, 90, 39, 0.25);
-        }
+.hero-lede {
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 300; line-height: 1.55;
+  color: rgba(247,243,232,0.68);
+  max-width: 440px;
+  margin-bottom: 44px;
+  letter-spacing: -0.01em;
+}
 
-        .btn-outline-white {
-            border: 2px solid white;
-            color: white;
-            transition: all 0.3s ease;
-        }
+.hero-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
-        .btn-outline-white:hover {
-            background-color: white;
-            color: var(--brand-green);
-            transform: translateY(-2px);
-        }
+.hero-credibility {
+  margin-top: 80px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(247,243,232,0.1);
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+}
+@media(max-width:560px){ .hero-credibility { grid-template-columns: 1fr 1fr; } }
+.cred-item .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(247,243,232,0.4); margin-bottom: 10px;
+}
+.cred-item .value {
+  font-family: 'Fraunces', serif;
+  font-size: 14px; font-weight: 400;
+  color: var(--paper); line-height: 1.4;
+}
+.cred-item .value strong { font-weight: 500; }
 
-        /* Custom Invert Button for Contact Section */
-        .btn-invert {
-            background-color: white;
-            color: var(--brand-green);
-            border: 2px solid white;
-            transition: all 0.3s ease;
-        }
+/* Hero meta in image corner */
+.hero-img-meta {
+  position: absolute;
+  right: 48px; bottom: 48px; z-index: 3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(247,243,232,0.45);
+  text-align: right;
+}
+.hero-img-meta::before {
+  content: ""; display: block;
+  width: 28px; height: 1px;
+  background: rgba(247,243,232,0.3);
+  margin-left: auto; margin-bottom: 10px;
+}
 
-        .btn-invert:hover {
-            background-color: var(--brand-green);
-            color: white;
-            transform: translateY(-2px);
-        }
+/* Classroom supplies image, right side of hero */
+.hero-supplies {
+  position: absolute;
+  right: max(0px, calc(50vw - 640px));
+  bottom: 40px;
+  width: min(560px, 44%);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.5));
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease .4s, transform 1.2s ease .4s;
+}
+#hero.loaded .hero-supplies { opacity: 1; transform: translateY(0); }
+@media(max-width:1100px){ .hero-supplies { width: 48%; } }
+@media(max-width:900px){ .hero-supplies { display: none; } }
 
-        /* Infinite Scroll Animation */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-320px * 9)); }
-        }
+/* Hero accent gold rule */
+.hero-rule {
+  position: absolute; left: 0; bottom: 0;
+  height: 1px; width: 240px;
+  background: linear-gradient(90deg, var(--gold-lt), transparent);
+  z-index: 3;
+}
 
-        .slider {
-            background: transparent;
-            height: 160px;
-            margin: auto;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
+/* ═════════════════════  TRUSTED  ═════════════════════ */
+#trusted {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 56px 0;
+}
+.trusted-label {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-bottom: 36px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--muted);
+}
+.trusted-label::before, .trusted-label::after {
+  content: ""; flex: 0 1 80px; height: 1px; background: var(--rule);
+}
 
-        .slider::before, .slider::after {
-            background: linear-gradient(to right, var(--brand-cream) 10%, rgba(253, 251, 247, 0) 100%);
-            content: "";
-            height: 160px;
-            position: absolute;
-            width: 150px;
-            z-index: 2;
-        }
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track {
+  display: flex; align-items: center; gap: 72px;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.partner-item {
+  display: inline-flex; align-items: center; gap: 12px;
+  filter: grayscale(1); opacity: 0.6;
+  transition: opacity .3s, filter .3s;
+  white-space: nowrap;
+  height: 48px;
+}
+.partner-item:hover { opacity: 1; filter: grayscale(0); }
+.partner-item img { max-height: 40px; max-width: 110px; object-fit: contain; }
+.partner-item .pname {
+  font-family: 'Fraunces', serif;
+  font-size: 14px; font-weight: 500; letter-spacing: -0.01em;
+  color: var(--ink-2); line-height: 1.1;
+}
+.partner-item .pname span {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400; font-size: 9px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
 
-        .slider::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
-        }
+/* ═════════════════════  APPROACH  ═════════════════════ */
+#approach {
+  background: var(--paper);
+}
 
-        .slider::before {
-            left: 0;
-            top: 0;
-        }
+.section-head {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: end;
+  margin-bottom: 96px;
+}
+@media(max-width:900px){ .section-head { grid-template-columns: 1fr; gap: 32px; margin-bottom: 64px; } }
 
-        .slide-track {
-            animation: scroll 40s linear infinite;
-            display: flex;
-            width: calc(320px * 18);
-            padding: 20px 0;
-        }
+.section-head h2 {
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 300;
+}
+.section-head h2 em { color: var(--moss); font-style: italic; }
+.section-head h2 .nowrap-line { display: inline-block; white-space: nowrap; }
+/* Allow the headline to shrink with viewport so the two nowrap lines always fit */
+@media(max-width:760px){
+  .section-head h2 { font-size: min(58px, 7.2vw); }
+}
+.section-head .head-aside {
+  font-family: 'Fraunces', serif;
+  font-size: 16px; line-height: 1.6; color: var(--muted);
+  max-width: 380px;
+  padding-bottom: 6px;
+}
+.section-head.on-dark h2 { color: var(--paper); }
+.section-head.on-dark .head-aside { color: rgba(247,243,232,0.6); }
 
-        .slide {
-            height: 120px;
-            width: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 15px;
-        }
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+@media(max-width:900px){ .approach-grid { grid-template-columns: 1fr; } }
 
-        /* Modern Logo Card Design */
-        .logo-card {
-            background: white;
-            border: 1px solid #f1f5f9;
-            border-radius: 12px;
-            padding: 20px;
-            width: 100%;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-            filter: grayscale(100%) opacity(0.7);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            gap: 12px;
-        }
+.principle {
+  padding: 56px 40px 56px 0;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.principle:last-child { border-right: 0; padding-right: 0; }
+.principle:not(:first-child) { padding-left: 40px; }
+@media(max-width:900px){
+  .principle { border-right: 0; border-bottom: 1px solid var(--rule); padding: 40px 0; }
+  .principle:not(:first-child) { padding-left: 0; }
+  .principle:last-child { border-bottom: 0; }
+}
+.principle .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  color: var(--moss);
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.principle .num::before {
+  content: ""; width: 24px; height: 1px; background: var(--moss);
+}
+.principle h3 {
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.08;
+}
+.principle h3 em { color: var(--moss); font-style: italic; }
+.principle p {
+  font-size: 15px; color: var(--muted); line-height: 1.7;
+}
 
-        .logo-card:hover {
-            filter: grayscale(0%) opacity(1);
-            border-color: var(--brand-green);
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+/* ═════════════════════  SERVICES  ═════════════════════ */
+#services {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule);
+}
 
-        .logo-card img {
-            max-height: 50px;
-            max-width: 100%;
-            object-fit: contain;
-        }
+.svc-list-wrap { border-top: 1px solid var(--rule); }
 
-        .text-logo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: #334155;
-            letter-spacing: -0.02em;
-            text-align: left;
-            line-height: 1.1;
-        }
+.svc-row {
+  display: grid; grid-template-columns: 100px 1.2fr 1fr 1fr;
+  gap: 40px;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  position: relative;
+  transition: background .35s ease;
+}
+.svc-row:hover { background: rgba(255,255,255,0.35); }
+@media(max-width:900px){
+  .svc-row { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+}
 
-        .text-logo span {
-            font-size: 10px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #64748b;
-        }
+.svc-num-col {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.18em;
+  color: var(--moss);
+  padding-top: 8px;
+}
+.svc-title-col h3 {
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.svc-title-col h3 em { color: var(--moss); font-style: italic; }
+.svc-title-col .svc-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 16px;
+}
+.svc-desc-col p {
+  font-size: 15px; color: var(--ink-2); line-height: 1.7;
+}
+.svc-includes h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 14px;
+}
+.svc-includes ul { list-style: none; }
+.svc-includes li {
+  font-size: 13.5px; color: var(--ink-2);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-start; gap: 12px;
+  line-height: 1.45;
+}
+.svc-includes li:last-child { border-bottom: 0; }
+.svc-includes li::before {
+  content: ""; flex-shrink: 0; margin-top: 9px;
+  width: 6px; height: 1px; background: var(--moss);
+}
 
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(100%);
-        }
-        #mobile-menu.open {
-            transform: translateX(0);
-        }
+/* ═════════════════════  ENGAGEMENT MODELS  ═════════════════════ */
+#engagement {
+  background: var(--paper);
+}
 
-        .podcast-feed-item {
-            transition: all 0.2s ease;
-        }
-        .podcast-feed-item:hover {
-            background-color: #f8fafc;
-            border-color: var(--brand-sage);
-        }
+.eng-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+@media(max-width:900px){ .eng-grid { grid-template-columns: 1fr; } }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-        }
+.eng-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 48px 36px;
+  position: relative;
+  transition: all .4s cubic-bezier(.23,1,.32,1);
+  display: flex; flex-direction: column;
+}
+.eng-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--moss);
+  box-shadow: 0 24px 48px -24px rgba(20,40,18,0.15);
+}
+.eng-card .eng-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  color: var(--moss); margin-bottom: 36px;
+}
+.eng-card h3 {
+  font-size: 28px; font-weight: 400; line-height: 1.05; margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.eng-card .eng-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.eng-card p {
+  font-size: 14px; color: var(--muted); line-height: 1.7; flex-grow: 1;
+}
+.eng-card .eng-best {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 32px; padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+.eng-card .eng-best strong {
+  display: block; font-family: 'Fraunces', serif; font-size: 13px;
+  letter-spacing: 0; text-transform: none;
+  color: var(--ink); margin-top: 6px; font-weight: 400; font-style: italic;
+}
 
-        .modal.open {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* ═════════════════════  PHILOSOPHY QUOTE  ═════════════════════ */
+#philosophy-quote {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+.pq-inner {
+  padding: 96px 0;
+  max-width: 920px;
+}
+@media(max-width:1000px){
+  .pq-inner { padding: 72px 0; }
+}
 
-        .modal-content {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 2rem;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            animation: modalFadeIn 0.3s ease-out;
-        }
+.pq-left {
+  position: relative;
+}
+.pq-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 220px; font-weight: 300;
+  color: var(--gold-lt);
+  line-height: 0.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.pq-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--sage);
+}
 
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.pq-quote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 300; line-height: 1.25;
+  color: var(--paper);
+  letter-spacing: -0.015em;
+}
+.pq-quote em { font-style: italic; color: var(--gold-lt); }
+.pq-attr {
+  margin-top: 36px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(247,243,232,0.55);
+}
+.pq-attr strong { color: var(--paper); font-weight: 500; }
 
-        /* Floating Tree Button */
-        .floating-action-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background-color: var(--brand-green);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 90;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
+.pq-bg-tree {
+  position: absolute;
+  right: -100px; top: 50%;
+  transform: translateY(-50%);
+  width: 600px; height: 700px;
+  opacity: 0.05;
+  pointer-events: none;
+}
 
-        .floating-action-btn:hover {
-            transform: scale(1.1) rotate(5deg);
-            background-color: #1e3d1a;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+/* ═════════════════════  PODCAST  ═════════════════════ */
+#podcast {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+
+.pod-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: stretch;
+}
+@media(max-width:1000px){ .pod-grid { grid-template-columns: 1fr; gap: 48px; align-items: start; } }
+
+#pod-main-col { display: flex; flex-direction: column; }
+.pod-grid > div:nth-child(2) { display: flex; flex-direction: column; }
+.pod-grid > div:nth-child(2) .pod-guest { margin-top: auto; }
+@media(max-width:1000px){
+  .pod-grid > div:nth-child(2) .pod-guest { margin-top: 40px; }
+}
+
+.pod-main {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 56px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pod-bottom {
+  margin-top: auto;
+  padding-top: 32px;
+}
+.pod-bottom .pod-listen { margin-top: 28px; }
+@media(max-width:560px){ .pod-main { padding: 36px 28px; } }
+.pod-main-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
+}
+.pod-main h3 {
+  font-size: clamp(22px, 2.8vw, 36px); font-weight: 400;
+  margin-bottom: 18px; line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.pod-main h3 em { color: var(--moss); font-style: italic; }
+.pod-desc { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
+.pod-listen {
+  display: flex; flex-wrap: wrap; gap: 28px;
+  margin-top: 36px; padding-top: 28px;
+  border-top: 1px solid var(--rule);
+}
+.pod-listen a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: color .2s;
+}
+.pod-listen a:hover { color: var(--green); }
+.pod-listen a i { font-size: 14px; }
+
+.pod-feed-label {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pod-episode {
+  display: grid; grid-template-columns: 48px 1fr 24px;
+  gap: 16px; align-items: center;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+  text-decoration: none; color: inherit;
+  transition: background .2s;
+}
+.pod-episode:hover { background: rgba(255,255,255,0.4); padding-left: 8px; padding-right: 8px; margin: 0 -8px; }
+.pod-episode:hover .pod-ep-arrow { color: var(--green); transform: translateX(3px); }
+.pod-ep-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; font-weight: 500;
+  color: var(--moss); text-align: left;
+}
+.pod-ep-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 4px;
+}
+.pod-ep-title {
+  font-family: 'Fraunces', serif;
+  font-size: 15px; font-weight: 400; color: var(--ink); line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.pod-ep-arrow { color: var(--faint); font-size: 13px; transition: transform .2s, color .2s; }
+
+.pod-guest {
+  margin-top: 40px; background: var(--forest); padding: 36px;
+  position: relative; overflow: hidden;
+}
+.pod-guest::before {
+  content: ""; position: absolute; right: -40px; top: -40px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(212,174,84,0.08), transparent 70%);
+}
+.pod-guest h4 {
+  font-family: 'Fraunces', serif; font-size: 24px; font-weight: 400;
+  color: var(--paper); margin: 16px 0 10px; line-height: 1.15;
+}
+.pod-guest p { font-size: 13.5px; color: rgba(247,243,232,.6); line-height: 1.65; }
+.pod-guest a {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 500;
+  color: var(--gold-lt); text-decoration: none;
+  margin-top: 24px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(212,174,84,0.3);
+  transition: border-color .2s;
+}
+.pod-guest a:hover { border-color: var(--gold-lt); }
+
+/* ═════════════════════  ABOUT  ═════════════════════ */
+#about {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-inner {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+@media(max-width:1000px){ .about-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+.about-text h2 {
+  color: var(--paper);
+  font-size: clamp(40px, 5vw, 72px);
+}
+.about-text h2 em { color: var(--gold-lt); font-style: italic; }
+.about-text p {
+  font-family: 'Fraunces', serif;
+  font-size: 17px; line-height: 1.65;
+  color: rgba(247,243,232,0.7);
+  margin-top: 24px;
+  font-weight: 300;
+  max-width: 460px;
+}
+.about-text .philosophy-btn {
+  margin-top: 40px;
+}
+
+.profiles { display: flex; flex-direction: column; gap: 0; }
+.profile {
+  display: grid; grid-template-columns: 88px 1fr;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(247,243,232,0.08);
+  align-items: start;
+}
+.profile:first-child { padding-top: 0; }
+.profile:last-child { border-bottom: 0; }
+
+.profile-avatar {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: rgba(247,243,232,0.04);
+  border: 1px solid rgba(247,243,232,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 28px; color: var(--gold-lt);
+  font-weight: 300;
+  flex-shrink: 0;
+}
+.profile-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(247,243,232,0.4); margin-bottom: 6px;
+}
+.profile-name {
+  font-family: 'Fraunces', serif; font-size: 24px; font-weight: 400;
+  color: var(--paper); margin-bottom: 10px; letter-spacing: -0.01em;
+}
+.profile-bio {
+  font-size: 13.5px; color: rgba(247,243,232,0.55); line-height: 1.7;
+}
+.profile-bio a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(125,153,116,0.3); padding-bottom: 1px; }
+.profile-bio a:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
+
+/* ═════════════════════  CONTACT  ═════════════════════ */
+#contact {
+  background: var(--deep);
+  padding: 140px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(247,243,232,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,243,232,0.025) 1px, transparent 1px);
+  background-size: 96px 96px;
+  pointer-events: none;
+}
+.contact-glow {
+  position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 400px;
+  background: radial-gradient(ellipse, rgba(30,61,34,0.4), transparent 70%);
+  pointer-events: none;
+}
+
+.contact-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  position: relative; z-index: 2;
+}
+@media(max-width:900px){ .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+.contact-left h2 {
+  font-size: clamp(48px, 6.8vw, 104px);
+  font-weight: 200;
+  color: var(--paper);
+  letter-spacing: -0.035em;
+  line-height: 0.96;
+}
+.contact-left h2 em { color: var(--gold-lt); font-style: italic; }
+.contact-left p {
+  font-family: 'Fraunces', serif;
+  font-size: 17px; line-height: 1.6;
+  color: rgba(247,243,232,0.6);
+  margin-top: 32px; max-width: 420px;
+  font-weight: 300;
+}
+
+.contact-options { display: flex; flex-direction: column; gap: 12px; }
+.contact-option {
+  display: grid; grid-template-columns: 56px 1fr auto;
+  gap: 24px; align-items: center;
+  padding: 26px 32px;
+  background: rgba(247,243,232,0.03);
+  border: 1px solid rgba(247,243,232,0.08);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  font-family: 'Inter', sans-serif;
+}
+.contact-option:hover {
+  background: rgba(247,243,232,0.07);
+  border-color: rgba(247,243,232,0.2);
+  transform: translateX(4px);
+}
+.contact-option-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(212,174,84,0.3);
+  color: var(--gold-lt);
+  font-size: 18px;
+}
+.contact-option-text { display: flex; flex-direction: column; gap: 4px; }
+.contact-option-text .lab {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(247,243,232,0.4);
+}
+.contact-option-text .val {
+  font-family: 'Fraunces', serif;
+  font-size: 18px; color: var(--paper); font-weight: 400;
+}
+.contact-option-arr {
+  color: var(--gold-lt); font-size: 18px;
+  transition: transform .25s;
+}
+.contact-option:hover .contact-option-arr { transform: translateX(4px); }
+
+/* ═════════════════════  FOOTER  ═════════════════════ */
+footer {
+  background: var(--deep);
+  border-top: 1px solid rgba(247,243,232,0.06);
+  padding: 64px 0 36px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+@media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media(max-width:560px){ .footer-grid { grid-template-columns: 1fr; } }
+
+.footer-blurb {
+  font-family: 'Fraunces', serif;
+  font-size: 14px; font-weight: 300; line-height: 1.65;
+  color: rgba(247,243,232,.4); max-width: 280px; margin-top: 20px;
+}
+.footer-col-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.24em;
+  text-transform: uppercase; color: rgba(247,243,232,0.3); margin-bottom: 20px;
+}
+.footer-col a, .footer-col p {
+  display: block; font-size: 13px; color: rgba(247,243,232,0.55);
+  text-decoration: none; margin-bottom: 10px; line-height: 1.5;
+  transition: color .2s;
+}
+.footer-col a:hover { color: var(--paper); }
+.footer-bottom {
+  padding-top: 28px; border-top: 1px solid rgba(247,243,232,0.06);
+  display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(247,243,232,0.25);
+}
+
+/* ═════════════════════  MODAL  ═════════════════════ */
+#philosophy-modal {
+  display: none; position: fixed; inset: 0; z-index: 110;
+  background: rgba(10,18,9,0.75); backdrop-filter: blur(8px);
+  align-items: center; justify-content: center; padding: 24px;
+}
+#philosophy-modal.open { display: flex; }
+.modal-box {
+  background: var(--paper); max-width: 640px; width: 100%;
+  padding: 56px; position: relative;
+  animation: modalIn .35s cubic-bezier(.23,1,.32,1);
+}
+@keyframes modalIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+.modal-close {
+  position: absolute; top: 22px; right: 22px;
+  background: none; border: none; cursor: pointer;
+  font-size: 20px; color: var(--muted); transition: color .2s;
+}
+.modal-close:hover { color: var(--ink); }
+.modal-box h3 {
+  font-size: clamp(28px, 4vw, 40px); font-weight: 300;
+  margin: 20px 0 28px; letter-spacing: -0.02em;
+}
+.modal-box h3 em { color: var(--moss); font-style: italic; }
+.modal-box p {
+  font-family: 'Fraunces', serif;
+  font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 16px;
+  font-weight: 300;
+}
+.modal-box strong { color: var(--ink); font-weight: 500; font-style: italic; }
+
+/* ═════════════════════  REVEAL & TWEAKS  ═════════════════════ */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .85s ease, transform .85s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes spin { to{transform:rotate(360deg)} }
+.spinner {
+  display:inline-block; width:18px; height:18px;
+  border:1px solid var(--rule); border-top-color:var(--green);
+  border-radius:50%; animation:spin 1s linear infinite;
+}
+
+/* Tweaks panel */
+#tweaks-panel {
+  position: fixed; right: 20px; bottom: 20px; z-index: 100;
+  width: 280px; background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2);
+  padding: 22px; display: none;
+}
+#tweaks-panel.open { display: block; }
+.tw-title { font-family:'Fraunces',serif; font-size:16px; font-weight:400; margin-bottom:4px; }
+.tw-sub { font-size:11px; color:var(--muted); margin-bottom:18px; }
+.tw-group { margin-top:16px; }
+.tw-label {
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px;
+}
+.tw-opts { display:flex; gap:6px; flex-wrap:wrap; }
+.tw-opts button {
+  font-family:'Inter',sans-serif;
+  font-size:11px; padding:7px 11px;
+  border:1px solid var(--rule); background:transparent;
+  cursor:pointer; color:var(--muted); transition:all .2s;
+}
+.tw-opts button.active { background:var(--green); color:var(--paper); border-color:var(--green); }
+.tw-opts button:hover:not(.active) { border-color:var(--green); color:var(--green); }
+
+/* ── Services cards (visual) ── */
+.svc-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+@media(max-width:900px){ .svc-cards { grid-template-columns: 1fr; gap: 20px; } }
+
+.svc-card-v2 {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  transition: all .4s cubic-bezier(.23,1,.32,1);
+  position: relative;
+  overflow: hidden;
+}
+.svc-card-v2::before {
+  content: ""; position: absolute; left: 0; top: 0;
+  width: 2px; height: 0;
+  background: var(--moss);
+  transition: height .5s cubic-bezier(.23,1,.32,1);
+}
+.svc-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px -28px rgba(20,40,18,0.18);
+  border-color: var(--moss);
+}
+.svc-card-v2:hover::before { height: 100%; }
+
+.svc-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 40px;
+}
+.svc-icon-lg {
+  width: 52px; height: 52px;
+  color: var(--moss);
+  fill: none; stroke: currentColor; stroke-width: 1.4;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.svc-card-v2 .svc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.22em;
+  color: var(--muted);
+}
+.svc-card-v2 h3 {
+  font-size: 24px; font-weight: 400; line-height: 1.1;
+  margin-bottom: 18px; letter-spacing: -0.02em;
+}
+.svc-card-v2 h3 em { color: var(--moss); font-style: italic; }
+.svc-card-v2 > p {
+  font-size: 14.5px; color: var(--muted); line-height: 1.65;
+  margin-bottom: 28px;
+}
+.svc-bullets {
+  list-style: none; padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+.svc-bullets li {
+  font-size: 13px; color: var(--ink-2);
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-start; gap: 12px;
+  line-height: 1.4;
+}
+.svc-bullets li::before {
+  content: ""; flex-shrink: 0; margin-top: 9px;
+  width: 8px; height: 1px; background: var(--moss);
+}
+.svc-format {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+}
+.svc-format-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block; margin-bottom: 12px;
+}
+.svc-format-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.svc-format-tags span {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 500;
+  padding: 5px 11px;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  background: var(--paper);
+  letter-spacing: 0.01em;
+}
+
+</style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav id="main-nav" class="fixed w-full z-50 nav-blur border-b border-gray-200/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center">
-                <!-- Left-aligned Logo (Centered Text Content) -->
-                <a href="#" class="logo-container flex flex-col items-center group text-center">
-                    <span class="logo-text-main text-3xl font-extrabold text-brand-green leading-none">ROOTED</span>
-                    <span class="text-[10px] uppercase tracking-[0.4em] text-brand-gold font-bold mt-1">K-12 Consulting</span>
-                </a>
-                
-                <!-- Right-aligned Links & Buttons -->
-                <div class="hidden md:flex items-center space-x-10">
-                    <div class="flex items-center space-x-8 text-xs font-bold tracking-widest uppercase text-gray-500">
-                        <a href="#services" class="hover:text-brand-green transition-colors">Services</a>
-                        <a href="#insights" class="hover:text-brand-green transition-colors">Insights</a>
-                        <a href="#about" class="hover:text-brand-green transition-colors">About</a>
-                    </div>
-                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn-primary px-6 py-2.5 rounded-full shadow-md text-xs font-bold tracking-widest uppercase">
-                        Schedule
-                    </button>
-                </div>
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav" class="at-top">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo" aria-label="ROOTED K-12 Consulting" style="text-align: center">
+      <span class="logo-name" style="font-size: 36px">Root<span class="ED">ED</span></span>
+      <span class="logo-sub" style="text-align: center; font-size: 12px">K–12 Consulting</span>
+    </a>
 
-                <!-- Mobile Trigger -->
-                <button class="md:hidden text-2xl text-brand-green" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-24 px-8 md:hidden">
-<button onclick="gtag('event', 'generate_lead', {'method': 'mobile_menu'}); Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'}); toggleMenu(); return false;" class="text-xl font-bold bg-brand-green text-white py-4 rounded-full mt-4">
-    Schedule a Meeting
-</button>
-            <div class="flex flex-col space-y-6 text-center">
-                <a href="#services" onclick="toggleMenu()" class="text-2xl font-bold text-gray-800">Services</a>
-                <a href="#insights" onclick="toggleMenu()" class="text-2xl font-bold text-gray-800">Insights</a>
-                <a href="#about" onclick="toggleMenu()" class="text-2xl font-bold text-gray-800">About</a>
-                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'}); toggleMenu(); return false;" class="text-xl font-bold bg-brand-green text-white py-4 rounded-full mt-4">
-                    Schedule a Meeting
-                </button>
-            </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#philosophy-quote">Approach</a>
+      <a href="#podcast">Insights</a>
+      <a href="Balanced by Design.html" class="btn btn-light" style="padding:10px 18px; font-size:12px;">
+        Balanced by Design
+      </a>
     </div>
 
-    <!-- Hero Section -->
-    <header class="relative pt-32 pb-8 lg:pt-40 lg:pb-12 px-6 overflow-hidden bg-brand-cream">
-        <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="space-y-6 lg:space-y-8 fade-in-up">
-<h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-none lg:leading-none">
-    <span class="sr-only">Rooted K-12: Technology Consulting & Educational IT Strategy</span>
-    Deep Roots, <br>
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-800 to-green-600">Digital Future.</span>
-</h1>
-                <h2 class="text-lg lg:text-xl text-gray-600 max-w-lg leading-tight">
-                    We partner with K-12 leaders to build sustainable IT systems, demystify emerging technologies, and bridge the gap between pedagogy and technology.
-                </h2>
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-<button onclick="gtag('event', 'generate_lead', {'method': 'hero_button'}); Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn-primary px-8 py-4 rounded-full text-center shadow-lg min-w-[200px]">
-    Schedule time
-</button>
-                    <a href="#services" class="btn-solutions px-8 py-4 rounded-full border border-gray-300 text-center text-gray-700 hover:bg-white transition shadow-sm min-w-[200px]">Solutions</a>
-                </div>
-            </div>
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
+        <path d="M1 1H21M1 7H21M1 13H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</nav>
 
-            <div class="relative fade-in-up" style="transition-delay: 0.2s;">
-                <div class="aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
-                    <img src="images/hero.png" alt="Modern educational technology in a classroom" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700">
-                    <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur p-5 rounded-xl shadow-lg max-w-xs border-l-4 border-green-800 hidden md:block">
-                        <p class="font-medium text-gray-800 text-md leading-snug">“Technology in the classroom is not the end goal. Enabling learning everywhere is the goal.”</p>
-                        <p class="text-[10px] text-brand-green font-bold mt-2 uppercase tracking-widest">— Andrew Barras</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Partners Section -->
-    <section id="partners" class="py-16 bg-brand-cream overflow-hidden border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 mb-8">
-            <div class="flex flex-col items-center text-center mb-6">
-                <span class="text-brand-green font-medium tracking-[0.3em] uppercase text-xs mb-2">Our Network</span>
-                <h2 class="text-2xl lg:text-3xl text-gray-900">Trusted Nationwide</h2>
-                <div class="w-10 h-1 bg-brand-green mt-3 rounded-full"></div>
-            </div>
-        </div>
-
-        <div class="slider">
-            <div class="slide-track">
-                <!-- 1. Amesbury Public Schools -->
-                <div class="slide"><div class="logo-card"><img src="images/amesbury.jpg" alt="Amesbury Public Schools logo"><div class="text-logo" style="color:#2a5a27">AMESBURY<br><span>Public Schools</span></div></div></div>
-                <!-- 2. Brockton Public Schools -->
-                <div class="slide"><div class="logo-card"><img src="images/brockton.png" alt="Brockton Public Schools logo"><div class="text-logo" style="color:#b22222">BROCKTON<br><span>Public Schools</span></div></div></div>
-                <!-- 3. Milwaukee Public Schools -->
-                <div class="slide"><div class="logo-card"><img src="images/milwaukee.jpg" alt="Milwaukee Public Schools logo"><div class="text-logo" style="color:#004a99">MILWAUKEE<br><span>Public Schools</span></div></div></div>
-                <!-- 4. Malden Public Schools -->
-                <div class="slide"><div class="logo-card"><img src="images/malden.png" alt="Malden Public Schools logo"><div class="text-logo" style="color:#004a99">MALDEN<br><span>Public Schools</span></div></div></div>
-                <!-- 5. Lunenburg Public Schools -->
-                <div class="slide"><div class="logo-card"><img src="images/lunenburg.png" alt="Lunenburg Public Schools logo"><div class="text-logo" style="color:#005a32">LUNENBURG<br><span>Public Schools</span></div></div></div>
-                <!-- 6. Wakefield Public Schools -->
-                <div class="slide"><div class="logo-card"><img src="images/wakefield.png" alt="Wakefield Public Schools logo"><div class="text-logo" style="color:#222">WAKEFIELD<br><span>Public Schools</span></div></div></div>
-                <!-- 7. Day of AI -->
-                <div class="slide"><div class="logo-card"><img src="images/dayofai.png" alt="Day of AI Logo"></div></div>
-                <!-- 8. Clever -->
-                <div class="slide"><div class="logo-card"><img src="images/clever.jpg" alt="Clever Logo"></div></div>
-                <!-- 9. Additional Partner (VITA-Learn) to fill the track -->
-                <div class="slide"><div class="logo-card"><img src="images/k12techpro.webp" alt="K12 Tech Pro Logo"></div></div>
-
-                <!-- Duplicate for seamless looping -->
-                <div class="slide"><div class="logo-card"><img src="images/amesbury.jpg" alt="Amesbury Logo"><div class="text-logo" style="color:#2a5a27">AMESBURY<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/brockton.png" alt="Brockton Logo"><div class="text-logo" style="color:#b22222">BROCKTON<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/milwaukee.jpg" alt="Milwaukee"><div class="text-logo" style="color:#004a99">MILWAUKEE<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/malden.png" alt="Malden Logo"><div class="text-logo" style="color:#004a99">MALDEN<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/lunenburg.png" alt="Lunenburg Logo"><div class="text-logo" style="color:#005a32">LUNENBURG<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/wakefield.png" alt="Wakefield Logo"><div class="text-logo" style="color:#222">WAKEFIELD<br><span>Public Schools</span></div></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/dayofai.png" alt="Day of AI Logo"></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/clever.jpg" alt="Clever Logo"></div></div>
-                <div class="slide"><div class="logo-card"><img src="images/k12techpro.webp" alt="K12 Tech Pro Logo"></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 fade-in-up">
-                <div class="max-w-3xl">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <span class="text-brand-green font-bold tracking-widest uppercase text-sm">Professional Excellence</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl text-gray-900 leading-tight lg:leading-snug">Comprehensive Support for <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-green-800 to-green-600 italic">K-12 Technology Ecosystems.</span></h2>
-                </div>
-            </div>
-
-           <div class="grid md:grid-cols-3 gap-10">
-    <div class="service-card p-10 rounded-[2.5rem] fade-in-up">
-        <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-            <i class="fas fa-brands fa-google text-2xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">Workshops & PD</h3>
-        <p class="text-gray-600 mb-8 leading-relaxed">
-            Bridging the gap between school infrastructure and classroom impact through research-based professional learning.
-        </p>
-        <div class="mt-auto pt-6 border-t border-gray-100">
-            <ul class="service-list space-y-4 text-sm font-medium text-gray-700">
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Google Workspace PD & Certification Paths</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Pedagogy-First Technology Integration</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Curriculum-Aligned Digital Tool Audits</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Executive Coaching for IT Leaders</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card p-10 rounded-[2.5rem] fade-in-up" style="transition-delay: 0.1s;">
-        <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-            <i class="fas fa-map-pin text-2xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">Strategy & Innovation</h3>
-        <p class="text-gray-600 mb-8 leading-relaxed">
-            Navigating emerging educational trends and technologies with safety, ethics, and future-ready goals at the forefront.
-        </p>
-        <div class="mt-auto pt-6 border-t border-gray-100">
-            <ul class="service-list space-y-4 text-sm font-medium text-gray-700">
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>District AI Policy & Governance</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Hands-on Innovation Workshops</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Automating Admin Tasks</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Modern Vendor Privacy Reviews</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card p-10 rounded-[2.5rem] fade-in-up" style="transition-delay: 0.2s;">
-        <div class="service-icon-box w-16 h-16 bg-emerald-50 text-brand-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
-            <i class="fas fa-gears text-2xl"></i>
-        </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900">Strategic IT Operations</h3>
-        <p class="text-gray-600 mb-8 leading-relaxed">
-            Optimizing the foundational systems of school districts through expert technical leadership and long-term planning.
-        </p>
-        <div class="mt-auto pt-6 border-t border-gray-100">
-            <ul class="service-list space-y-4 text-sm font-medium text-gray-700">
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Tech Department Audits</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Multi-Year Capital Planning</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Cybersecurity Planning</span></li>
-                <li class="flex items-start"><i class="fas fa-circle-check text-brand-sage mr-3 mt-1"></i> <span>Interim Technology Director Services</span></li>
-            </ul>
-        </div>
-    </div>
+<!-- Mobile nav -->
+<div id="mobile-nav">
+  <button class="mobile-close" onclick="toggleMobileNav()" aria-label="Close">✕</button>
+  <a href="#services" onclick="toggleMobileNav()">Services</a>
+  <a href="#philosophy-quote" onclick="toggleMobileNav()">Approach</a>
+  <a href="#podcast" onclick="toggleMobileNav()">Insights</a>
+  <div style="margin-top:32px;">
+    <a href="Balanced by Design.html" onclick="toggleMobileNav()" class="btn btn-light" style="width:100%; justify-content:center; padding:18px 28px; font-size:13px;">
+      Balanced by Design →
+    </a>
+  </div>
 </div>
-        </div>
-    </section>
 
-    <!-- Insights Section: K-12 Tech Talk Podcast -->
-    <section id="insights" class="py-24 bg-slate-50 border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 fade-in-up">
-                <span class="text-brand-green font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Insights & Community</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-serif">K-12 Tech Talk Podcast</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                    Join the conversation with over 200 episodes covering the most pressing issues in educational technology. From cybersecurity to classroom AI.
-                </p>
-            </div>
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero">
+  <img class="hero-bg" src="assets/hero.png" alt="K-12 technology in the classroom">
+  <div class="hero-backdrop"></div>
+  <div class="wrap hero-wrap">
+    <div class="hero-left">
+    <div>
+      <h1 class="hero-headline reveal" style="transition-delay:.05s;">
+        The blueprint for<br>
+        <em>sustainable</em> K–12 technology.
+      </h1>
 
-            <div class="grid lg:grid-cols-12 gap-12 items-start" id="podcast-container">
-                <!-- Loading State -->
-                <div class="col-span-12 text-center py-12" id="podcast-loading">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-brand-green"></div>
-                    <p class="mt-4 text-gray-500 font-medium">Fetching latest episodes...</p>
-                </div>
-                
-                <!-- Podcast Content -->
-                <div class="lg:col-span-7 fade-in-up hidden" id="podcast-main">
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 h-full flex flex-col">
-                        <div class="flex items-center space-x-4 mb-8">
-                            <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center text-white shadow-lg">
-                                <i class="fas fa-podcast text-3xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900 leading-none">Latest Episode</h3>
-                                <p class="text-brand-sage font-medium text-sm mt-1 uppercase tracking-wide">Featured Discussion</p>
-                            </div>
-                        </div>
-                        
-                        <div id="latest-episode-info" class="mb-10 flex-grow">
-                            <!-- Title and Description injected via JS -->
-                        </div>
+      <p class="hero-lede reveal" style="transition-delay:.12s;">RootED partners with superintendents, principals, and IT directors to build resilient technology systems — grounded in classroom reality.</p>
 
-                        <div class="flex flex-wrap gap-6 pt-6 border-t border-gray-100">
-                            <a href="https://podcasts.apple.com/us/podcast/k12-tech-talk/id1493032539" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
-                                <i class="fab fa-apple text-xl mr-2"></i> Listen on Apple
-                            </a>
-                            <a href="https://open.spotify.com/show/6l6QQjUgq25CLfjGtRk1Ss?si=91316bb6bc7040cb" target="_blank" class="flex items-center text-xs font-bold text-gray-500 hover:text-brand-green transition-all uppercase tracking-widest">
-                                <i class="fab fa-spotify text-xl mr-2 text-green-500"></i> Listen on Spotify
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 fade-in-up hidden" id="podcast-sidebar" style="transition-delay: 0.1s;">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-xl font-bold text-gray-800">Recent Feed</h3>
-                        <a href="https://k12techtalkpodcast.com" target="_blank" class="text-brand-green font-bold text-sm hover:underline">View All Episodes <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                    
-                    <div class="space-y-4" id="recent-episodes-list">
-                        <!-- List items injected via JS -->
-                    </div>
-
-                    <div class="mt-8 p-6 bg-brand-green rounded-2xl text-white relative overflow-hidden">
-                        <div class="relative z-10">
-                            <p class="font-bold text-lg mb-2">Want to be a guest?</p>
-                            <p class="text-sm text-green-100 mb-4 opacity-80">Share your district's story with thousands of tech leaders.</p>
-                            <a href="mailto:info@k12techtalkpodcast.com?subject=Guest%20Inquiry%20-%20K-12%20Tech%20Talk" class="inline-block bg-white text-brand-green px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all">Submit Request</a>
-                        </div>
-                        <i class="fas fa-microphone absolute -right-4 -bottom-4 text-7xl text-white/10 -rotate-12"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Philosophy & About -->
-    <section id="about" class="py-24 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative fade-in-up">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg mt-8" alt="Students engaged in collaborative learning">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg" alt="Teacher leading a classroom discussion">
-                    </div>
-                </div>
-                <div class="fade-in-up">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Expertise Driven by Experience.</h2>
-                    <div class="space-y-6 text-gray-600 leading-relaxed">
-                        <p>
-                            <p>
-    Based in Boston, our firm is built on a foundation of real-world district leadership. Rooted K-12 is led by <strong><a href="https://www.linkedin.com/in/mark-racine/" target="_blank" class="hover:text-brand-green transition-colors">Mark Racine</a></strong>, an experienced K-12 IT leader with nearly 20 years of experience managing technology in urban school environments. Mark is a frequent speaker at national conferences and co-host of the <i>K-12 Tech Talk</i> podcast, where he shares insights with thousands of technology leaders.
-</p>
-                        </p>
-                        <p>
-                            <strong>Sarah Racine</strong>, a passionate educator with over 20 years in the classroom, leads our pedagogical strategy. Her background in curriculum development and instructional coaching ensures that every technological solution we recommend is grounded in sound teaching practice.
-                        </p>
-                        <p>
-                            If you happen to hear a bark during our calls, that’s just <strong>Milo</strong>, our Chief Morale Officer, ensuring our spirits stay as high as our standards.
-                        </p>
-                        <p>
-                            Together, they lead a team dedicated to helping schools navigate the complexities of digital transformation while keeping their roots firmly planted in student success.
-                        </p>
-                        <div class="pt-4">
-                            <button onclick="togglePhilosophyModal()" class="group inline-flex items-center text-brand-green font-bold tracking-tight hover:text-brand-gold transition-all">
-                                <span class="border-b-2 border-brand-green group-hover:border-brand-gold pb-0.5">Learn more about the "Rooted" philosophy</span>
-                                <i class="fas fa-chevron-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Reach Out Section -->
-    <section id="contact" class="py-24 bg-brand-green relative text-white">
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center fade-in-up">
-            <h2 class="text-4xl md:text-5xl mb-8">Let's Grow Together</h2>
-            <p class="text-xl text-green-50 mb-12 max-w-2xl mx-auto opacity-90">Ready to transform your district's digital landscape? Choose a way to connect with us below.</p>
-            
-            <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <!-- Contact Button -->
-                <a href="mailto:info@rootedk12.com" class="btn-outline-white flex items-center justify-center space-x-3 px-8 py-5 rounded-2xl text-xl font-bold tracking-wide">
-                    <i class="fas fa-envelope text-2xl"></i>
-                    <span>Contact</span>
-                </a>
-                
-                <!-- Schedule Button -->
-<button onclick="gtag('event', 'generate_lead', {'method': 'bottom_contact_section'}); Calendly.initPopupWidget({url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn-invert flex items-center justify-center space-x-3 px-8 py-5 rounded-2xl text-xl font-bold tracking-wide shadow-xl">
-    <i class="fas fa-calendar-alt text-2xl"></i>
-    <span>Schedule</span>
-</button>
-            </div>
-        </div>
-        
-        <!-- Subtle decorative background elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
-            <i class="fas fa-seedling absolute -top-10 -left-10 text-[15rem] rotate-12"></i>
-            <i class="fas fa-tree absolute -bottom-20 -right-20 text-[20rem] -rotate-12"></i>
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-500 text-sm">&copy; 2025 Rooted K-12 Educational Consulting. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Philosophy Modal -->
-    <div id="philosophy-modal" class="modal" onclick="if(event.target === this) togglePhilosophyModal()">
-        <div class="modal-content text-center">
-            <button onclick="togglePhilosophyModal()" class="absolute top-6 right-6 text-gray-400 hover:text-red-500 transition-colors">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-            
-            <div class="w-16 h-16 bg-brand-green text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <i class="fas fa-seedling text-3xl"></i>
-            </div>
-            
-            <h3 class="text-3xl text-gray-900 mb-6">The Rooted Philosophy</h3>
-            
-            <div class="text-gray-600 leading-relaxed text-left space-y-4">
-                <p>
-                    Inspired by our family name, <strong>Racine</strong>—the French word for "root"—RootED K-12 is built on the philosophy that a healthy digital ecosystem requires a healthy foundation, starting from the roots. 
-                </p>
-                <p>
-                    Just as a tree cannot sustain a complex canopy without a deep and nourished base, an educational environment cannot truly flourish through devices alone; it requires a robust, intentional infrastructure of support and strategy.
-                </p>
-                <p>
-                    By focusing on these essential "roots"—the foundational systems, equitable access, and purposeful implementation that power EdTech—we ensure that technology serves as a natural extension of growth, providing the stability and nourishment needed for innovation to reach new heights across our entire community.
-                </p>
-            </div>
-
-            <button onclick="togglePhilosophyModal()" class="mt-10 bg-gray-100 text-gray-700 font-bold px-8 py-3 rounded-full hover:bg-brand-green hover:text-white transition-all">
-                Close
-            </button>
-        </div>
+      <div class="hero-cta-row reveal" style="transition-delay:.18s;">
+        <button onclick="gtag('event','generate_lead',{'method':'hero'});Calendly.initPopupWidget({url:'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn btn-light">
+          Schedule a consultation <span class="arr">→</span>
+        </button>
+        <a href="#services" class="btn btn-outline-light">Explore services</a>
+      </div>
     </div>
 
-    <script>
-        // Philosophy Modal Toggle
-        function togglePhilosophyModal() {
-            const modal = document.getElementById('philosophy-modal');
-            modal.classList.toggle('open');
-            document.body.style.overflow = modal.classList.contains('open') ? 'hidden' : 'auto';
-        }
+  </div>
+  </div>
 
-        // Scroll Management for Logo & Navbar
-        window.addEventListener('scroll', function() {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('nav-scrolled');
-            } else {
-                nav.classList.remove('nav-scrolled');
-            }
-        });
+  <div class="hero-rule"></div>
+  <img class="hero-supplies" src="assets/classroom-supplies.png" alt="Laptop and classroom supplies">
+</section>
 
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('open');
-            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : 'auto';
-        }
+<!-- ═══════════════ TRUSTED ═══════════════ -->
+<section id="trusted">
+  <div class="trusted-label">Districts &amp; partners we've worked with</div>
+  <div class="marquee">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+</section>
 
-        async function fetchPodcastFeed() {
-            const rssUrl = 'https://k12techtalkpodcast.com/feed/podcast/';
-            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services" class="section grain">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="margin-bottom: 28px;">What we do</div>
 
-            try {
-                const response = await fetch(proxyUrl);
-                const data = await response.json();
-                
-                if (data.status === 'ok') {
-                    const items = data.items;
-                    populatePodcastSection(items);
-                }
-            } catch (error) {
-                console.error('Error fetching podcast feed:', error);
-                const loadingEl = document.getElementById('podcast-loading');
-                if (loadingEl) {
-                    loadingEl.innerHTML = `
-                        <p class="text-red-500 font-medium">Failed to load podcast feed. <button onclick="fetchPodcastFeed()" class="underline">Retry</button></p>
-                    `;
-                }
-            }
-        }
+    <div class="section-head reveal">
+      <h2><span class="nowrap-line">Strategic counsel,</span><br><span class="nowrap-line">grounded in <em>district reality</em>.</span></h2>
+      <div class="head-aside">
+        Three practice areas, adaptable to your district's size, scope, and stage of digital maturity.
+      </div>
+    </div>
 
-        function populatePodcastSection(episodes) {
-            const latest = episodes[0];
-            const recents = episodes.slice(1, 4);
+    <div class="svc-cards reveal">
+      <article class="svc-card-v2">
+        <div class="svc-head">
+          <svg class="svc-icon-lg" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <rect x="4" y="8" width="36" height="24" rx="2" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M14 36h16M22 32v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M4 26h36" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="22" cy="18" r="4" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M14 18h2M28 18h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span class="svc-num">01</span>
+        </div>
+        <h3>Workshops &amp;<br><em>Professional Development</em></h3>
+        <p>Research-based professional learning that connects infrastructure to classroom impact.</p>
+        <ul class="svc-bullets">
+          <li>Google Workspace PD &amp; certification</li>
+          <li>Pedagogy-first technology integration</li>
+          <li>Executive coaching for IT leaders</li>
+        </ul>
+      </article>
 
-            const tempDiv = document.createElement("div");
-            tempDiv.innerHTML = latest.description;
-            let cleanDesc = tempDiv.textContent || tempDiv.innerText || "";
-            if (cleanDesc.length > 350) {
-                cleanDesc = cleanDesc.substring(0, 350).trim() + "...";
-            }
+      <article class="svc-card-v2">
+        <div class="svc-head">
+          <svg class="svc-icon-lg" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <path d="M8 36L18 24l6 6 12-14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="34" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M4 8v32h36" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span class="svc-num">02</span>
+        </div>
+        <h3>Strategy &amp;<br><em>Innovation</em></h3>
+        <p>Navigating AI, automation, and emerging technologies with safety and ethics first.</p>
+        <ul class="svc-bullets">
+          <li>District AI policy &amp; governance</li>
+          <li>Administrative task automation</li>
+          <li>Vendor data privacy reviews</li>
+        </ul>
+      </article>
 
-            const latestInfoContainer = document.getElementById('latest-episode-info');
-            if (latestInfoContainer) {
-                latestInfoContainer.innerHTML = `
-                    <div class="space-y-4">
-                        <span class="text-xs font-bold text-brand-green uppercase tracking-[0.2em]">Latest Release &bull; ${new Date(latest.pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                        <h4 class="text-3xl font-bold text-gray-900 leading-tight">${latest.title}</h4>
-                        <p class="text-gray-600 text-lg leading-relaxed font-light">
-                            ${cleanDesc}
-                        </p>
-                        <a href="${latest.link}" target="_blank" class="inline-flex items-center text-brand-green font-bold hover:text-brand-gold transition-colors pt-2">
-                            Listen <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                `;
-            }
+      <article class="svc-card-v2">
+        <div class="svc-head">
+          <svg class="svc-icon-lg" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="4" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M22 6v4M22 34v4M6 22h4M34 22h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M10.3 10.3l2.8 2.8M30.9 30.9l2.8 2.8M10.3 33.7l2.8-2.8M30.9 13.1l2.8-2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="22" cy="22" r="10" stroke="currentColor" stroke-width="1.4" opacity=".35"/>
+          </svg>
+          <span class="svc-num">03</span>
+        </div>
+        <h3>Strategic<br><em>IT Operations</em></h3>
+        <p>Foundational systems leadership — multi-year planning, cybersecurity, and operational rhythm.</p>
+        <ul class="svc-bullets">
+          <li>Technology department audits</li>
+          <li>Cybersecurity preparedness</li>
+          <li>Interim Technology Director</li>
+        </ul>
+      </article>
+    </div>
 
-            const recentListContainer = document.getElementById('recent-episodes-list');
-            if (recentListContainer) {
-                recentListContainer.innerHTML = recents.map((ep) => {
-                    const date = new Date(ep.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                    return `
-                        <a href="${ep.link}" target="_blank" class="podcast-feed-item bg-white p-5 rounded-2xl border border-gray-100 flex items-start space-x-4 block">
-                            <div class="w-12 h-12 flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center text-brand-green">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1 block">${date}</span>
-                                <h4 class="font-bold text-gray-900 text-sm mb-1 line-clamp-2">${ep.title}</h4>
-                            </div>
-                        </a>
-                    `;
-                }).join('');
-            }
+    <div class="reveal" style="margin-top: 64px; display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
+      <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn btn-dark">
+        Discuss your district <span class="arr">→</span>
+      </button>
+      <a href="/cdn-cgi/l/email-protection#0a63646c654a7865657e6f6e613b3824696567" class="btn btn-outline-dark"><span class="__cf_email__" data-cfemail="573e393138172538382332333c66657934383a">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</section>
 
-            document.getElementById('podcast-loading')?.classList.add('hidden');
-            document.getElementById('podcast-main')?.classList.remove('hidden');
-            document.getElementById('podcast-sidebar')?.classList.remove('hidden');
-        }
+<!-- ═══════════════ PHILOSOPHY QUOTE ═══════════════ -->
+<section id="philosophy-quote">
+  <div class="wrap pq-inner">
+    <div class="reveal">
+      <p class="pq-quote">
+        Technology in the classroom is <em>not</em> the end goal.<br>
+        Enabling learning everywhere <em>is</em> the goal.
+      </p>
+      <div class="pq-attr">
+        <strong>Andrew Barras</strong> &nbsp;/&nbsp; Educator
+      </div>
+    </div>
+  </div>
+</section>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            fetchPodcastFeed();
+<!-- ═══════════════ PODCAST ═══════════════ -->
+<section id="podcast" class="section">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="margin-bottom: 28px;">Insights</div>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+    <div class="section-head reveal">
+      <h2>K–12 Tech Talk
+Podcast.</h2>
+      <div class="head-aside">
+        200+ episodes on cybersecurity, AI, and the real challenges facing district technology teams.
+      </div>
+    </div>
 
-            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-        });
-    </script>
+    <div class="pod-grid">
+      <div id="pod-main-col" class="reveal">
+        <div id="pod-loading" style="padding:64px; border:1px solid var(--rule); text-align:center; background: var(--white);">
+          <div class="spinner"></div>
+          <p style="margin-top:16px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faint);">Loading latest episode</p>
+        </div>
+        <div id="pod-main" class="pod-main" style="display:none;"></div>
+      </div>
+
+      <div class="reveal" style="transition-delay:.1s;">
+        <div class="pod-feed-label">
+          <div class="eyebrow">Recent episodes</div>
+          <a href="https://k12techtalkpodcast.com" target="_blank" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss); text-decoration:none;">All →</a>
+        </div>
+        <div id="pod-feed"></div>
+
+        <div class="pod-guest">
+          <div class="eyebrow on-dark">Be a guest</div>
+          <h4>Share your district's story.</h4>
+          <p>Reach thousands of technology leaders across the country with your experience and insight.</p>
+          <a href="/cdn-cgi/l/email-protection#fe97909891be95cfcc8a9b9d968a9f92958e919a9d9f8d8ad09d9193c18d8b9c949b9d8ac3b98b9b8d8adbccceb7908f8b978c87dbccced3dbccceb5d3cfccdbccceaa9b9d96dbccceaa9f9295">
+            Submit a request →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="contact-grid-bg"></div>
+  <div class="contact-glow"></div>
+  <div class="wrap contact-inner">
+    <div class="contact-left">
+      <div class="eyebrow on-dark reveal" style="margin-bottom: 28px;">Let's talk</div>
+      <h2 class="reveal" style="transition-delay:.05s;">
+        Ready to<br><em>get started?</em>
+      </h2>
+      <p class="reveal" style="transition-delay:.12s;">
+        Whether you need a strategic partner, a one-time assessment, or interim leadership coverage — we'd like to hear about your district.
+      </p>
+    </div>
+
+    <div class="contact-options reveal" style="transition-delay:.18s;">
+      <button onclick="gtag('event','generate_lead',{'method':'contact_section'});Calendly.initPopupWidget({url:'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="contact-option">
+        <div class="contact-option-icon"><i class="far fa-calendar"></i></div>
+        <div class="contact-option-text">
+          <span class="lab" style="text-align: left">Book a meeting</span>
+          <span class="val" style="text-align: left">Schedule a call.</span>
+        </div>
+        <div class="contact-option-arr">→</div>
+      </button>
+      <a href="/cdn-cgi/l/email-protection#6f060109002f1d00001b0a0b045e5d410c0002" class="contact-option">
+        <div class="contact-option-icon"><i class="far fa-envelope"></i></div>
+        <div class="contact-option-text">
+          <span class="lab">Send a message</span>
+          <span class="val"><span class="__cf_email__" data-cfemail="7811161e17380a17170c1d1c13494a561b1715">[email&#160;protected]</span></span>
+        </div>
+        <div class="contact-option-arr">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-name" style="font-size:22px;">Root<span class="ED">ED</span></span>
+          <span class="logo-sub" style="color: rgba(247,243,232,0.45); margin-top:7px;">K–12 Consulting</span>
+        </a>
+        <p class="footer-blurb">Strategic technology counsel for K–12 districts. Based in Boston, Massachusetts.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Services</div>
+        <a href="#services">Workshops &amp; PD</a>
+        <a href="#services">Strategy &amp; Innovation</a>
+        <a href="#services">Strategic IT Operations</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Company</div>
+        <a href="#services">Services</a>
+        <a href="#philosophy-quote">Approach</a>
+        <a href="#podcast">Insights</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Connect</div>
+        <a href="/cdn-cgi/l/email-protection#046d6a626b44766b6b7061606f35362a676b69"><span class="__cf_email__" data-cfemail="0d64636b624d7f6262796869663c3f236e6260">[email&#160;protected]</span></a>
+        <a href="https://k12techtalkpodcast.com" target="_blank">K–12 Tech Talk ↗</a>
+        <a href="https://www.linkedin.com/in/mark-racine/" target="_blank">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 RootED K12 Consulting</span>
+      <span>Boston, Massachusetts</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Philosophy Modal -->
+<div id="philosophy-modal" onclick="if(event.target===this)togglePhilosophyModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="togglePhilosophyModal()">✕</button>
+    <div class="eyebrow" style="margin-bottom:12px;">Our name, our purpose</div>
+    <h3>The Rooted<br><em>philosophy</em>.</h3>
+    <p>Inspired by our family name, <strong>Racine</strong> — the French word for "root" — RootED K–12 is built on the belief that a healthy digital ecosystem requires a healthy foundation, starting from the roots.</p>
+    <p>Just as a tree cannot sustain a complex canopy without a deep and nourished base, an educational environment cannot truly flourish through devices alone. It requires a robust, intentional infrastructure of support, strategy, and trust.</p>
+    <p>By focusing on these essential roots — the foundational systems, equitable access, and purposeful implementation that power EdTech — we ensure technology serves as a natural extension of growth.</p>
+    <button onclick="togglePhilosophyModal()" class="btn btn-outline-dark" style="margin-top:28px;">Close</button>
+  </div>
+</div>
+
+<!-- Tweaks -->
+<div id="tweaks-panel">
+  <div class="tw-title">Tweaks</div>
+  <div class="tw-sub">Visual variations</div>
+  <div class="tw-group">
+    <div class="tw-label">Accent color</div>
+    <div class="tw-opts" id="tw-accent">
+      <button data-val="gold" class="active">Gold</button>
+      <button data-val="sage">Sage</button>
+      <button data-val="copper">Copper</button>
+    </div>
+  </div>
+  <div class="tw-group">
+    <div class="tw-label">Paper warmth</div>
+    <div class="tw-opts" id="tw-paper">
+      <button data-val="warm" class="active">Warm</button>
+      <button data-val="cool">Cool</button>
+    </div>
+  </div>
+  <div class="tw-group">
+    <div class="tw-label">Grain texture</div>
+    <div class="tw-opts" id="tw-grain">
+      <button data-val="on" class="active">On</button>
+      <button data-val="off">Off</button>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Tweaks ──
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "gold",
+  "paper": "warm",
+  "grain": "on"
+}/*EDITMODE-END*/;
+let tw = {...TWEAK_DEFAULTS};
+
+function applyTweaks(t){
+  const r = document.documentElement;
+  if(t.accent==='gold'){ r.style.setProperty('--gold-lt','#d4ae54'); r.style.setProperty('--gold','#b8932e'); }
+  else if(t.accent==='sage'){ r.style.setProperty('--gold-lt','#7d9974'); r.style.setProperty('--gold','#5a7a4e'); }
+  else { r.style.setProperty('--gold-lt','#c08660'); r.style.setProperty('--gold','#9a6a48'); }
+
+  if(t.paper==='warm'){ r.style.setProperty('--paper','#f7f3e8'); r.style.setProperty('--paper-2','#ede8d8'); r.style.setProperty('--rule','#d8d1ba'); }
+  else { r.style.setProperty('--paper','#f3f3ee'); r.style.setProperty('--paper-2','#e8e9e2'); r.style.setProperty('--rule','#d2d3cb'); }
+
+  document.querySelectorAll('.grain').forEach(el => {
+    el.style.setProperty('--grain-opacity', t.grain==='on' ? 0.35 : 0);
+    const b = el.querySelector(':scope::before');
+  });
+  // Use a stylesheet rule for grain opacity
+  let gs = document.getElementById('grain-style');
+  if(!gs){ gs = document.createElement('style'); gs.id='grain-style'; document.head.appendChild(gs); }
+  gs.textContent = `.grain::before { opacity: ${t.grain==='on' ? 0.35 : 0} !important; }`;
+
+  ['accent','paper','grain'].forEach(k=>{
+    const id = k==='accent'?'tw-accent':k==='paper'?'tw-paper':'tw-grain';
+    document.querySelectorAll(`#${id} button`).forEach(b=>b.classList.toggle('active', b.dataset.val===t[k]));
+  });
+}
+
+function bindTweaks(){
+  [['tw-accent','accent'],['tw-paper','paper'],['tw-grain','grain']].forEach(([id,key])=>{
+    document.querySelectorAll(`#${id} button`).forEach(b=>{
+      b.addEventListener('click',()=>{
+        tw[key]=b.dataset.val; applyTweaks(tw);
+        try{window.parent.postMessage({type:'__edit_mode_set_keys',edits:{[key]:b.dataset.val}},'*');}catch(e){}
+      });
+    });
+  });
+}
+
+window.addEventListener('message',e=>{
+  if(!e.data?.type) return;
+  if(e.data.type==='__activate_edit_mode') document.getElementById('tweaks-panel').classList.add('open');
+  if(e.data.type==='__deactivate_edit_mode') document.getElementById('tweaks-panel').classList.remove('open');
+});
+setTimeout(()=>{ try{window.parent.postMessage({type:'__edit_mode_available'},'*');}catch(e){} },300);
+
+// ── Nav scroll handling ──
+const nav = document.getElementById('nav');
+function updateNav(){
+  const y = window.scrollY;
+  const hero = document.getElementById('hero');
+  const heroH = hero ? hero.offsetHeight : 0;
+  const contactEl = document.getElementById('contact');
+  const contactTop = contactEl ? contactEl.offsetTop : 1e9;
+  const philEl = document.getElementById('philosophy-quote');
+  const philTop = philEl ? philEl.offsetTop : 1e9;
+  const philBot = philEl ? philTop + philEl.offsetHeight : 1e9;
+
+  // Dark zones: hero, philosophy-quote, contact
+  const inDarkZone = y >= contactTop - 80 || (y >= philTop - 80 && y < philBot - 80);
+
+  if(y < 60){
+    nav.className = 'at-top';
+  } else if(y < heroH - 80){
+    nav.className = 'scrolled-dark';
+  } else if(inDarkZone){
+    nav.className = 'scrolled-dark';
+  } else {
+    nav.className = 'scrolled-light';
+  }
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+
+// ── Mobile nav ──
+function toggleMobileNav(){
+  const m = document.getElementById('mobile-nav');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+
+// ── Philosophy modal ──
+function togglePhilosophyModal(){
+  const m = document.getElementById('philosophy-modal');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+
+// ── Partners marquee ──
+const partners = [
+  {img:'assets/amesbury.jpg', name:'Amesbury', sub:'Public Schools'},
+  {img:'assets/brockton.png', name:'Brockton', sub:'Public Schools'},
+  {img:'assets/milwaukee.jpg', name:'Milwaukee', sub:'Public Schools'},
+  {img:'assets/malden.png', name:'Malden', sub:'Public Schools'},
+  {img:'assets/lunenburg.png', name:'Lunenburg', sub:'Public Schools'},
+  {img:'assets/wakefield.png', name:'Wakefield', sub:'Public Schools'},
+  {img:'assets/dayofai.png', name:'', sub:''},
+  {img:'assets/clever.jpg', name:'', sub:''},
+  {img:'assets/k12techpro.webp', name:'', sub:''},
+];
+function makePartner(p){
+  const label = p.name ? `<span class="pname">${p.name}<span>${p.sub}</span></span>` : '';
+  return `<div class="partner-item"><img src="${p.img}" alt="${p.name||'Partner'} logo">${label}</div>`;
+}
+const track = document.getElementById('marqueeTrack');
+track.innerHTML = partners.map(makePartner).join('') + partners.map(makePartner).join('');
+
+// ── Podcast feed ──
+async function fetchPodcast(){
+  try {
+    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://k12techtalkpodcast.com/feed/podcast/'));
+    const data = await res.json();
+    if(data.status==='ok') renderPodcast(data.items);
+  } catch(e) {
+    const l = document.getElementById('pod-loading');
+    if(l) l.innerHTML = '<p style="color:#c0392b; font-size:13px;">Could not load feed. <button onclick="fetchPodcast()" style="text-decoration:underline;background:none;border:none;cursor:pointer;color:inherit;">Retry</button></p>';
+  }
+}
+
+function renderPodcast(items){
+  const latest = items[0];
+  const recent = items.slice(1, 5);
+
+  const tmp = document.createElement('div');
+  tmp.innerHTML = latest.description;
+  const fullDesc = (tmp.textContent || '').trim();
+  const desc = fullDesc.length > 520 ? fullDesc.slice(0, 520).trim() + '…' : fullDesc;
+  const dateStr = new Date(latest.pubDate).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+
+  document.getElementById('pod-loading').style.display = 'none';
+  const main = document.getElementById('pod-main');
+  main.style.display = 'flex';
+  main.innerHTML = `
+    <div class="pod-main-meta">
+      <span class="eyebrow">Latest episode</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faint);">${dateStr}</span>
+    </div>
+    <h3>${latest.title}</h3>
+    <p class="pod-desc">${desc}</p>
+    <div class="pod-bottom">
+      <a href="${latest.link}" target="_blank" class="btn btn-dark" style="padding:14px 24px;">
+        Listen to episode <span class="arr">→</span>
+      </a>
+      <div class="pod-listen">
+        <a href="https://podcasts.apple.com/us/podcast/k12-tech-talk/id1493032539" target="_blank"><i class="fab fa-apple"></i> Apple</a>
+        <a href="https://open.spotify.com/show/6l6QQjUgq25CLfjGtRk1Ss" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+        <a href="https://k12techtalkpodcast.com" target="_blank"><i class="fas fa-globe"></i> All episodes</a>
+      </div>
+    </div>
+  `;
+
+  const feed = document.getElementById('pod-feed');
+  feed.innerHTML = recent.map((ep,i)=>{
+    const d = new Date(ep.pubDate).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    return `
+      <a href="${ep.link}" target="_blank" class="pod-episode">
+        <div class="pod-ep-num">${String(i+2).padStart(2,'0')}</div>
+        <div>
+          <div class="pod-ep-date">${d}</div>
+          <div class="pod-ep-title">${ep.title}</div>
+        </div>
+        <div class="pod-ep-arrow">→</div>
+      </a>
+    `;
+  }).join('');
+}
+
+// ── Reveal on scroll ──
+document.addEventListener('DOMContentLoaded', ()=>{
+  applyTweaks(tw);
+  bindTweaks();
+  fetchPodcast();
+  updateNav();
+
+  // Hero animation
+  setTimeout(()=>{ document.getElementById('hero')?.classList.add('loaded'); }, 200);
+
+  // Reveal everything in hero immediately
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.06, rootMargin:'0px 0px -40px 0px'});
+
+  document.querySelectorAll('.reveal:not(#hero .reveal)').forEach(el=>{
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      obs.observe(el);
+    }
+  });
+});
+</script>
 </body>
 </html>

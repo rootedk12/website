@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Balanced by Design — A K-12 Screen Time Leadership Program | Rooted K-12</title>
+<meta name="description" content="A four-month consulting program that helps K-12 districts move from reactive screen time debates to proactive, evidence-based policy. Fall 2026 cohort applications open." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:        #f4efe4;
+    --bg-2:      #ece5d3;
+    --bg-3:      #e3dac4;
+    --ink:       #15281d;
+    --forest:    #1d3528;
+    --forest-2:  #2a4737;
+    --moss:      #4a6151;
+    --muted:     #5d6859;
+    --clay:      #b07a47;
+    --line:      #d6cdb7;
+    --line-2:    #c5b99c;
+    --cream:     #faf6ec;
+
+    --serif: "Newsreader", "Source Serif 4", Georgia, serif;
+    --sans:  "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a{ color: inherit; }
+  ::selection{ background: var(--forest); color: var(--cream); }
+
+  /* ---------- Layout primitives ---------- */
+  .wrap{
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .rule{
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+  .eyebrow{
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow .dot{
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--clay);
+  }
+  .display{
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    color: var(--forest);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .display em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--forest-2);
+  }
+  h2.section-title{
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 4.2vw, 52px);
+    letter-spacing: -0.018em;
+    line-height: 1.05;
+    color: var(--forest);
+    margin: 0 0 18px 0;
+    text-wrap: balance;
+  }
+  h2.section-title em{ font-style: italic; color: var(--moss); font-weight: 400; }
+  h2.section-title .ln{ display: block; white-space: nowrap; }
+  .lede{
+    font-family: var(--serif);
+    font-size: clamp(19px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 60ch;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  p{ text-wrap: pretty; }
+
+  /* ---------- Header ---------- */
+  header.site{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--forest);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 14px;
+  }
+  .brand .mark{
+    width: 22px; height: 22px; display: inline-block;
+  }
+  .brand .mark svg{ display:block; width:100%; height:100%; }
+  .brand small{
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--moss);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1px;
+  }
+  .nav-right{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-right a.back{
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-right a.back:hover{ color: var(--forest); }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    line-height: 1;
+  }
+  .btn-primary{
+    background: var(--forest);
+    color: var(--cream);
+  }
+  .btn-primary:hover{ background: #11241a; transform: translateY(-1px); }
+  .btn-ghost{
+    background: transparent;
+    color: var(--forest);
+    border-color: var(--line-2);
+  }
+  .btn-ghost:hover{ border-color: var(--forest); }
+  .btn .arrow{
+    display: inline-block;
+    width: 14px;
+    transition: transform .2s ease;
+  }
+  .btn:hover .arrow{ transform: translateX(3px); }
+  .btn-sm{ padding: 9px 16px; font-size: 13px; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    padding: 88px 0 96px;
+    overflow: hidden;
+  }
+  .hero-head{
+    margin-bottom: 56px;
+  }
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 64px;
+    align-items: end;
+  }
+  .hero h1{
+    font-size: clamp(64px, 11vw, 168px);
+    max-width: 14ch;
+  }
+  .hero .sub{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 30px);
+    color: var(--moss);
+    margin: 28px 0 0 0;
+    max-width: 44ch;
+    line-height: 1.3;
+  }
+  .hero .lead{
+    margin-top: 36px;
+    max-width: 56ch;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .hero .cta-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 40px;
+    align-items: center;
+  }
+  .hero .cta-meta{
+    font-size: 13px;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+  .hero-meta{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-bottom: 4px;
+  }
+  .hero-meta .label{
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 500;
+  }
+  .hero-meta .value{
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.1;
+    color: var(--forest);
+    letter-spacing: -0.01em;
+  }
+  .hero-meta .row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+  .hero-meta .row:last-child{ border-bottom: 1px solid var(--line); }
+
+  /* Subtle root decoration in hero */
+  .root-deco{
+    position: absolute;
+    pointer-events: none;
+    right: -40px;
+    top: 60px;
+    width: 280px;
+    height: 280px;
+    opacity: 0.18;
+    z-index: 0;
+  }
+  .hero-grid > *{ position: relative; z-index: 1; }
+
+  /* ---------- Featured quote strip ---------- */
+  .quote-strip{ padding: 0; }
+  .quote-strip-inner{
+    padding: 88px 0 96px;
+    max-width: 1000px;
+    position: relative;
+  }
+  .quote-strip .eyebrow{ margin-bottom: 28px; }
+  .quote-strip-q{
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(30px, 4vw, 56px);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--cream);
+    margin: 0;
+    padding: 0;
+    text-wrap: balance;
+    position: relative;
+  }
+  .quote-strip-q em{
+    font-style: italic;
+    color: color-mix(in srgb, var(--cream) 70%, transparent);
+  }
+  .quote-strip-q .q-mark{
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--clay);
+    font-size: 1.05em;
+    line-height: 0;
+    margin-right: 4px;
+    display: inline;
+  }
+
+  /* ---------- Stat strip ---------- */
+  .strip{
+    background: var(--forest);
+    color: var(--cream);
+  }
+  .strip-inner{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 32px 0;
+  }
+  .strip-item{
+    padding: 8px 24px;
+    border-left: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+  }
+  .strip-item:first-child{ border-left: 0; padding-left: 0; }
+  .strip-item .n{
+    font-family: var(--serif);
+    font-size: clamp(36px, 3.6vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    display: block;
+  }
+  .strip-item .l{
+    font-size: 13px;
+    color: color-mix(in srgb, var(--cream) 70%, transparent);
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Sections ---------- */
+  section.block{
+    padding: 112px 0;
+    position: relative;
+  }
+  section.block.tight{ padding: 88px 0; }
+  section.block.alt{ background: var(--bg-2); }
+  section.block.dark{ background: var(--forest); color: var(--cream); }
+  section.block.dark h2.section-title{ color: var(--cream); }
+  section.block.dark h2.section-title em{ color: color-mix(in srgb, var(--cream) 70%, transparent); }
+  section.block.dark .eyebrow{ color: color-mix(in srgb, var(--cream) 70%, transparent); }
+  section.block.dark .eyebrow .dot{ background: var(--clay); }
+
+  .section-head{
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 56px;
+  }
+  .section-head > .lede{
+    /* Push the lede down past the eyebrow so it aligns with the heading's first line */
+    padding-top: 30px;
+  }
+  .section-head .lede{ color: inherit; }
+
+  /* ---------- Phases ---------- */
+  .phases{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .phase{
+    padding: 36px 32px 40px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .phase:last-child{ border-right: 0; }
+  .phase .num{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--clay);
+    letter-spacing: 0.02em;
+  }
+  .phase .name{
+    font-family: var(--serif);
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--forest);
+    margin: 0;
+  }
+  .phase .weeks{
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 500;
+  }
+  .phase p{
+    margin: 0;
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .phase .deliverable{
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px dashed var(--line-2);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .phase .deliverable .dlabel{
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 500;
+  }
+  .phase .deliverable .dname{
+    font-family: var(--serif);
+    font-size: 19px;
+    color: var(--forest);
+    line-height: 1.25;
+  }
+
+  /* ---------- Glance table ---------- */
+  .glance{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid color-mix(in srgb, var(--cream) 24%, transparent);
+  }
+  .glance .row{
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+    gap: 32px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+  }
+  .glance .row .k{
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--cream) 65%, transparent);
+    font-weight: 500;
+  }
+  .glance .row .v{
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.35;
+    color: var(--cream);
+    letter-spacing: -0.005em;
+  }
+  .glance .row .v small{
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--cream) 60%, transparent);
+    letter-spacing: 0;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .glance .row .tag{
+    font-family: var(--sans);
+    font-size: 12px;
+    color: color-mix(in srgb, var(--cream) 65%, transparent);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- Participants ---------- */
+  .roles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .role{
+    border: 1px solid var(--line);
+    background: var(--bg);
+    padding: 28px 28px 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 220px;
+  }
+  .role .seat{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--clay);
+  }
+  .role h3{
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--forest);
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .role p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .roles-note{
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 64ch;
+  }
+
+  /* ---------- Add-ons ---------- */
+  .addons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .addon{
+    border: 1px solid var(--line);
+    background: var(--bg);
+    padding: 36px 36px 38px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .addon .tag{
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-weight: 500;
+  }
+  .addon h3{
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--forest);
+    margin: 0;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  .addon p{
+    margin: 0;
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .addon .meta{
+    margin-top: 8px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+  }
+  .addon .meta span{
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ---------- Apply CTA ---------- */
+  section.apply{
+    padding: 0;
+    background: var(--bg-2);
+  }
+  .apply-inner{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 0;
+    min-height: 480px;
+  }
+  .apply-copy{
+    padding: 88px 64px 88px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+  .apply-copy h2{
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 4.4vw, 60px);
+    color: var(--forest);
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+  }
+  .apply-copy h2 em{ font-style: italic; color: var(--moss); }
+  .apply-copy p{
+    margin: 0;
+    color: var(--ink);
+    max-width: 48ch;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .apply-card{
+    background: var(--forest);
+    color: var(--cream);
+    padding: 56px 56px 56px 56px;
+    margin: 56px -32px 56px 0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    position: relative;
+  }
+  .apply-card .label{
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--cream) 70%, transparent);
+    font-weight: 500;
+  }
+  .apply-card h3{
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--cream);
+    margin: 0;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  .apply-card ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .apply-card li{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 15px;
+    color: color-mix(in srgb, var(--cream) 88%, transparent);
+  }
+  .apply-card li::before{
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--clay);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transform: translateY(-2px);
+  }
+  .apply-card .btn-light{
+    background: var(--cream);
+    color: var(--forest);
+    align-self: flex-start;
+  }
+  .apply-card .btn-light:hover{ background: #fff; transform: translateY(-1px); }
+  .apply-card .btn-outline{
+    background: transparent;
+    color: var(--cream);
+    border-color: color-mix(in srgb, var(--cream) 35%, transparent);
+    align-self: flex-start;
+  }
+  .apply-card .btn-outline:hover{ border-color: var(--cream); background: color-mix(in srgb, var(--cream) 8%, transparent); }
+  .apply-card .actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .apply-card .contact{
+    border-top: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+    padding-top: 24px;
+    font-size: 14px;
+    color: color-mix(in srgb, var(--cream) 70%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .apply-card .contact a{
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent);
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site{
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    padding: 40px 0 48px;
+  }
+  .foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .foot a{ color: var(--muted); text-decoration: none; }
+  .foot a:hover{ color: var(--forest); }
+  .foot .links{ display: flex; gap: 24px; }
+
+  /* ---------- Pull-out / aside lines ---------- */
+  .pullquote{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.35;
+    color: var(--forest);
+    border-left: 2px solid var(--clay);
+    padding-left: 24px;
+    max-width: 50ch;
+    margin: 0;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 920px){
+    .hero{ padding: 56px 0 72px; }
+    .hero-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .hero-meta{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hero-meta .row{ padding: 16px 0; }
+    .root-deco{ right: -80px; top: auto; bottom: -40px; opacity: 0.12; }
+
+    .strip-inner{ grid-template-columns: 1fr 1fr; gap: 0; }
+    .strip-item{ padding: 16px 20px; border-left: 0; border-top: 1px solid color-mix(in srgb, var(--cream) 18%, transparent); }
+    .strip-item:nth-child(-n+2){ border-top: 0; }
+    .strip-item:nth-child(odd){ padding-left: 0; }
+
+    section.block{ padding: 80px 0; }
+    .section-head{ grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .section-head > .lede{ padding-top: 0; }
+
+    .phases{ grid-template-columns: 1fr; }
+    .phase{ border-right: 0; }
+
+    .glance .row{ grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+    .glance .row .tag{ display: none; }
+
+    .roles{ grid-template-columns: 1fr; }
+    .addons{ grid-template-columns: 1fr; }
+
+    .apply-inner{ grid-template-columns: 1fr; min-height: 0; }
+    .apply-copy{ padding: 64px 0 8px; }
+    .apply-card{ margin: 0 0 64px 0; padding: 40px 32px; }
+
+    .nav-right .back{ display: none; }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding: 0 20px; }
+    .hero h1{ font-size: 48px; }
+    .strip-inner{ grid-template-columns: 1fr; }
+    .strip-item{ border-left: 0; padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--cream) 18%, transparent); }
+    .strip-item:first-child{ border-top: 0; }
+    .phase{ padding: 28px 22px 32px; }
+    .phase .name{ font-size: 34px; }
+    .glance .row .v{ font-size: 19px; }
+    .addon{ padding: 28px 24px 32px; }
+    .apply-card h3{ font-size: 28px; }
+  }
+
+  /* ═══════════ Site-wide nav & footer matching the home page ═══════════ */
+  :root{
+    --paper:    #f7f3e8;
+    --paper-3:  #e2dcc6;
+    --deep:     #0c1a10;
+    --green:    #1e3d22;
+    --brand-green:           #82b275;
+    --brand-green-on-light:  #2e5a2a;
+    --gold-lt:  #d4ae54;
+  }
+
+  #nav{
+    position: sticky; top: 0; left: 0; right: 0; z-index: 90;
+    height: 76px;
+    display: flex; align-items: center;
+    background: rgba(247,243,232,0.92);
+    backdrop-filter: blur(18px) saturate(1.1);
+    border-bottom: 1px solid var(--paper-3);
+    font-family: 'Inter', sans-serif;
+  }
+  #nav .nav-inner{
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%;
+  }
+  #nav .logo{
+    display: inline-flex; flex-direction: column; align-items: flex-start;
+    text-decoration: none; line-height: 1;
+  }
+  #nav .logo-name{
+    font-family: 'Fraunces', serif;
+    font-size: 36px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--ink);
+  }
+  #nav .logo-name .ED{ color: var(--brand-green-on-light); }
+  #nav .logo-sub{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--muted); margin-top: 6px;
+  }
+  #nav .nav-links{ display: flex; align-items: center; gap: 36px; }
+  @media(max-width:960px){ #nav .nav-links{ display: none; } }
+  #nav .nav-links a{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 500;
+    text-decoration: none; color: var(--muted);
+    transition: color .2s;
+  }
+  #nav .nav-links a:hover{ color: var(--ink); }
+
+  /* Button styled to match home page "btn-light" but sitting on light bg */
+  #nav .nav-links a.btn-light,
+  #nav .nav-links a.btn-light:hover{
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--green); color: var(--paper);
+    border: 1px solid var(--green);
+    padding: 10px 18px; font-size: 12px;
+    letter-spacing: 0.01em;
+    border-radius: 0;
+  }
+  #nav .nav-links a.btn-light:hover{
+    background: var(--deep); border-color: var(--deep);
+  }
+
+  .hamburger{
+    display: none; background: none; border: 0; cursor: pointer;
+    color: var(--ink); padding: 8px;
+  }
+  @media(max-width:960px){ .hamburger{ display: flex; } }
+
+  #mobile-nav{
+    position: fixed; inset: 0; z-index: 100;
+    background: var(--deep);
+    transform: translateX(100%); transition: transform .4s ease;
+    padding: 90px 28px 28px;
+    overflow-y: auto;
+  }
+  #mobile-nav.open{ transform: translateX(0); }
+  #mobile-nav a{
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 40px; font-weight: 300;
+    color: var(--paper); text-decoration: none;
+    letter-spacing: -0.01em;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  #mobile-nav a:hover{ color: var(--gold-lt); }
+  #mobile-nav a.btn-light,
+  #mobile-nav a.btn-light:hover{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 500;
+    padding: 18px 28px;
+    border: 1px solid var(--paper);
+    background: var(--paper); color: var(--ink);
+    text-align: center; justify-content: center;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .mobile-close{
+    position: absolute; top: 28px; right: 28px;
+    background: none; border: 0; color: var(--paper);
+    font-size: 22px; cursor: pointer;
+  }
+
+  /* Home-style footer */
+  .rooted-footer{
+    background: var(--deep);
+    border-top: 1px solid rgba(247,243,232,.06);
+    padding: 64px 0 36px;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+  }
+  .rooted-footer .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .rooted-footer .footer-grid{
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 56px;
+  }
+  @media(max-width:900px){ .rooted-footer .footer-grid{ grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media(max-width:560px){ .rooted-footer .footer-grid{ grid-template-columns: 1fr; } }
+  .rooted-footer .logo{
+    display: inline-flex; flex-direction: column; align-items: flex-start;
+    text-decoration: none; line-height: 1;
+  }
+  .rooted-footer .logo-name{
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--paper);
+  }
+  .rooted-footer .logo-name .ED{ color: var(--brand-green); }
+  .rooted-footer .logo-sub{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: rgba(247,243,232,.45); margin-top: 7px;
+  }
+  .rooted-footer .footer-blurb{
+    font-family: 'Fraunces', serif;
+    font-size: 14px; font-weight: 300; line-height: 1.65;
+    color: rgba(247,243,232,.4); max-width: 280px; margin-top: 20px;
+  }
+  .rooted-footer .footer-col-label{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(247,243,232,.3); margin-bottom: 20px;
+  }
+  .rooted-footer .footer-col a, .rooted-footer .footer-col p{
+    display: block; font-size: 13px; color: rgba(247,243,232,.55);
+    text-decoration: none; margin-bottom: 10px; line-height: 1.5;
+    transition: color .2s;
+  }
+  .rooted-footer .footer-col a:hover{ color: var(--paper); }
+  .rooted-footer .footer-bottom{
+    padding-top: 28px; border-top: 1px solid rgba(247,243,232,.06);
+    display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(247,243,232,.25);
+  }
+</style>
+</head>
+<body>
+
+<!-- Reusable root motif: simple organic line illustration built from curves -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="root-mark" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M50 6 V 94" />
+        <path d="M50 36 C 50 50, 32 56, 26 74" />
+        <path d="M50 36 C 50 50, 68 56, 74 74" />
+        <path d="M50 56 C 50 66, 40 70, 36 86" />
+        <path d="M50 56 C 50 66, 60 70, 64 86" />
+        <circle cx="50" cy="6" r="2.2" fill="currentColor" stroke="none" />
+        <circle cx="26" cy="74" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="74" cy="74" r="1.6" fill="currentColor" stroke="none" />
+        <circle cx="36" cy="86" r="1.4" fill="currentColor" stroke="none" />
+        <circle cx="64" cy="86" r="1.4" fill="currentColor" stroke="none" />
+      </g>
+    </symbol>
+    <symbol id="root-mark-lg" viewBox="0 0 200 220">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M100 10 V 210" />
+        <path d="M100 70 C 100 100, 60 110, 44 160" />
+        <path d="M100 70 C 100 100, 140 110, 156 160" />
+        <path d="M100 110 C 100 140, 72 150, 64 200" />
+        <path d="M100 110 C 100 140, 128 150, 136 200" />
+        <path d="M100 150 C 100 170, 90 180, 88 208" />
+        <path d="M100 150 C 100 170, 110 180, 112 208" />
+        <circle cx="100" cy="10" r="3" fill="currentColor" stroke="none" />
+        <circle cx="44" cy="160" r="2" fill="currentColor" stroke="none" />
+        <circle cx="156" cy="160" r="2" fill="currentColor" stroke="none" />
+        <circle cx="64" cy="200" r="1.8" fill="currentColor" stroke="none" />
+        <circle cx="136" cy="200" r="1.8" fill="currentColor" stroke="none" />
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ════════ NAV (matches home page) ════════ -->
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="RootED K12 - New.html" class="logo" aria-label="ROOTED K-12 Consulting">
+      <span class="logo-name">Root<span class="ED">ED</span></span>
+      <span class="logo-sub">K–12 Consulting</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="RootED K12 - New.html#services">Services</a>
+      <a href="RootED K12 - New.html#philosophy-quote">Approach</a>
+      <a href="RootED K12 - New.html#podcast">Insights</a>
+      <a href="Balanced by Design.html" class="btn-light">Home</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
+        <path d="M1 1H21M1 7H21M1 13H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div id="mobile-nav">
+  <button class="mobile-close" onclick="toggleMobileNav()" aria-label="Close">✕</button>
+  <a href="RootED K12 - New.html#services" onclick="toggleMobileNav()">Services</a>
+  <a href="RootED K12 - New.html#philosophy-quote" onclick="toggleMobileNav()">Approach</a>
+  <a href="RootED K12 - New.html#podcast" onclick="toggleMobileNav()">Insights</a>
+  <div style="margin-top:32px;">
+    <a href="Balanced by Design.html" onclick="toggleMobileNav()" class="btn-light" style="width:100%;">Balanced by Design →</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="root-deco" style="color: var(--forest);" aria-hidden="true">
+      <svg viewBox="0 0 200 220" width="100%" height="100%"><use href="#root-mark-lg"></use></svg>
+    </div>
+    <div class="hero-head">
+      <div class="eyebrow"><span class="dot"></span> Fall 2026 Cohort · Applications Open</div>
+      <h1 class="display" style="margin-top: 22px; font-size: 72px">Balanced<br />by <em>Design.</em></h1>
+      <p class="sub">A K-12 screen time leadership program for districts ready to lead the conversation — not react to it.</p>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <p class="lead">Four months. Three deliverables. One cohort of districts working through a structured process of assessment, alignment, and action — so your team can speak with confidence about how technology is used, why, and what comes next.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#apply">Interest form <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#process">See the process <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <aside class="hero-meta" aria-label="Program at a glance">
+        <div class="row">
+          <div>
+            <div class="label">Length</div>
+            <div class="value">16 weeks</div>
+          </div>
+          <div>
+            <div class="label">Cohort size</div>
+            <div class="value">8–10 districts</div>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="label">Seats per district</div>
+            <div class="value">3 admins</div>
+          </div>
+          <div>
+            <div class="label">Starts</div>
+            <div class="value">Fall 2026</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED QUOTE ============ -->
+<section class="strip quote-strip" aria-label="Program philosophy">
+  <div class="wrap">
+    <div class="quote-strip-inner">
+      <div class="eyebrow" style="color: color-mix(in srgb, var(--cream) 70%, transparent);"><span class="dot"></span> Program Philosophy</div>
+      <blockquote class="quote-strip-q">
+        Quality of use matters <em>more than quantity.</em> The goal is shared language for what good technology use actually looks like — and the practice to back it up.
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE THREE PHASES ============ -->
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> The Process</div>
+        <h2 class="section-title">Three phases.<br /><em>One direction.</em></h2>
+      </div>
+      <p class="lede">
+        Each phase has a named deliverable presented to district leadership before the next phase begins — so progress is visible, defensible, and built on the work that came before.
+      </p>
+    </div>
+
+    <div class="phases">
+      <article class="phase">
+        <div>
+          <div class="num">Phase 01</div>
+          <h3 class="name">Assess</h3>
+          <div class="weeks" style="margin-top:8px;">Weeks 1 – 5</div>
+        </div>
+        <p>Concrete, observable data on how technology is actually being used across your schools — classroom observations, teacher and family surveys, MDM and filter logs, and policy mapping.</p>
+        <p style="color: var(--muted); font-size: 14.5px; margin-top: -6px;">
+          Move beyond national headlines and speak with informed clarity about your own district.
+        </p>
+        <div class="deliverable">
+          <div class="dlabel">Deliverable</div>
+          <div class="dname">Current State Snapshot</div>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div>
+          <div class="num">Phase 02</div>
+          <h3 class="name">Align</h3>
+          <div class="weeks" style="margin-top:8px;">Weeks 6 – 10</div>
+        </div>
+        <p>Facilitated visioning with teachers, families, and (where applicable) students. Synthesis into grade-band benchmarks and a gap analysis, with cabinet priority-setting before Phase 3 begins.</p>
+        <p style="color: var(--muted); font-size: 14.5px; margin-top: -6px;">
+          Convert data into a community-informed direction the whole district can stand behind.
+        </p>
+        <div class="deliverable">
+          <div class="dlabel">Deliverable</div>
+          <div class="dname">Balanced Technology Vision</div>
+        </div>
+      </article>
+
+      <article class="phase">
+        <div>
+          <div class="num">Phase 03</div>
+          <h3 class="name">Act</h3>
+          <div class="weeks" style="margin-top:8px;">Weeks 11 – 16</div>
+        </div>
+        <p>Three coordinated plans — instructional practice, guidance, and procurement — developed in parallel so they reinforce one another. Closes with a PD kickoff for teaching staff.</p>
+        <p style="color: var(--muted); font-size: 14.5px; margin-top: -6px;">
+          The document your team keeps and uses long after the program ends.
+        </p>
+        <div class="deliverable">
+          <div class="dlabel">Deliverable</div>
+          <div class="dname">Balanced by Design Action Plan</div>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ WHO SHOULD PARTICIPATE ============ -->
+<section class="block alt" id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Who Should Participate</div>
+        <h2 class="section-title">A team of three.<br /><em>From the top.</em></h2>
+      </div>
+      <p class="lede">Balanced by Design is built for district leadership teams. We recommend the following roles so that district policy, instruction, and technology can move together towards a common goal.</p>
+    </div>
+
+    <div class="roles">
+      <article class="role">
+        <span class="seat">Seat 01 · Executive sponsor</span>
+        <h3>Superintendent<br />or Assistant Superintendent</h3>
+        <p>Connects the program's work to district-wide priorities and clears the path for implementation across departments.</p>
+      </article>
+      <article class="role">
+        <span class="seat">Seat 02 · Instructional lead</span>
+        <h3>Curriculum &amp;<br />Instruction Leader</h3>
+        <p>Owns the teacher-facing visioning work and the instructional practice roadmap that emerges in Phase 3.</p>
+      </article>
+      <article class="role">
+        <span class="seat">Seat 03 · Infrastructure</span>
+        <h3>Director of Technology<br />or equivalent</h3>
+        <p>Brings infrastructure context to procurement guidance, MDM and filter data, and practice decisions about devices and tools.</p>
+      </article>
+    </div>
+
+    <p class="roles-note">
+      No existing screen time policy or recent audit is required to participate. The program is designed to work from whatever starting point a district is at — what matters is that leadership is ready to engage staff and community in an honest conversation.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ADD-ONS ============ -->
+<section class="block" id="addons">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Optional Add-ons</div>
+        <h2 class="section-title"><span class="ln">Extend the work into</span><em class="ln">classrooms and homes.</em></h2>
+      </div>
+    </div>
+
+    <div class="addons">
+      <article class="addon">
+        <span class="tag">Add-on · Families</span>
+        <h3>Family Screen Time Webinar</h3>
+        <p>A live, family-facing virtual session led by the Rooted K-12 team. Helps parents and caregivers understand how technology is used at school, where the district is headed, and practical strategies for managing screen time at home in ways that complement that approach.</p>
+      </article>
+
+      <article class="addon">
+        <span class="tag">Add-on · Teachers</span>
+        <h3>Teacher Professional Development</h3>
+        <p>A focused PD session at the intersection of today's most pressing classroom technology questions — intentional integration, lesson planning with technology in mind, and practical AI literacy for educators. Grounded in the vision your district develops in Phase 2.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLY ============ -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="apply-inner">
+      <div class="apply-copy">
+        <div class="eyebrow"><span class="dot"></span> Apply</div>
+        <h2>Lead the conversation.<br /><em>Don't react to it.</em></h2>
+        <p style="font-size: 2px">Applications are open for the inaugural Balanced by Design cohort, launching Fall 2026.</p>
+      </div>
+
+      <aside class="apply-card">
+        <div class="label">Fall 2026 Cohort</div>
+        <h3>Interested in learning more?</h3>
+        <div class="actions">
+          <a class="btn btn-light" href="https://forms.gle/f4EJPrMRqgDAEWuE6" target="_blank" rel="noopener">
+            Interest form <span class="arrow">→</span>
+          </a>
+          <a class="btn btn-outline" href="/cdn-cgi/l/email-protection#5a33343c351a2835352e3f3e316b687439353765292f38303f392e67183b363b34393f3e7f686a38237f686a1e3f29333d34">
+            Email us <span class="arrow">→</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<!-- ════════ FOOTER (matches home page) ════════ -->
+<footer class="rooted-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="RootED K12 - New.html" class="logo">
+          <span class="logo-name">Root<span class="ED">ED</span></span>
+          <span class="logo-sub">K–12 Consulting</span>
+        </a>
+        <p class="footer-blurb">Strategic technology counsel for K–12 districts. Based in Boston, Massachusetts.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Services</div>
+        <a href="RootED K12 - New.html#services">Workshops &amp; PD</a>
+        <a href="RootED K12 - New.html#services">Strategy &amp; Innovation</a>
+        <a href="RootED K12 - New.html#services">Strategic IT Operations</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Company</div>
+        <a href="RootED K12 - New.html#services">Services</a>
+        <a href="RootED K12 - New.html#philosophy-quote">Approach</a>
+        <a href="RootED K12 - New.html#podcast">Insights</a>
+        <a href="RootED K12 - New.html#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Connect</div>
+        <a href="/cdn-cgi/l/email-protection#f29b9c949db2809d9d86979699c3c0dc919d9f"><span class="__cf_email__" data-cfemail="0d64636b624d7f6262796869663c3f236e6260">[email&#160;protected]</span></a>
+        <a href="https://k12techtalkpodcast.com" target="_blank">K–12 Tech Talk ↗</a>
+        <a href="https://www.linkedin.com/in/mark-racine/" target="_blank">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RootED K12 Consulting</span>
+      <span>Boston, Massachusetts</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function toggleMobileNav(){
+    document.getElementById('mobile-nav').classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
