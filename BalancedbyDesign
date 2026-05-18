@@ -985,17 +985,17 @@
 <!-- ════════ NAV (matches home page) ════════ -->
 <nav id="nav">
   <div class="wrap nav-inner">
-    <a href="RootED K12 - New.html" class="logo" aria-label="ROOTED K-12 Consulting">
+    <a href="/" class="logo" aria-label="ROOTED K-12 Consulting">
       <span class="logo-name">Root<span class="ED">ED</span></span>
       <span class="logo-sub">K–12 Consulting</span>
     </a>
 
-    <div class="nav-links">
-      <a href="RootED K12 - New.html#services">Services</a>
-      <a href="RootED K12 - New.html#philosophy-quote">Approach</a>
-      <a href="RootED K12 - New.html#podcast">Insights</a>
-      <a href="Balanced by Design.html" class="btn-light">Home</a>
-    </div>
+<div class="nav-links">
+  <a href="/#services" class="nav-link">Services</a>
+  <a href="/#philosophy-quote" class="nav-link">Approach</a>
+  <a href="/#podcast" class="nav-link">Insights</a>
+  <a href="/#contact" class="nav-link-btn">Contact Us</a>
+</div>
 
     <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
       <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
@@ -1008,9 +1008,9 @@
 <!-- Mobile nav -->
 <div id="mobile-nav">
   <button class="mobile-close" onclick="toggleMobileNav()" aria-label="Close">✕</button>
-  <a href="RootED K12 - New.html#services" onclick="toggleMobileNav()">Services</a>
-  <a href="RootED K12 - New.html#philosophy-quote" onclick="toggleMobileNav()">Approach</a>
-  <a href="RootED K12 - New.html#podcast" onclick="toggleMobileNav()">Insights</a>
+  <a href="/#services" onclick="toggleMobileNav()">Services</a>
+  <a href="/#philosophy-quote" onclick="toggleMobileNav()">Approach</a>
+  <a href="/#podcast" onclick="toggleMobileNav()">Insights</a>
   <div style="margin-top:32px;">
     <a href="Balanced by Design.html" onclick="toggleMobileNav()" class="btn-light" style="width:100%;">Balanced by Design →</a>
   </div>
@@ -1232,7 +1232,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a href="RootED K12 - New.html" class="logo">
+        <a href="/" class="logo">
           <span class="logo-name">Root<span class="ED">ED</span></span>
           <span class="logo-sub">K–12 Consulting</span>
         </a>
@@ -1240,16 +1240,16 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-label">Services</div>
-        <a href="RootED K12 - New.html#services">Workshops &amp; PD</a>
-        <a href="RootED K12 - New.html#services">Strategy &amp; Innovation</a>
-        <a href="RootED K12 - New.html#services">Strategic IT Operations</a>
+        <a href="/#services">Workshops &amp; PD</a>
+        <a href="/#services">Strategy &amp; Innovation</a>
+        <a href="/#services">Strategic IT Operations</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-label">Company</div>
-        <a href="RootED K12 - New.html#services">Services</a>
-        <a href="RootED K12 - New.html#philosophy-quote">Approach</a>
-        <a href="RootED K12 - New.html#podcast">Insights</a>
-        <a href="RootED K12 - New.html#contact">Contact</a>
+        <a href="/#services">Services</a>
+        <a href="/#philosophy-quote">Approach</a>
+        <a href="/#podcast">Insights</a>
+        <a href="/#contact">Contact</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-label">Connect</div>
