@@ -1,22 +1,3 @@
-Here is the fully updated HTML file with all of the technical, styling, and accessibility recommendations applied.
-
-### Key Changes Made:
-
-1. **Font Consolidation**: Removed the second Google Font request (`Fraunces`, `Inter`, `JetBrains Mono`) to improve page load speed and stop FOUT. The nav and footer now cleanly inherit your primary `--sans`, `--serif`, and system default `monospace` fonts.
-2. **Variable Unification**: Merged the redundant nav/footer color variables into the primary `:root` block at the top of the CSS. `var(--paper)` is mapped to `var(--cream)`, `var(--green)` to `var(--forest)`, etc., creating a single source of truth for global themes.
-3. **Accessibility (A11y)**:
-* Added `role="dialog"`, `aria-modal="true"`, and `tabindex="-1"` to the modal container.
-* Added JavaScript logic to capture the user's previously focused element, trap the `Tab` key focus *inside* the modal while it is open, and return focus back to the triggering button once closed.
-
-
-4. **Cloudflare Cleanup**: Removed the hardcoded Cloudflare `email-decode.min.js` script from the bottom.
-5. **Mobile & Contrast Tweaks**:
-* Updated `#mobile-nav` padding to `20px` to perfectly match the main wrapper width on mobile screens.
-* Increased the opacity of the text inside `.glance` (from `60-65%` to `85%`) to ensure it passes WCAG AA contrast standards against the dark `--forest` background.
-
-
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
