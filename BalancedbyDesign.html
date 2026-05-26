@@ -584,6 +584,160 @@
     color: var(--muted);
   }
 
+  /* ---------- Phase button and modal ---------- */
+  .phase-btn{
+    margin-top: 18px;
+    padding: 11px 20px;
+    background: var(--forest);
+    color: var(--cream);
+    border: 1px solid var(--forest);
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    cursor: pointer;
+    transition: transform .15s ease, background .2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phase-btn:hover{
+    background: #11241a;
+    transform: translateY(-1px);
+  }
+
+  /* Modal styles */
+  .modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 26, 16, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open{
+    display: flex;
+  }
+  .modal{
+    background: var(--bg);
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 24px 48px rgba(12, 26, 16, 0.25);
+  }
+  .modal-header{
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    padding: 32px 40px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .modal-header h2{
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--forest);
+    margin: 0;
+    letter-spacing: -0.015em;
+    flex: 1;
+  }
+  .modal-close{
+    background: none;
+    border: 0;
+    font-size: 24px;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 8px;
+    transition: color .2s;
+    flex-shrink: 0;
+  }
+  .modal-close:hover{
+    color: var(--forest);
+  }
+  .modal-content{
+    padding: 40px;
+  }
+  .sessions-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .session-card{
+    border: 1px solid var(--line);
+    background: var(--white);
+    padding: 28px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .session-card .num{
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--clay);
+    letter-spacing: 0.02em;
+  }
+  .session-card h3{
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--forest);
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .session-card p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  .team-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+  }
+  .team-card{
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 560px){
+    .modal-header{
+      padding: 24px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .modal-header h2{
+      font-size: 26px;
+    }
+    .modal-close{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .modal-content{
+      padding: 20px;
+    }
+    .sessions-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* ---------- Apply CTA ---------- */
   section.apply{
     padding: 0;
@@ -620,10 +774,11 @@
     line-height: 1.6;
   }
   .apply-card{
-    background: var(--forest);
-    color: var(--cream);
+    background: transparent;
+    color: var(--ink);
     padding: 56px 56px 56px 56px;
     margin: 56px -32px 56px 0;
+    border: 1px solid var(--line);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -635,14 +790,14 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: color-mix(in srgb, var(--cream) 70%, transparent);
+    color: var(--clay);
     font-weight: 500;
   }
   .apply-card h3{
     font-family: var(--serif);
     font-weight: 400;
     font-size: 36px;
-    color: var(--cream);
+    color: var(--forest);
     margin: 0;
     letter-spacing: -0.015em;
     line-height: 1.1;
@@ -660,29 +815,29 @@
     align-items: baseline;
     gap: 12px;
     font-size: 15px;
-    color: color-mix(in srgb, var(--cream) 88%, transparent);
+    color: var(--muted);
   }
   .apply-card li::before{
     content: "";
     width: 6px; height: 6px;
-    background: var(--clay);
+    background: var(--forest);
     border-radius: 50%;
     flex-shrink: 0;
     transform: translateY(-2px);
   }
   .apply-card .btn-light{
-    background: var(--cream);
-    color: var(--forest);
+    background: var(--forest);
+    color: var(--cream);
     align-self: flex-start;
   }
-  .apply-card .btn-light:hover{ background: #fff; transform: translateY(-1px); }
+  .apply-card .btn-light:hover{ background: #11241a; transform: translateY(-1px); }
   .apply-card .btn-outline{
     background: transparent;
-    color: var(--cream);
-    border-color: color-mix(in srgb, var(--cream) 35%, transparent);
+    color: var(--forest);
+    border-color: var(--forest);
     align-self: flex-start;
   }
-  .apply-card .btn-outline:hover{ border-color: var(--cream); background: color-mix(in srgb, var(--cream) 8%, transparent); }
+  .apply-card .btn-outline:hover{ border-color: var(--forest); background: color-mix(in srgb, var(--forest) 8%, transparent); }
   .apply-card .actions{
     display: flex;
     flex-wrap: wrap;
@@ -690,18 +845,18 @@
     align-items: center;
   }
   .apply-card .contact{
-    border-top: 1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+    border-top: 1px solid var(--line);
     padding-top: 24px;
     font-size: 14px;
-    color: color-mix(in srgb, var(--cream) 70%, transparent);
+    color: var(--muted);
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
   .apply-card .contact a{
-    color: var(--cream);
+    color: var(--forest);
     text-decoration: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent);
+    border-bottom: 1px solid var(--line);
   }
 
   /* ---------- Footer ---------- */
@@ -1023,7 +1178,7 @@
       <svg viewBox="0 0 200 220" width="100%" height="100%"><use href="#root-mark-lg"></use></svg>
     </div>
     <div class="hero-head">
-      <div class="eyebrow"><span class="dot"></span> Fall 2026 Cohort · Applications Open</div>
+      <div class="eyebrow" style="font-size: 18px">FALL 2026 COHORT</div>
       <h1 class="display" style="margin-top: 22px; font-size: 72px">Balanced<br />by <em>Design.</em></h1>
       <p class="sub">Empowering districts to move beyond screen limits and define how technology elevates teaching quality.</p>
     </div>
@@ -1065,7 +1220,7 @@
 <section class="strip quote-strip" aria-label="Program philosophy">
   <div class="wrap">
     <div class="quote-strip-inner">
-      <div class="eyebrow" style="color: color-mix(in srgb, var(--cream) 70%, transparent);"><span class="dot"></span> Program Philosophy</div>
+      <div class="eyebrow" style="color: color-mix(in srgb, var(--cream) 70%, transparent); font-size: 16px"><span class="dot"></span> Program Philosophy</div>
       <blockquote class="quote-strip-q">
         Quality of use matters <em>more than quantity.</em> The goal is shared language for what good technology use actually looks like — and the practice to back it up.
       </blockquote>
@@ -1078,7 +1233,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow"><span class="dot"></span> The Process</div>
+        <div class="eyebrow" style="font-size: 16px"><span class="dot"></span> The Process</div>
         <h2 class="section-title">Three phases.<br /><em>One direction.</em></h2>
       </div>
       <p class="lede">
@@ -1101,6 +1256,7 @@
           <div class="dlabel">Deliverable</div>
           <div class="dname">Current State Snapshot</div>
         </div>
+        <button class="phase-btn" onclick="openModal('assess')">View sessions <span class="arrow">→</span></button>
       </article>
 
       <article class="phase">
@@ -1117,6 +1273,7 @@
           <div class="dlabel">Deliverable</div>
           <div class="dname">Balanced Technology Vision</div>
         </div>
+        <button class="phase-btn" onclick="openModal('align')">View sessions <span class="arrow">→</span></button>
       </article>
 
       <article class="phase">
@@ -1133,6 +1290,7 @@
           <div class="dlabel">Deliverable</div>
           <div class="dname">Balanced by Design Action Plan</div>
         </div>
+        <button class="phase-btn" onclick="openModal('act')">View sessions <span class="arrow">→</span></button>
       </article>
     </div>
 
@@ -1144,7 +1302,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow"><span class="dot"></span> Who Should Participate</div>
+        <div class="eyebrow" style="font-size: 16px"><span class="dot"></span> Who Should Participate</div>
         <h2 class="section-title">A team of three.<br /><em>From the top.</em></h2>
       </div>
       <p class="lede">Balanced by Design is built for district leadership teams. We recommend the following roles so that district policy, instruction, and technology can move together towards a common goal.</p>
@@ -1152,66 +1310,69 @@
 
     <div class="roles">
       <article class="role">
-        <span class="seat">Seat 01 · Executive sponsor</span>
+        <span class="seat" style="font-size: 18px">Policy</span>
         <h3>Superintendent<br />or Assistant Superintendent</h3>
         <p>Connects the program's work to district-wide priorities and clears the path for implementation across departments.</p>
       </article>
       <article class="role">
-        <span class="seat">Seat 02 · Instructional lead</span>
+        <span class="seat" style="font-size: 18px">Instructional</span>
         <h3>Curriculum &amp;<br />Instruction Leader</h3>
         <p>Owns the teacher-facing visioning work and the instructional practice roadmap that emerges in Phase 3.</p>
       </article>
       <article class="role">
-        <span class="seat">Seat 03 · Infrastructure</span>
+        <span class="seat" style="font-size: 18px">Technology</span>
         <h3>Director of Technology<br />or equivalent</h3>
         <p>Brings infrastructure context to procurement guidance, MDM and filter data, and practice decisions about devices and tools.</p>
       </article>
     </div>
 
-    <p class="roles-note">
-      No existing screen time policy or recent audit is required to participate. The program is designed to work from whatever starting point a district is at — what matters is that leadership is ready to engage staff and community in an honest conversation.
-    </p>
   </div>
 </section>
 
-<!-- ============ ADD-ONS ============ -->
-<section class="block" id="addons">
+<!-- ============ MODELS ============ -->
+<section class="block" id="models">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow"><span class="dot"></span> Optional Add-ons</div>
-        <h2 class="section-title"><span class="ln">Extend the work into</span><em class="ln">classrooms and homes.</em></h2>
+        <div class="eyebrow" style="font-size: 16px">OUR MODEL</div>
+        <h2 class="section-title">Two paths.</h2>
       </div>
+      <p class="lede">Choose the model that fits your district's pace and readiness, either through a workshop model with a cohort of other districts or a coaching model that tailors the program to your district's needs.</p>
     </div>
 
     <div class="addons">
       <article class="addon">
-        <span class="tag">Add-on · Families</span>
-        <h3>Family Screen Time Webinar</h3>
-        <p>A live, family-facing virtual session led by the Rooted K-12 team. Helps parents and caregivers understand how technology is used at school, where the district is headed, and practical strategies for managing screen time at home in ways that complement that approach.</p>
+        <span class="tag">Recommended</span>
+        <h3>Workshop Model</h3>
+        <p>Sixteen weeks of cohort sessions, peer learning, and structured deliverables. Your team works together with five other districts to move through assessment, alignment, and action planning. This model is ideal for districts needing to learn about the different components of technology integration but unsure if they are ready for a formal policy.</p>
+        <div class="meta">
+          <span>Four months · Six districts · High engagement</span>
+        </div>
       </article>
 
       <article class="addon">
-        <span class="tag">Add-on · Teachers</span>
-        <h3>Teacher Professional Development</h3>
-        <p>A focused PD session at the intersection of today's most pressing classroom technology questions — intentional integration, lesson planning with technology in mind, and practical AI literacy for educators. Grounded in the vision your district develops in Phase 2.</p>
+        <span class="tag">Optional</span>
+        <h3>Workshop + Coaching</h3>
+        <p>All workshop sessions, plus dedicated coaching between sessions and a follow-up support period. Ideal for districts navigating complexity, scaling across multiple buildings, or embedding implementation support into your timeline. Recommended for districts needing a formal policy or governance framework.</p>
+        <div class="meta">
+          <span>Four months + follow-up · Individualized support</span>
+        </div>
       </article>
     </div>
   </div>
 </section>
+
 
 <!-- ============ APPLY ============ -->
 <section class="apply" id="apply">
   <div class="wrap">
     <div class="apply-inner">
       <div class="apply-copy">
-        <div class="eyebrow"><span class="dot"></span> Apply</div>
         <h2>Lead the conversation.<br /><em>Don't react to it.</em></h2>
-        <p style="font-size: 2px">Applications are open for the inaugural Balanced by Design cohort, launching Fall 2026.</p>
       </div>
 
       <aside class="apply-card">
-        <div class="label">Fall 2026 Cohort</div>
+        <div class="label" style="font-size: 18px">Fall 2026 Cohort</div>
         <h3>Interested in learning more?</h3>
         <div class="actions">
           <a class="btn btn-light" href="https://forms.gle/8SpYpJk1K73qxRek7" target="_blank" rel="noopener">
@@ -1265,10 +1426,163 @@
   </div>
 </footer>
 
+<!-- Session modal -->
+<div id="sessionModal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">Sessions</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-content">
+      <div class="sessions-grid" id="sessionsGrid">
+        <!-- Sessions will be populated here -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleMobileNav(){
     document.getElementById('mobile-nav').classList.toggle('open');
   }
+
+  const sessionData = {
+    assess: {
+      title: 'Assess Phase Sessions',
+      sessions: [
+        {
+          num: 'Session 01',
+          title: 'Kickoff & Assessment Framework',
+          description: 'This introductory session welcomes districts to the program, establishes peer collaborative norms, and provides essential research context regarding the post-pandemic acceleration of educational technology. Participants leave with a shared understanding of why this work matters and a commitment to an honest assessment of their school technology.'
+        },
+        {
+          num: 'Session 02',
+          title: 'What Are Students Actually Doing? Assessing Technology Use',
+          description: 'Districts are introduced to an observational framework designed to distinguish between passive consumption and genuine student engagement. Teams leave with clear observation protocols and data collection instruments ready to deploy across grade bands.'
+        },
+        {
+          num: 'Session 03',
+          title: 'Assessing Cognitive Demand & Critical Thinking',
+          description: 'This workshop takes a deep dive into how technology choices can either elevate or lower the cognitive demand placed on students. Using real classroom scenarios, teams reflect on their current tech usage and establish a shared vocabulary for future assessment work.'
+        },
+        {
+          num: 'Session 04',
+          title: 'From Data to Leadership Narrative',
+          description: 'Participants synthesize classroom observations, surveys, and logs into a coherent current-state narrative tailored for district cabinet members. Peer pairs provide feedback on draft snapshots to complete the Phase 1 assessment requirements.'
+        }
+      ]
+    },
+    align: {
+      title: 'Align Phase Sessions',
+      sessions: [
+        {
+          num: 'Session 01',
+          title: 'Phase 1 Showcase and Visioning Launch',
+          description: 'Districts share findings from their snapshots to identify cross-district tech usage themes and learn design frameworks that position tech as a tool for specific learning goals. Teams practice redesigning a low-demand digital activity into a high-demand experience, leaving ready to engage community stakeholders.'
+        },
+        {
+          num: 'Session 02',
+          title: 'Stakeholder Alignment - Addressing Screentime Concerns',
+          description: 'This session addresses parent anxiety, social media backlash, and legitimate community concerns regarding excessive screen time. Districts learn a stakeholder engagement framework to conduct honest dialogues and define what good technology use looks like.'
+        },
+        {
+          num: 'Session 03',
+          title: 'Data Privacy and Cybersecurity in K-12',
+          description: 'This session breaks down what districts need to know in plain-language; privacy laws (FERPA/COPPA), vendor data agreements, and board-level security accountability. Districts receive a compliance checklist and a self-assessment tool to guide their future visioning and procurement frameworks.'
+        },
+        {
+          num: 'Session 04',
+          title: 'Establishing a Vision for Technology in your District',
+          description: 'Teams work in small groups to draft grade-appropriate vision statements that articulate the quality, rather than just frequency, of technology use. Leaders utilize "Four Questions" to ensure technology volume isn\'t preventing depth or critical thinking.'
+        },
+        {
+          num: 'Session 05',
+          title: 'The Adolescent Perspective on Technology',
+          description: 'We\'ll talk about the growing mind and how technology plays a role in the development of the adolescent mind. The developmental insights will then be used to refine their district visions through a wellbeing lens.'
+        },
+        {
+          num: 'Session 06',
+          title: 'Phase 2 Showcase: Sharing Our Visions',
+          description: 'Each district presents its draft Balanced Technology Vision to gather structured peer feedback and ensure cabinet readiness for approval. The workshop introduces the final three action workstreams: instructional practices, procurement frameworks, and family communications.'
+        }
+      ]
+    },
+    act: {
+      title: 'Act Phase Sessions',
+      sessions: [
+        {
+          num: 'Session 01',
+          title: 'Designing the Instructional Practice Roadmap',
+          description: 'Leaders engage in a platform rationalization exercise to cut technology budget clutter and retire low-adoption digital tools. Teams collaborate with peers to map out the instructional guidance and professional learning teachers need to implement the vision.'
+        },
+        {
+          num: 'Session 02',
+          title: 'AI Literacy and Emerging Technology in the Classroom',
+          description: 'This workshop provides practical guidance on generative AI, age-appropriate use frameworks, academic integrity, and district AI policy. Leaders are introduced to an "Emerging Technology Protocol" to evaluate future tech purchases against their approved vision before adoption.'
+        },
+        {
+          num: 'Session 03',
+          title: 'Procurement, Guidance, and the Privacy-by-Design Framework',
+          description: 'Participants embed design principles and standard privacy reviews into their finalized Procurement Evaluation Framework. The session also builds a plain-language Family Communication Toolkit explaining what the district discovered, decided, and is changing.'
+        },
+        {
+          num: 'Session 04',
+          title: 'Building Teacher Capacity for Purposeful Technology Use',
+          description: 'Protocols and practices can\'t shift without effective professional development that shifts classroom culture and addresses common teacher challenges. Districts share, review, and finalize all elements of their action plans and teacher PD designs.'
+        },
+        {
+          num: 'Session 05',
+          title: 'Implementation Planning',
+          description: 'Each district reflects on where they started and what they built: a technology vision grounded in student learning and classroom reality, a framework for assessing technology use, clarity on high cognitive demand versus low cognitive demand activities, understanding of community and stakeholder concerns, and concrete plans for implementation.'
+        },
+        {
+          num: 'Session 06',
+          title: 'Program Closing: What We Built Together',
+          description: 'Final session focusing on implementation and sustainability. Confirm 90-day implementation priorities: what changes happen first? Who owns them? Confirm internal ownership and communication plan: how will leadership communicate the vision to full staff? Discuss board communication options and follow-on support: implementation coaching, teacher PD delivery, board presentation support, mid-year check-in. Each district leaves with full ownership of their work, clear 90-day priorities, and a path to sustainability.'
+        }
+      ]
+    }
+  };
+
+  function openModal(phase) {
+    const data = sessionData[phase];
+    const modal = document.getElementById('sessionModal');
+    const title = document.getElementById('modalTitle');
+    const grid = document.getElementById('sessionsGrid');
+
+    title.textContent = data.title;
+    
+    grid.innerHTML = data.sessions.map(session => `
+      <div class="session-card">
+        <div class="num">${session.num}</div>
+        <h3>${session.title}</h3>
+        <p>${session.description}</p>
+      </div>
+    `).join('');
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('sessionModal');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close modal when clicking on overlay
+  document.getElementById('sessionModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
 </script>
 
 </body>
