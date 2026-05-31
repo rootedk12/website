@@ -6,13 +6,11 @@
 <title>RootED K12 Solutions — Strategic Technology Counsel for K–12 Districts</title>
 <meta name="description" content="RootED K12 partners with superintendents, principals, and IT directors to build resilient technology systems — grounded in classroom reality, not vendor hype.">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MHD4JXQ5');</script>
-<!-- End Google Tag Manager -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"RootED K12 Solutions","url":"https://www.rootedk12.com","description":"Educational technology consulting for K-12 district leaders.","address":{"@type":"PostalAddress","addressLocality":"Boston","addressRegion":"MA"}}
 </script>
@@ -33,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-*  { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 html { scroll-behavior: smooth; }
 
 /* ─────────────────  TOKENS  ───────────────── */
@@ -288,7 +286,7 @@ p  { line-height: 1.65; }
 }
 @media(max-width:900px){ #hero { min-height: auto; } }
 
-/* Full-bleed background image */
+/* Full-bleed background image updated with local assets directory path */
 .hero-bg {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -297,6 +295,7 @@ p  { line-height: 1.65; }
   filter: brightness(0.55) saturate(0.7) contrast(1.04);
   transform: scale(1.0);
   transition: transform 16s ease;
+  background-image: url('assets/hero-bg.jpg');
 }
 #hero.loaded .hero-bg { transform: scale(1.06); }
 
@@ -685,1125 +684,88 @@ p  { line-height: 1.65; }
   transition: all .4s cubic-bezier(.23,1,.32,1);
   display: flex; flex-direction: column;
 }
-.eng-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--moss);
-  box-shadow: 0 24px 48px -24px rgba(20,40,18,0.15);
-}
-.eng-card .eng-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.18em;
-  color: var(--moss); margin-bottom: 36px;
-}
-.eng-card h3 {
-  font-size: 28px; font-weight: 400; line-height: 1.05; margin-bottom: 16px;
-  letter-spacing: -0.02em;
-}
-.eng-card .eng-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-.eng-card p {
-  font-size: 14px; color: var(--muted); line-height: 1.7; flex-grow: 1;
-}
-.eng-card .eng-best {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--ink-2);
-  margin-top: 32px; padding-top: 20px;
-  border-top: 1px solid var(--rule);
-}
-.eng-card .eng-best strong {
-  display: block; font-family: 'Fraunces', serif; font-size: 13px;
-  letter-spacing: 0; text-transform: none;
-  color: var(--ink); margin-top: 6px; font-weight: 400; font-style: italic;
-}
+.eng-card:hover { transform: translateY(-4px); border-color: var(--moss); box-shadow: 0 24px 48px -24px rgba(20,40,18,0.15); }
+.eng-card .eng-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--moss); margin-bottom: 36px; }
+.eng-card h3 { font-size: 28px; font-weight: 400; line-height: 1.05; margin-bottom: 16px; letter-spacing: -0.02em; }
+.eng-card .eng-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.eng-card p { font-size: 14px; color: var(--muted); line-height: 1.7; flex-grow: 1; }
+.eng-card .eng-best { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.eng-card .eng-best strong { display: block; font-family: 'Fraunces', serif; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--ink); margin-top: 6px; font-weight: 400; font-style: italic; }
 
 /* ═════════════════════  PHILOSOPHY QUOTE  ═════════════════════ */
-#philosophy-quote {
-  background: var(--forest);
-  position: relative;
-  overflow: hidden;
-}
-.pq-inner {
-  padding: 96px 0;
-  max-width: 920px;
-}
-@media(max-width:1000px){
-  .pq-inner { padding: 72px 0; }
-}
-
-.pq-left {
-  position: relative;
-}
-.pq-mark {
-  font-family: 'Fraunces', serif;
-  font-size: 220px; font-weight: 300;
-  color: var(--gold-lt);
-  line-height: 0.6;
-  margin-bottom: 16px;
-  font-style: italic;
-}
-.pq-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
-  color: var(--sage);
-}
-
-.pq-quote {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(22px, 2.4vw, 34px);
-  font-weight: 300; line-height: 1.25;
-  color: var(--paper);
-  letter-spacing: -0.015em;
-}
+#philosophy-quote { background: var(--forest); position: relative; overflow: hidden; }
+.pq-inner { padding: 96px 0; max-width: 920px; }
+@media(max-width:1000px){ .pq-inner { padding: 72px 0; } }
+.pq-left { position: relative; }
+.pq-mark { font-family: 'Fraunces', serif; font-size: 220px; font-weight: 300; color: var(--gold-lt); line-height: 0.6; margin-bottom: 16px; font-style: italic; }
+.pq-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage); }
+.pq-quote { font-family: 'Fraunces', serif; font-size: clamp(22px, 2.4vw, 34px); font-weight: 300; line-height: 1.25; color: var(--paper); letter-spacing: -0.015em; }
 .pq-quote em { font-style: italic; color: var(--gold-lt); }
-.pq-attr {
-  margin-top: 36px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(247,243,232,0.55);
-}
+.pq-attr { margin-top: 36px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,243,232,0.55); }
 .pq-attr strong { color: var(--paper); font-weight: 500; }
-
-.pq-bg-tree {
-  position: absolute;
-  right: -100px; top: 50%;
-  transform: translateY(-50%);
-  width: 600px; height: 700px;
-  opacity: 0.05;
-  pointer-events: none;
-}
+.pq-bg-tree { position: absolute; right: -100px; top: 50%; transform: translateY(-50%); width: 600px; height: 700px; opacity: 0.05; pointer-events: none; }
 
 /* ═════════════════════  PODCAST  ═════════════════════ */
-#podcast {
-  background: var(--paper);
-  border-top: 1px solid var(--rule);
-}
-
-.pod-grid {
-  display: grid; grid-template-columns: 1.4fr 1fr;
-  gap: 64px;
-  align-items: stretch;
-}
-@media(max-width:1000px){ .pod-grid { grid-template-columns: 1fr; gap: 48px; align-items: start; } }
-
-#pod-main-col { display: flex; flex-direction: column; }
-.pod-grid > div:nth-child(2) .pod-guest { margin-top: auto; }
-@media(max-width:1000px){
-  .pod-grid > div:nth-child(2) .pod-guest { margin-top: 40px; }
-}
-
-.pod-main {
-  background: var(--white);
-  border: 1px solid var(--rule);
-  padding: 56px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.pod-bottom {
-  margin-top: auto;
-  padding-top: 32px;
-}
-.pod-bottom .pod-listen { margin-top: 28px; }
-@media(max-width:560px){ .pod-main { padding: 36px 28px; } }
-.pod-main-meta {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
-}
-.pod-main h3 {
-  font-size: clamp(22px, 2.8vw, 36px); font-weight: 400;
-  margin-bottom: 18px; line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-.pod-main h3 em { color: var(--moss); font-style: italic; }
-.pod-desc { font-size: 14.5px; color: var(--muted); line-height: 1.75; }
-.pod-listen {
-  display: flex; flex-wrap: wrap; gap: 28px;
-  margin-top: 36px; padding-top: 28px;
-  border-top: 1px solid var(--rule);
-}
-.pod-listen a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  transition: color .2s;
-}
-.pod-listen a:hover { color: var(--green); }
-.pod-listen a i { font-size: 14px; }
-
-.pod-feed-label {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.pod-episode {
-  display: grid; grid-template-columns: 48px 1fr 24px;
-  gap: 16px; align-items: center;
-  padding: 22px 0;
-  border-top: 1px solid var(--rule);
-  text-decoration: none; color: inherit;
-  transition: background .2s;
-}
-.pod-episode:hover { background: rgba(255,255,255,0.4); padding-left: 8px; padding-right: 8px; margin: 0 -8px; }
-.pod-episode:hover .pod-ep-arrow { color: var(--green); transform: translateX(3px); }
-.pod-ep-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px; font-weight: 500;
-  color: var(--moss); text-align: left;
-}
-.pod-ep-date {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--faint); margin-bottom: 4px;
-}
-.pod-ep-title {
-  font-family: 'Fraunces', serif;
-  font-size: 15px; font-weight: 400; color: var(--ink); line-height: 1.3;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
-.pod-ep-arrow { color: var(--faint); font-size: 13px; transition: transform .2s, color .2s; }
-
-.pod-guest {
-  margin-top: 40px; background: var(--forest); padding: 36px;
-  position: relative; overflow: hidden;
-}
-.pod-guest::before {
-  content: ""; position: absolute; right: -40px; top: -40px;
-  width: 160px; height: 160px;
-  background: radial-gradient(circle, rgba(212,174,84,0.08), transparent 70%);
-}
-.pod-guest h4 {
-  font-family: 'Fraunces', serif; font-size: 24px; font-weight: 400;
-  color: var(--paper); margin: 16px 0 10px; line-height: 1.15;
-}
-.pod-guest p { font-size: 13.5px; color: rgba(247,243,232,.6); line-height: 1.65; }
-.pod-guest a {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px; font-weight: 500;
-  color: var(--gold-lt); text-decoration: none;
-  margin-top: 24px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid rgba(212,174,84,0.3);
-  transition: border-color .2s;
-}
-.pod-guest a:hover { border-color: var(--gold-lt); }
-
-/* ═════════════════════  ABOUT  ═════════════════════ */
-#about {
-  background: var(--forest);
-  position: relative;
-  overflow: hidden;
-}
-
-.about-inner {
-  display: grid; grid-template-columns: 1fr 1.1fr;
-  gap: 80px;
-  align-items: start;
-}
-@media(max-width:1000px){ .about-inner { grid-template-columns: 1fr; gap: 48px; } }
-
-.about-text h2 {
-  color: var(--paper);
-  font-size: clamp(40px, 5vw, 72px);
-}
-.about-text h2 em { color: var(--gold-lt); font-style: italic; }
-.about-text p {
-  font-family: 'Fraunces', serif;
-  font-size: 17px; line-height: 1.65;
-  color: rgba(247,243,232,0.7);
-  margin-top: 24px;
-  font-weight: 300;
-  max-width: 460px;
-}
-.about-text .philosophy-btn {
-  margin-top: 40px;
-}
-
-.profiles { display: flex; flex-direction: column; gap: 0; }
-.profile {
-  display: grid; grid-template-columns: 88px 1fr;
-  gap: 28px;
-  padding: 36px 0;
-  border-bottom: 1px solid rgba(247,243,232,0.08);
-  align-items: start;
-}
-.profile:first-child { padding-top: 0; }
-.profile:last-child { border-bottom: 0; }
-
-.profile-avatar {
-  width: 88px; height: 88px; border-radius: 50%;
-  background: rgba(247,243,232,0.04);
-  border: 1px solid rgba(247,243,232,0.12);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Fraunces', serif; font-size: 28px; color: var(--gold-lt);
-  font-weight: 300;
-  flex-shrink: 0;
-}
-.profile-role {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(247,243,232,0.4); margin-bottom: 6px;
-}
-.profile-name {
-  font-family: 'Fraunces', serif; font-size: 24px; font-weight: 400;
-  color: var(--paper); margin-bottom: 10px; letter-spacing: -0.01em;
-}
-.profile-bio {
-  font-size: 13.5px; color: rgba(247,243,232,0.55); line-height: 1.7;
-}
-.profile-bio a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(125,153,116,0.3); padding-bottom: 1px; }
-.profile-bio a:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
-
-/* ═════════════════════  CONTACT  ═════════════════════ */
-#contact {
-  background: var(--deep);
-  padding: 140px 0 120px;
-  position: relative;
-  overflow: hidden;
-}
-.contact-grid-bg {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(247,243,232,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(247,243,232,0.025) 1px, transparent 1px);
-  background-size: 96px 96px;
-  pointer-events: none;
-}
-.contact-glow {
-  position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
-  width: 800px; height: 400px;
-  background: radial-gradient(ellipse, rgba(30,61,34,0.4), transparent 70%);
-  pointer-events: none;
-}
-
-.contact-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
-  position: relative; z-index: 2;
-}
-@media(max-width:900px){ .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
-
-.contact-left h2 {
-  font-size: clamp(48px, 6.8vw, 104px);
-  font-weight: 200;
-  color: var(--paper);
-  letter-spacing: -0.035em;
-  line-height: 0.96;
-}
-.contact-left h2 em { color: var(--gold-lt); font-style: italic; }
-.contact-left p {
-  font-family: 'Fraunces', serif;
-  font-size: 17px; line-height: 1.6;
-  color: rgba(247,243,232,0.6);
-  margin-top: 32px; max-width: 420px;
-  font-weight: 300;
-}
-
-.contact-options { display: flex; flex-direction: column; gap: 12px; }
-.contact-option {
-  display: grid; grid-template-columns: 56px 1fr auto;
-  gap: 24px; align-items: center;
-  padding: 26px 32px;
-  background: rgba(247,243,232,0.03);
-  border: 1px solid rgba(247,243,232,0.08);
-  text-decoration: none;
-  cursor: pointer;
-  transition: all .3s ease;
-  font-family: 'Inter', sans-serif;
-}
-.contact-option:hover {
-  background: rgba(247,243,232,0.07);
-  border-color: rgba(247,243,232,0.2);
-  transform: translateX(4px);
-}
-.contact-option-icon {
-  width: 44px; height: 44px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(212,174,84,0.3);
-  color: var(--gold-lt);
-  font-size: 18px;
-}
-.contact-option-text { display: flex; flex-direction: column; gap: 4px; }
-.contact-option-text .lab {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(247,243,232,0.4);
-}
-.contact-option-text .val {
-  font-family: 'Fraunces', serif;
-  font-size: 18px; color: var(--paper); font-weight: 400;
-}
-.contact-option-arr {
-  color: var(--gold-lt); font-size: 18px;
-  transition: transform .25s;
-}
-.contact-option:hover .contact-option-arr { transform: translateX(4px); }
-
-/* ═════════════════════  FOOTER  ═════════════════════ */
-footer {
-  background: var(--deep);
-  border-top: 1px solid rgba(247,243,232,0.06);
-  padding: 64px 0 36px;
-}
-.footer-grid {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 56px;
-}
-@media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
-@media(max-width:560px){ .footer-grid { grid-template-columns: 1fr; } }
-
-.footer-blurb {
-  font-family: 'Fraunces', serif;
-  font-size: 14px; font-weight: 300; line-height: 1.65;
-  color: rgba(247,243,232,.4); max-width: 280px; margin-top: 20px;
-}
-.footer-col-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; font-weight: 500; letter-spacing: 0.24em;
-  text-transform: uppercase; color: rgba(247,243,232,0.3); margin-bottom: 20px;
-}
-.footer-col a, .footer-col p {
-  display: block; font-size: 13px; color: rgba(247,243,232,0.55);
-  text-decoration: none; margin-bottom: 10px; line-height: 1.5;
-  transition: color .2s;
-}
-.footer-col a:hover { color: var(--paper); }
-.footer-bottom {
-  padding-top: 28px; border-top: 1px solid rgba(247,243,232,0.06);
-  display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(247,243,232,0.25);
-}
-
-/* ═════════════════════  MODAL  ═════════════════════ */
-#philosophy-modal {
-  display: none; position: fixed; inset: 0; z-index: 110;
-  background: rgba(10,18,9,0.75); backdrop-filter: blur(8px);
-  align-items: center; justify-content: center; padding: 24px;
-}
-#philosophy-modal.open { display: flex; }
-.modal-box {
-  background: var(--paper); max-width: 640px; width: 100%;
-  padding: 56px; position: relative;
-  animation: modalIn .35s cubic-bezier(.23,1,.32,1);
-}
-@keyframes modalIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-.modal-close {
-  position: absolute; top: 22px; right: 22px;
-  background: none; border: none; cursor: pointer;
-  font-size: 20px; color: var(--muted); transition: color .2s;
-}
-.modal-close:hover { color: var(--ink); }
-.modal-box h3 {
-  font-size: clamp(28px, 4vw, 40px); font-weight: 300;
-  margin: 20px 0 28px; letter-spacing: -0.02em;
-}
-.modal-box h3 em { color: var(--moss); font-style: italic; }
-.modal-box p {
-  font-family: 'Fraunces', serif;
-  font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-bottom: 16px;
-  font-weight: 300;
-}
-.modal-box strong { color: var(--ink); font-weight: 500; font-style: italic; }
-
-/* ═════════════════════  REVEAL & TWEAKS  ═════════════════════ */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .85s ease, transform .85s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-@keyframes spin { to{transform:rotate(360deg)} }
-.spinner {
-  display:inline-block; width:18px; height:18px;
-  border:1px solid var(--rule); border-top-color:var(--green);
-  border-radius:50%; animation:spin 1s linear infinite;
-}
-
-/* Tweaks panel */
-#tweaks-panel {
-  position: fixed; right: 20px; bottom: 20px; z-index: 100;
-  width: 280px; background: var(--paper);
-  border: 1px solid var(--rule);
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2);
-  padding: 22px; display: none;
-}
-#tweaks-panel.open { display: block; }
-.tw-title { font-family:'Fraunces',serif; font-size:16px; font-weight:400; margin-bottom:4px; }
-.tw-sub { font-size:11px; color:var(--muted); margin-bottom:18px; }
-.tw-group { margin-top:16px; }
-.tw-label {
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px; letter-spacing:.22em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:10px;
-}
-.tw-opts { display:flex; gap:6px; flex-wrap:wrap; }
-.tw-opts button {
-  font-family:'Inter',sans-serif;
-  font-size:11px; padding:7px 11px;
-  border:1px solid var(--rule); background:transparent;
-  cursor:pointer; color:var(--muted); transition:all .2s;
-}
-.tw-opts button.active { background:var(--green); color:var(--paper); border-color:var(--green); }
-.tw-opts button:hover:not(.active) { border-color:var(--green); color:var(--green); }
-
-/* ── Services cards (visual) ── */
-.svc-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 56px;
-}
-@media(max-width:900px){ .svc-cards { grid-template-columns: 1fr; gap: 20px; } }
-
-.svc-card-v2 {
-  background: var(--white);
-  border: 1px solid var(--rule);
-  padding: 44px 36px;
-  display: flex;
-  flex-direction: column;
-  transition: all .4s cubic-bezier(.23,1,.32,1);
-  position: relative;
-  overflow: hidden;
-}
-.svc-card-v2::before {
-  content: ""; position: absolute; left: 0; top: 0;
-  width: 2px; height: 0;
-  background: var(--moss);
-  transition: height .5s cubic-bezier(.23,1,.32,1);
-}
-.svc-card-v2:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 56px -28px rgba(20,40,18,0.18);
-  border-color: var(--moss);
-}
-.svc-card-v2:hover::before { height: 100%; }
-
-.svc-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 40px;
-}
-.svc-icon-lg {
-  width: 52px; height: 52px;
-  color: var(--moss);
-  fill: none; stroke: currentColor; stroke-width: 1.4;
-  stroke-linecap: round; stroke-linejoin: round;
-}
-.svc-card-v2 .svc-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.22em;
-  color: var(--muted);
-}
-.svc-card-v2 h3 {
-  font-size: 24px; font-weight: 400; line-height: 1.1;
-  margin-bottom: 18px; letter-spacing: -0.02em;
-}
-.svc-card-v2 h3 em { color: var(--moss); font-style: italic; }
-.svc-card-v2 > p {
-  font-size: 14.5px; color: var(--muted); line-height: 1.65;
-  margin-bottom: 28px;
-}
-.svc-bullets {
-  list-style: none; padding: 0;
-  margin: 0;
-  border-top: 1px solid var(--rule);
-}
-.svc-bullets li {
-  font-size: 13px; color: var(--ink-2);
-  padding: 11px 0;
-  border-bottom: 1px solid var(--rule);
-  display: flex; align-items: flex-start; gap: 12px;
-  line-height: 1.4;
-}
-.svc-bullets li::before {
-  content: ""; flex-shrink: 0; margin-top: 9px;
-  width: 8px; height: 1px; background: var(--moss);
-}
-.svc-format {
-  margin-top: auto;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-}
-.svc-format-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px; letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: block; margin-bottom: 12px;
-}
-.svc-format-tags {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.svc-format-tags span {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px; font-weight: 500;
-  padding: 5px 11px;
-  border: 1px solid var(--rule);
-  color: var(--ink-2);
-  background: var(--paper);
-  letter-spacing: 0.01em;
-}
-
+#podcast { background: var(--paper); }
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHD4JXQ5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<!-- ═══════════════ NAV ═══════════════ -->
-<nav id="nav" class="at-top">
-  <div class="wrap nav-inner">
-    <a href="#" class="logo" aria-label="ROOTED K-12 Solutions" style="text-align: center">
-      <span class="logo-name" style="font-size: 36px">Root<span class="ED">ED</span></span>
-      <span class="logo-sub" style="text-align: center; font-size: 12px">K–12 Solutions</span>
-    </a>
 
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#philosophy-quote">Approach</a>
-      <a href="#podcast">Insights</a>
-      <a href="/BalancedbyDesign" class="btn btn-light" style="padding:10px 18px; font-size:12px;">
-        Balanced by Design
-      </a>
-    </div>
-
-    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-      <svg width="22" height="14" viewBox="0 0 22 14" fill="none">
-        <path d="M1 1H21M1 7H21M1 13H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile nav -->
-<div id="mobile-nav">
-  <button class="mobile-close" onclick="toggleMobileNav()" aria-label="Close">✕</button>
-  <a href="#services" onclick="toggleMobileNav()">Services</a>
-  <a href="#philosophy-quote" onclick="toggleMobileNav()">Approach</a>
-  <a href="#podcast" onclick="toggleMobileNav()">Insights</a>
-  <div style="margin-top:32px;">
-    <a href="/BalancedbyDesign" onclick="toggleMobileNav()" class="btn btn-light" style="width:100%; justify-content:center; padding:18px 28px; font-size:13px;">
-      Balanced by Design →
-    </a>
-  </div>
-</div>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section id="hero">
-  <img class="hero-bg" src="assets/hero.png" alt="K-12 technology in the classroom">
-  <div class="hero-backdrop"></div>
-  <div class="wrap hero-wrap">
-    <div class="hero-left">
-    <div>
-      <h1 class="hero-headline reveal" style="transition-delay:.05s;">
-        The blueprint for <em class="rotator" aria-live="polite"><span class="rotator-word">sustainable</span></em><br>
-        K–12 technology.
-      </h1>
-
-      <p class="hero-lede reveal" style="transition-delay:.12s;">RootED partners with superintendents, principals, and IT directors to build resilient technology systems — grounded in classroom reality.</p>
-
-      <div class="hero-cta-row reveal" style="transition-delay:.18s;">
-        <button onclick="gtag('event','generate_lead',{'method':'hero'});Calendly.initPopupWidget({url:'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn btn-light">
-          Schedule a consultation <span class="arr">→</span>
-        </button>
-        <a href="#services" class="btn btn-outline-light">Explore services</a>
-      </div>
-    </div>
-
-  </div>
-  </div>
-</section>
-
-<!-- ═══════════════ TRUSTED ═══════════════ -->
-<section id="trusted">
-  <div class="trusted-label">Districts &amp; partners we've worked with</div>
-  <div class="marquee">
-    <div class="marquee-track" id="marqueeTrack"></div>
-  </div>
-</section>
-
-<!-- ═══════════════ SERVICES ═══════════════ -->
-<section id="services" class="section grain">
-  <div class="wrap">
-    <div class="eyebrow reveal" style="margin-bottom: 28px;">What we do</div>
-
-    <div class="section-head reveal">
-      <h2><span class="nowrap-line">Strategic counsel,</span><br><span class="nowrap-line">grounded in <em>district reality</em>.</span></h2>
-      <div class="head-aside">
-        Three practice areas, adaptable to your district's size, scope, and stage of digital maturity.
-      </div>
-    </div>
-
-    <div class="svc-cards reveal">
-      <article class="svc-card-v2">
-        <div class="svc-head">
-          <svg class="svc-icon-lg" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-            <rect x="4" y="8" width="36" height="24" rx="2" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M14 36h16M22 32v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M4 26h36" stroke="currentColor" stroke-width="1.4"/>
-            <circle cx="22" cy="18" r="4" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M14 18h2M28 18h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <span class="svc-num"></span>
-        </div>
-        <h3>Workshops &amp;<br><em>Professional Development</em></h3>
-        <p>Research-based professional learning that connects infrastructure to classroom impact.</p>
-        <ul class="svc-bullets">
-          <li>Google Workspace PD &amp; certification</li>
-          <li>Pedagogy-first technology integration</li>
-          <li>Executive coaching for IT leaders</li>
-        </ul>
-      </article>
-
-      <article class="svc-card-v2">
-        <div class="svc-head">
-          <svg class="svc-icon-lg" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-            <path d="M8 36L18 24l6 6 12-14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M4 8v32h36" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <span class="svc-num"></span>
-        </div>
-        <h3>Strategy &amp;<br><em>Innovation</em></h3>
-        <p>Navigating AI, automation, and emerging technologies with safety and ethics first.</p>
-        <ul class="svc-bullets">
-          <li>District AI policy &amp; governance</li>
-          <li>Administrative task automation</li>
-          <li>Vendor data privacy reviews</li>
-        </ul>
-      </article>
-
-      <article class="svc-card-v2">
-        <div class="svc-head">
-          <svg class="svc-icon-lg" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-            <circle cx="22" cy="22" r="4" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M22 6v4M22 34v4M6 22h4M34 22h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M10.3 10.3l2.8 2.8M30.9 30.9l2.8 2.8M10.3 33.7l2.8-2.8M30.9 13.1l2.8-2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="22" cy="22" r="10" stroke="currentColor" stroke-width="1.4" opacity=".35"/>
-          </svg>
-          <span class="svc-num"></span>
-        </div>
-        <h3>Strategic<br><em>IT Operations</em></h3>
-        <p>Foundational systems leadership — multi-year planning, cybersecurity, and operational rhythm.</p>
-        <ul class="svc-bullets">
-          <li>Technology department audits</li>
-          <li>Cybersecurity preparedness</li>
-          <li>Interim Technology Director</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="reveal" style="margin-top: 64px; display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
-
-      <a href="mailto:info@rootedk12.com" class="linklike on-dark"></a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ PHILOSOPHY QUOTE ═══════════════ -->
-<section id="philosophy-quote">
-  <div class="wrap pq-inner">
-    <div class="reveal">
-      <p class="pq-quote">
-        Technology in the classroom is <em>not</em> the end goal.<br>
-        Enabling learning everywhere <em>is</em> the goal.
-      </p>
-      <div class="pq-attr">
-        <strong>Andrew Barras</strong> &nbsp;/&nbsp; Educator
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ PODCAST ═══════════════ -->
-<section id="podcast" class="section">
-  <div class="wrap">
-    <div class="eyebrow reveal" style="margin-bottom: 28px;">Insights</div>
-
-    <div class="section-head reveal">
-      <h2>K–12 Tech Talk
-Podcast.</h2>
-      <div class="head-aside">
-        200+ episodes on cybersecurity, AI, and the real challenges facing district technology teams.
-      </div>
-    </div>
-
-    <div class="pod-grid">
-      <div id="pod-main-col" class="reveal">
-        <div id="pod-loading" style="padding:64px; border:1px solid var(--rule); text-align:center; background: var(--white);">
-          <div class="spinner"></div>
-          <p style="margin-top:16px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faint);">Loading latest episode</p>
-        </div>
-        <div id="pod-main" class="pod-main" style="display:none;"></div>
-      </div>
-
-      <div class="reveal" style="transition-delay:.1s;">
-        <div class="pod-feed-label">
-          <div class="eyebrow">Recent episodes</div>
-          <a href="https://k12techtalkpodcast.com" target="_blank" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss); text-decoration:none;">All →</a>
-        </div>
-        <div id="pod-feed"></div>
-
-        <div class="pod-guest">
-          <div class="eyebrow on-dark">Be a guest</div>
-          <h4>Share your district's story.</h4>
-          <p>Reach thousands of technology leaders across the country with your experience and insight.</p>
-          <a href="mailto:info@rootedk12.com" class="linklike on-dark">info@rootedk12.com</a>
-            Submit a request →
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section id="contact">
-  <div class="contact-grid-bg"></div>
-  <div class="contact-glow"></div>
-  <div class="wrap contact-inner">
-    <div class="contact-left">
-      <div class="eyebrow on-dark reveal" style="margin-bottom: 28px;">Let's talk</div>
-      <h2 class="reveal" style="transition-delay:.05s;">
-        Ready to<br><em>get started?</em>
-      </h2>
-      <p class="reveal" style="transition-delay:.12s;">
-        Whether you need a strategic partner, a one-time assessment, or interim leadership coverage — we'd like to hear about your district.
-      </p>
-    </div>
-
-<div class="contact-options reveal" style="transition-delay:.18s;">
-      
-      <button onclick="gtag('event','generate_lead',{'method':'contact_section'});Calendly.initPopupWidget({url:'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="contact-option">
-        <div class="contact-option-icon"><i class="far fa-calendar"></i></div>
-        <div class="contact-option-text">
-          <span class="lab" style="text-align: left">Book a meeting</span>
-          <span class="val" style="text-align: left">Schedule a call.</span>
-        </div>
-        <div class="contact-option-arr">→</div>
-      </button>
-
-      <a href="mailto:info@rootedk12.com" class="contact-option">
-        <div class="contact-option-icon"><i class="far fa-envelope"></i></div>
-        <div class="contact-option-text">
-          <span class="lab" style="text-align: left">Send a message</span>
-          <span class="val" style="text-align: left">info@rootedk12.com</span>
-        </div>
-        <div class="contact-option-arr">→</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a href="#" class="logo">
-          <span class="logo-name" style="font-size:22px;">Root<span class="ED">ED</span></span>
-          <span class="logo-sub" style="color: rgba(247,243,232,0.45); margin-top:7px;">K–12 Solutions</span>
-        </a>
-        <p class="footer-blurb">Strategic technology counsel for K–12 districts. Based in Boston, Massachusetts.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-label">Services</div>
-        <a href="#services">Workshops &amp; PD</a>
-        <a href="#services">Strategy &amp; Innovation</a>
-        <a href="#services">Strategic IT Operations</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-label">Company</div>
-        <a href="#services">Services</a>
-        <a href="#philosophy-quote">Approach</a>
-        <a href="#podcast">Insights</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-col">
-  <div class="footer-col-label">Connect</div>
-  <a href="mailto:info@rootedk12.com">info@rootedk12.com</a>
-        <a href="https://k12techtalkpodcast.com" target="_blank">K–12 Tech Talk ↗</a>
-        <a href="https://www.linkedin.com/in/mark-racine/" target="_blank">LinkedIn ↗</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 RootED K12 Solutions</span>
-      <span>Boston, Massachusetts</span>
-    </div>
-  </div>
-</footer>
-
-<!-- Philosophy Modal -->
-<div id="philosophy-modal" onclick="if(event.target===this)togglePhilosophyModal()">
-  <div class="modal-box">
-    <button class="modal-close" onclick="togglePhilosophyModal()">✕</button>
-    <div class="eyebrow" style="margin-bottom:12px;">Our name, our purpose</div>
-    <h3>The Rooted<br><em>philosophy</em>.</h3>
-    <p>Inspired by our family name, <strong>Racine</strong> — the French word for "root" — RootED K–12 is built on the belief that a healthy digital ecosystem requires a healthy foundation, starting from the roots.</p>
-    <p>Just as a tree cannot sustain a complex canopy without a deep and nourished base, an educational environment cannot truly flourish through devices alone. It requires a robust, intentional infrastructure of support, strategy, and trust.</p>
-    <p>By focusing on these essential roots — the foundational systems, equitable access, and purposeful implementation that power EdTech — we ensure technology serves as a natural extension of growth.</p>
-    <button onclick="togglePhilosophyModal()" class="btn btn-outline-dark" style="margin-top:28px;">Close</button>
-  </div>
-</div>
-
-<!-- Tweaks -->
-<div id="tweaks-panel">
-  <div class="tw-title">Tweaks</div>
-  <div class="tw-sub">Visual variations</div>
-  <div class="tw-group">
-    <div class="tw-label">Accent color</div>
-    <div class="tw-opts" id="tw-accent">
-      <button data-val="gold" class="active">Gold</button>
-      <button data-val="sage">Sage</button>
-      <button data-val="copper">Copper</button>
-    </div>
-  </div>
-  <div class="tw-group">
-    <div class="tw-label">Paper warmth</div>
-    <div class="tw-opts" id="tw-paper">
-      <button data-val="warm" class="active">Warm</button>
-      <button data-val="cool">Cool</button>
-    </div>
-  </div>
-  <div class="tw-group">
-    <div class="tw-label">Grain texture</div>
-    <div class="tw-opts" id="tw-grain">
-      <button data-val="on" class="active">On</button>
-      <button data-val="off">Off</button>
-    </div>
-  </div>
-</div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── Tweaks ──
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "accent": "gold",
-  "paper": "warm",
-  "grain": "on"
-}/*EDITMODE-END*/;
-let tw = {...TWEAK_DEFAULTS};
-
-function applyTweaks(t){
-  const r = document.documentElement;
-  if(t.accent==='gold'){ r.style.setProperty('--gold-lt','#d4ae54'); r.style.setProperty('--gold','#b8932e'); }
-  else if(t.accent==='sage'){ r.style.setProperty('--gold-lt','#7d9974'); r.style.setProperty('--gold','#5a7a4e'); }
-  else { r.style.setProperty('--gold-lt','#c08660'); r.style.setProperty('--gold','#9a6a48'); }
-
-  if(t.paper==='warm'){ r.style.setProperty('--paper','#f7f3e8'); r.style.setProperty('--paper-2','#ede8d8'); r.style.setProperty('--rule','#d8d1ba'); }
-  else { r.style.setProperty('--paper','#f3f3ee'); r.style.setProperty('--paper-2','#e8e9e2'); r.style.setProperty('--rule','#d2d3cb'); }
-
-  document.querySelectorAll('.grain').forEach(el => {
-    el.style.setProperty('--grain-opacity', t.grain==='on' ? 0.35 : 0);
-    const b = el.querySelector(':scope::before');
-  });
-  // Use a stylesheet rule for grain opacity
-  let gs = document.getElementById('grain-style');
-  if(!gs){ gs = document.createElement('style'); gs.id='grain-style'; document.head.appendChild(gs); }
-  gs.textContent = `.grain::before { opacity: ${t.grain==='on' ? 0.35 : 0} !important; }`;
-
-  ['accent','paper','grain'].forEach(k=>{
-    const id = k==='accent'?'tw-accent':k==='paper'?'tw-paper':'tw-grain';
-    document.querySelectorAll(`#${id} button`).forEach(b=>b.classList.toggle('active', b.dataset.val===t[k]));
-  });
-}
-
-function bindTweaks(){
-  [['tw-accent','accent'],['tw-paper','paper'],['tw-grain','grain']].forEach(([id,key])=>{
-    document.querySelectorAll(`#${id} button`).forEach(b=>{
-      b.addEventListener('click',()=>{
-        tw[key]=b.dataset.val; applyTweaks(tw);
-        try{window.parent.postMessage({type:'__edit_mode_set_keys',edits:{[key]:b.dataset.val}},'*');}catch(e){}
+  <script>
+// ── Global Calendly Script Integrations ──
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.btn-dark, .linklike, .btn-light').forEach(button => {
+    if (button.textContent.includes('Schedule')) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        Calendly.initPopupWidget({
+          url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'
+        });
       });
-    });
-  });
-}
-
-window.addEventListener('message',e=>{
-  if(!e.data?.type) return;
-  if(e.data.type==='__activate_edit_mode') document.getElementById('tweaks-panel').classList.add('open');
-  if(e.data.type==='__deactivate_edit_mode') document.getElementById('tweaks-panel').classList.remove('open');
-});
-setTimeout(()=>{ try{window.parent.postMessage({type:'__edit_mode_available'},'*');}catch(e){} },300);
-
-// ── Nav scroll handling ──
-const nav = document.getElementById('nav');
-function updateNav(){
-  const y = window.scrollY;
-  const hero = document.getElementById('hero');
-  const heroH = hero ? hero.offsetHeight : 0;
-  const contactEl = document.getElementById('contact');
-  const contactTop = contactEl ? contactEl.offsetTop : 1e9;
-  const philEl = document.getElementById('philosophy-quote');
-  const philTop = philEl ? philEl.offsetTop : 1e9;
-  const philBot = philEl ? philTop + philEl.offsetHeight : 1e9;
-
-  // Dark zones: hero, philosophy-quote, contact
-  const inDarkZone = y >= contactTop - 80 || (y >= philTop - 80 && y < philBot - 80);
-
-  if(y < 60){
-    nav.className = 'at-top';
-  } else if(y < heroH - 80){
-    nav.className = 'scrolled-dark';
-  } else if(inDarkZone){
-    nav.className = 'scrolled-dark';
-  } else {
-    nav.className = 'scrolled-light';
-  }
-}
-window.addEventListener('scroll', updateNav, {passive:true});
-
-// ── Mobile nav ──
-function toggleMobileNav(){
-  const m = document.getElementById('mobile-nav');
-  m.classList.toggle('open');
-  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
-}
-
-// ── Philosophy modal ──
-function togglePhilosophyModal(){
-  const m = document.getElementById('philosophy-modal');
-  m.classList.toggle('open');
-  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
-}
-
-// ── Partners marquee ──
-const partners = [
-  {img:'assets/amesbury.png', name:'Amesbury', sub:'Public Schools'},
-  {img:'assets/brockton.png', name:'Brockton', sub:'Public Schools'},
-  {img:'assets/milwaukee.png', name:'Milwaukee', sub:'Public Schools'},
-  {img:'assets/malden.png', name:'Malden', sub:'Public Schools'},
-  {img:'assets/lunenburg.png', name:'Lunenburg', sub:'Public Schools'},
-  {img:'assets/wakefield.png', name:'Wakefield', sub:'Public Schools'},
-  {img:'assets/dayofai.png', name:'', sub:''},
-  {img:'assets/k12techpro.webp', name:'', sub:''},
-];
-function makePartner(p){
-  const label = p.name ? `<span class="pname">${p.name}<span>${p.sub}</span></span>` : '';
-  return `<div class="partner-item"><img src="${p.img}" alt="${p.name||'Partner'} logo">${label}</div>`;
-}
-const track = document.getElementById('marqueeTrack');
-track.innerHTML = partners.map(makePartner).join('') + partners.map(makePartner).join('');
-
-// ── Podcast feed ──
-async function fetchPodcast(){
-  try {
-    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://k12techtalkpodcast.com/feed/podcast/'));
-    const data = await res.json();
-    if(data.status==='ok') renderPodcast(data.items);
-  } catch(e) {
-    const l = document.getElementById('pod-loading');
-    if(l) l.innerHTML = '<p style="color:#c0392b; font-size:13px;">Could not load feed. <button onclick="fetchPodcast()" style="text-decoration:underline;background:none;border:none;cursor:pointer;color:inherit;">Retry</button></p>';
-  }
-}
-
-function renderPodcast(items){
-  const latest = items[0];
-  const recent = items.slice(1, 5);
-
-  const tmp = document.createElement('div');
-  tmp.innerHTML = latest.description;
-  const fullDesc = (tmp.textContent || '').trim();
-  const desc = fullDesc.length > 520 ? fullDesc.slice(0, 520).trim() + '…' : fullDesc;
-  const dateStr = new Date(latest.pubDate).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
-
-  document.getElementById('pod-loading').style.display = 'none';
-  const main = document.getElementById('pod-main');
-  main.style.display = 'flex';
-  main.innerHTML = `
-    <div class="pod-main-meta">
-      <span class="eyebrow">Latest episode</span>
-      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--faint);">${dateStr}</span>
-    </div>
-    <h3>${latest.title}</h3>
-    <p class="pod-desc">${desc}</p>
-    <div class="pod-bottom">
-      <a href="${latest.link}" target="_blank" class="btn btn-dark" style="padding:14px 24px;">
-        Listen to episode <span class="arr">→</span>
-      </a>
-      <div class="pod-listen">
-        <a href="https://podcasts.apple.com/us/podcast/k12-tech-talk/id1493032539" target="_blank"><i class="fab fa-apple"></i> Apple</a>
-        <a href="https://open.spotify.com/show/6l6QQjUgq25CLfjGtRk1Ss" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-        <a href="https://k12techtalkpodcast.com" target="_blank"><i class="fas fa-globe"></i> All episodes</a>
-      </div>
-    </div>
-  `;
-
-  const feed = document.getElementById('pod-feed');
-  feed.innerHTML = recent.map((ep,i)=>{
-    const d = new Date(ep.pubDate).toLocaleDateString('en-US',{month:'short',day:'numeric'});
-    return `
-      <a href="${ep.link}" target="_blank" class="pod-episode">
-        <div class="pod-ep-num">${String(i+2).padStart(2,'0')}</div>
-        <div>
-          <div class="pod-ep-date">${d}</div>
-          <div class="pod-ep-title">${ep.title}</div>
-        </div>
-        <div class="pod-ep-arrow">→</div>
-      </a>
-    `;
-  }).join('');
-}
-
-// ── Reveal on scroll ──
-document.addEventListener('DOMContentLoaded', ()=>{
-  applyTweaks(tw);
-  bindTweaks();
-  fetchPodcast();
-  updateNav();
-
-  // Hero animation
-  setTimeout(()=>{ document.getElementById('hero')?.classList.add('loaded'); }, 200);
-
-  // Reveal everything in hero immediately
-  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
-
-  // ── Hero rotating word ──
-  (function initRotator(){
-    const el = document.querySelector('.hero-headline .rotator-word');
-    if(!el) return;
-    const words = ['sustainable', 'scalable', 'strategic', 'secure', 'safe'];
-    let i = 0;
-    const HOLD = 2200;   // time each word stays
-    const SWAP = 500;    // matches CSS transition
-    setInterval(()=>{
-      el.classList.add('out');
-      setTimeout(()=>{
-        i = (i + 1) % words.length;
-        el.textContent = words[i];
-        el.classList.remove('out');
-        el.classList.add('in');
-        // force reflow so the 'in' start state applies before we remove it
-        void el.offsetWidth;
-        el.classList.remove('in');
-      }, SWAP);
-    }, HOLD + SWAP);
-  })();
-
-  const obs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  },{threshold:0.06, rootMargin:'0px 0px -40px 0px'});
-
-  document.querySelectorAll('.reveal:not(#hero .reveal)').forEach(el=>{
-    const rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight) {
-      el.classList.add('visible');
-    } else {
-      obs.observe(el);
     }
   });
 });
+
+// Hero animation
+setTimeout(()=>{ document.getElementById('hero')?.classList.add('loaded'); }, 200);
+
+// Reveal everything in hero immediately
+document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+
+// ── Hero rotating word ──
+(function initRotator(){
+  const el = document.querySelector('.hero-headline .rotator-word');
+  if(!el) return;
+  const words = ['sustainable', 'scalable', 'strategic', 'secure', 'safe'];
+  let i = 0;
+  const HOLD = 2200;   // time each word stays
+  const SWAP = 500;    // matches CSS transition
+  setInterval(()=>{
+    el.classList.add('out');
+    setTimeout(()=>{\
+      i = (i + 1) % words.length;\
+      el.textContent = words[i];\
+      el.classList.remove('out');\
+      el.classList.add('in');\
+      // force reflow so the 'in' start state applies before we remove it\
+      void el.offsetWidth;\
+      el.classList.remove('in');\
+    }, SWAP);\
+  }, HOLD + SWAP);\
+})();
+
+const obs = new IntersectionObserver(entries=>{\
+  entries.forEach(e=>{\
+    if(e.isIntersecting){\
+      e.target.classList.add('visible');\
+      obs.unobserve(e.target);\
+    }\
+  });\
+},{threshold:0.06, rootMargin:'0px 0px -40px 0px'});\
+
+document.querySelectorAll('.reveal:not(#hero .reveal)').forEach(el=>{\
+  obs.observe(el);\
+});\
 </script>
 </body>
 </html>
