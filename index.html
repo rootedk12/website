@@ -286,7 +286,7 @@ p  { line-height: 1.65; }
 }
 @media(max-width:900px){ #hero { min-height: auto; } }
 
-/* Full-bleed background image updated with local assets directory path */
+/* Full-bleed background image */
 .hero-bg {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -295,7 +295,6 @@ p  { line-height: 1.65; }
   filter: brightness(0.55) saturate(0.7) contrast(1.04);
   transform: scale(1.0);
   transition: transform 16s ease;
-  background-image: url('assets/hero-bg.jpg');
 }
 #hero.loaded .hero-bg { transform: scale(1.06); }
 
@@ -478,7 +477,7 @@ p  { line-height: 1.65; }
   z-index: 3;
 }
 
-/* ═════════════════════  TRUSTED  ═════════════════════ */
+/* ─────────────────  TRUSTED  ───────────────── */
 #trusted {
   background: var(--paper-2);
   border-top: 1px solid var(--rule);
@@ -526,7 +525,7 @@ p  { line-height: 1.65; }
   margin-top: 2px;
 }
 
-/* ═════════════════════  APPROACH  ═════════════════════ */
+/* ─────────────────  APPROACH  ───────────────── */
 #approach {
   background: var(--paper);
 }
@@ -600,7 +599,7 @@ p  { line-height: 1.65; }
   font-size: 15px; color: var(--muted); line-height: 1.7;
 }
 
-/* ═════════════════════  SERVICES  ═════════════════════ */
+/* ─────────────────  SERVICES  ───────────────── */
 #services {
   background: var(--paper-2);
   border-top: 1px solid var(--rule);
@@ -670,11 +669,17 @@ p  { line-height: 1.65; }
 }
 
 .eng-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 24px;
 }
-@media(max-width:900px){ .eng-grid { grid-template-columns: 1fr; } }
+
+@media(max-width:900px){
+  .eng-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .eng-card {
   background: var(--white);
@@ -682,90 +687,819 @@ p  { line-height: 1.65; }
   padding: 48px 36px;
   position: relative;
   transition: all .4s cubic-bezier(.23,1,.32,1);
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.eng-card:hover { transform: translateY(-4px); border-color: var(--moss); box-shadow: 0 24px 48px -24px rgba(20,40,18,0.15); }
-.eng-card .eng-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--moss); margin-bottom: 36px; }
-.eng-card h3 { font-size: 28px; font-weight: 400; line-height: 1.05; margin-bottom: 16px; letter-spacing: -0.02em; }
-.eng-card .eng-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-.eng-card p { font-size: 14px; color: var(--muted); line-height: 1.7; flex-grow: 1; }
-.eng-card .eng-best { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--rule); }
-.eng-card .eng-best strong { display: block; font-family: 'Fraunces', serif; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--ink); margin-top: 6px; font-weight: 400; font-style: italic; }
 
-/* ═════════════════════  PHILOSOPHY QUOTE  ═════════════════════ */
-#philosophy-quote { background: var(--forest); position: relative; overflow: hidden; }
-.pq-inner { padding: 96px 0; max-width: 920px; }
-@media(max-width:1000px){ .pq-inner { padding: 72px 0; } }
-.pq-left { position: relative; }
-.pq-mark { font-family: 'Fraunces', serif; font-size: 220px; font-weight: 300; color: var(--gold-lt); line-height: 0.6; margin-bottom: 16px; font-style: italic; }
-.pq-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage); }
-.pq-quote { font-family: 'Fraunces', serif; font-size: clamp(22px, 2.4vw, 34px); font-weight: 300; line-height: 1.25; color: var(--paper); letter-spacing: -0.015em; }
-.pq-quote em { font-style: italic; color: var(--gold-lt); }
-.pq-attr { margin-top: 36px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,243,232,0.55); }
-.pq-attr strong { color: var(--paper); font-weight: 500; }
-.pq-bg-tree { position: absolute; right: -100px; top: 50%; transform: translateY(-50%); width: 600px; height: 700px; opacity: 0.05; pointer-events: none; }
+.eng-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--moss);
+  box-shadow: 0 24px 48px -24px rgba(20,40,18,0.15);
+}
+
+.eng-card .eng-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--moss);
+  margin-bottom: 36px;
+}
+
+.eng-card h3 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.eng-card .eng-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.eng-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.eng-card .eng-best {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.eng-card .eng-best strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  margin-top: 6px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ═════════════════════ PHILOSOPHY QUOTE ═════════════════════ */
+#philosophy-quote {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+
+.pq-inner {
+  padding: 96px 0;
+  max-width: 920px;
+}
+
+@media(max-width:1000px){
+  .pq-inner {
+    padding: 72px 0;
+  }
+}
+
+.pq-left {
+  position: relative;
+}
+
+.pq-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 220px;
+  font-weight: 300;
+  color: var(--gold-lt);
+  line-height: 0.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.pq-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.pq-quote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--paper);
+  letter-spacing: -0.015em;
+}
+
+.pq-quote em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+.pq-attr {
+  margin-top: 36px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247,243,232,0.55);
+}
+
+.pq-attr strong {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+.pq-bg-tree {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 700px;
+  opacity: 0.05;
+  pointer-events: none;
+}
 
 /* ═════════════════════  PODCAST  ═════════════════════ */
-#podcast { background: var(--paper); }
+#podcast {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.pod-inner {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 80px; align-items: center;
+}
+@media(max-width:900px){ .pod-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+.pod-left { max-width: 580px; }
+.pod-title {
+  font-size: clamp(32px, 3.8vw, 52px);
+  font-weight: 300; line-height: 1.05;
+  margin-bottom: 24px;
+}
+.pod-title em { color: var(--moss); font-style: italic; }
+.pod-desc { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 36px; }
+
+.pod-episodes { display: flex; flex-direction: column; gap: 16px; }
+.pod-ep {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 24px;
+  display: flex; gap: 20px; align-items: center;
+  text-decoration: none; color: inherit;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.pod-ep:hover {
+  border-color: var(--moss);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -12px rgba(20,40,18,0.12);
+}
+.pod-ep-play {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--paper-2); color: var(--moss);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+  transition: background .2s, color .2s;
+}
+.pod-ep:hover .pod-ep-play { background: var(--moss); color: var(--paper); }
+.pod-ep-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 4px;
+}
+.pod-ep-title { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+
+.pod-right { position: relative; display: flex; justify-content: center; }
+.pod-graphic-box {
+  background: var(--forest);
+  width: 100%; max-width: 420px;
+  aspect-ratio: 1;
+  padding: 40px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative;
+  box-shadow: 0 32px 64px -24px rgba(12,26,16,0.3);
+}
+.pod-graphic-box::before {
+  content: ""; position: absolute; inset: 12px;
+  border: 1px solid rgba(247,243,232,0.12); pointer-events: none;
+}
+.pod-g-top {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--sage);
+}
+.pod-g-mid h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 38px; font-weight: 400; line-height: 1.05;
+  color: var(--paper); letter-spacing: -0.01em;
+}
+.pod-g-mid h4 em { font-style: italic; color: var(--gold-lt); font-weight: 400; }
+.pod-g-bot {
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.pod-g-host {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(247,243,232,0.5);
+}
+.pod-g-host strong { color: var(--paper); font-weight: 500; display: block; margin-top: 2px; }
+.pod-g-waves { display: flex; gap: 3px; align-items: flex-end; height: 28px; }
+.pod-g-waves span { width: 2px; background: var(--gold-lt); border-radius: 1px; animation: wave 1.2s ease-in-out infinite alternate; }
+.pod-g-waves span:nth-child(1) { height: 12px; animation-delay: 0.1s; }
+.pod-g-waves span:nth-child(2) { height: 24px; animation-delay: 0.4s; }
+.pod-g-waves span:nth-child(3) { height: 16px; animation-delay: 0.2s; }
+.pod-g-waves span:nth-child(4) { height: 28px; animation-delay: 0.6s; }
+.pod-g-waves span:nth-child(5) { height: 10px; animation-delay: 0.3s; }
+@keyframes wave { from{transform:scaleY(0.4)} to{transform:scaleY(1.1)} }
+
+/* ─────────────────  ABOUT BIO  ───────────────── */
+#about-bio { background: var(--paper-2); border-bottom: 1px solid var(--rule); }
+.bio-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+@media(max-width:900px) { .bio-grid { grid-template-columns: 1fr; gap: 48px; } }
+.bio-left { position: relative; }
+.bio-frame { position: relative; border: 1px solid var(--rule); padding: 16px; background: var(--white); }
+.bio-img { width: 100%; aspect-ratio: 0.85; object-fit: cover; filter: sepia(0.15) contrast(1.02); }
+.bio-signature { font-family: 'Fraunces', serif; font-style: italic; font-size: 20px; color: var(--moss); margin-top: 16px; text-align: right; padding-right: 8px; }
+.bio-right h3 { font-size: clamp(28px, 3.4vw, 44px); font-weight: 300; line-height: 1.1; margin-bottom: 28px; }
+.bio-right h3 em { color: var(--moss); }
+.bio-text p { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 24px; }
+.bio-text p:last-child { margin-bottom: 0; }
+
+/* ─────────────────  RESOURCES  ───────────────── */
+#resources { background: var(--paper); }
+.res-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
+@media(max-width:900px){ .res-grid { grid-template-columns: 1fr; gap: 24px; } }
+.res-card { background: var(--white); border: 1px solid var(--rule); padding: 40px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: border-color .3s, transform .3s; }
+.res-card:hover { border-color: var(--moss); transform: translateY(-3px); box-shadow: 0 16px 36px -16px rgba(20,40,18,0.15); }
+.res-card .res-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 24px; }
+.res-card h3 { font-size: 22px; font-weight: 400; line-height: 1.2; margin-bottom: 14px; }
+.res-card p { font-size: 14px; color: var(--muted); line-height: 1.6; flex-grow: 1; margin-bottom: 28px; }
+.res-card .res-action { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.res-card .res-action i { transition: transform .2s; font-size: 11px; }
+.res-card:hover .res-action i { transform: translateX(3px); color: var(--moss); }
+
+/* ─────────────────  CONTACT  ───────────────── */
+#contact {
+  background: var(--deep); color: var(--paper);
+  padding: 140px 0 100px; overflow: hidden;
+}
+@media(max-width:768px){ #contact { padding: 96px 0 64px; } }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 96px; align-items: start; }
+@media(max-width:960px){ .contact-grid { grid-template-columns: 1fr; gap: 64px; } }
+
+.contact-left { max-width: 480px; }
+.contact-title { font-size: clamp(36px, 4.4vw, 64px); font-weight: 200; line-height: 1.05; color: var(--white); margin-bottom: 28px; letter-spacing: -0.03em; }
+.contact-title em { color: var(--brand-green); font-style: italic; font-weight: 300; }
+.contact-lede { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 300; line-height: 1.6; color: rgba(247,243,232,0.65); margin-bottom: 44px; }
+
+.contact-methods { display: flex; flex-direction: column; gap: 28px; }
+.c-method { display: flex; gap: 20px; align-items: flex-start; }
+.c-method-icon { width: 40px; height: 40px; border: 1px solid rgba(247,243,232,0.15); display: flex; align-items: center; justify-content: center; color: var(--brand-green); font-size: 14px; flex-shrink: 0; }
+.c-method-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,243,232,0.4); margin-bottom: 4px; }
+.c-method-value { font-size: 15px; color: var(--paper); text-decoration: none; }
+a.c-method-value:hover { color: var(--brand-green); text-decoration: underline; }
+
+.contact-right { position: relative; }
+/* Clean container for inline Calendly widget */
+.calendly-inline-container {
+  background: var(--forest);
+  border: 1px solid rgba(247,243,232,0.08);
+  box-shadow: 0 32px 64px -16px rgba(0,0,0,0.4);
+  width: 100%;
+}
+
+/* ─────────────────  FOOTER  ───────────────── */
+#footer { background: var(--deep); color: rgba(247,243,232,0.45); padding: 48px 0; border-top: 1px solid rgba(247,243,232,0.06); font-size: 13px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.footer-left { display: flex; align-items: center; gap: 16px; }
+.footer-logo { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; color: var(--paper); letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; }
+.footer-logo .ED { color: var(--brand-green); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { color: inherit; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--paper); }
+
+/* ─────────────────  ANIMATION UTILS  ───────────────── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.85s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.85s cubic-bezier(0.215, 0.610, 0.355, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: opacity 0.5s ease; transform: none; }
+  .reveal.visible { transform: none; }
+}
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
 </style>
 </head>
-<body>
+<body class="grain">
 
-  <script>
-// ── Global Calendly Script Integrations ──
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.btn-dark, .linklike, .btn-light').forEach(button => {
-    if (button.textContent.includes('Schedule')) {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        Calendly.initPopupWidget({
-          url: 'https://calendly.com/mark-rootedk12/1-1-with-mark'
-        });
-      });
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHD4JXQ5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav id="nav" class="at-top">
+  <div class="wrap nav-inner">
+    <a href="#hero" class="logo" aria-label="RootED K12 Solutions Home">
+      <span class="logo-name">Root<span class="ED">ED</span></span>
+      <span class="logo-sub">K12 Solutions</span>
+    </a>
+    <div class="nav-links">
+      <a href="#approach">Our Approach</a>
+      <a href="#services">Services</a>
+      <a href="#engagement">Engagement</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#about-bio">About</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact" class="btn btn-light">Work With Us <span class="arr">→</span></a>
+    </div>
+    <button class="hamburger" aria-label="Open Navigation Menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <i class="fa-solid fa-bars-staggered fa-lg"></i>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+  <button class="mobile-close" aria-label="Close Menu" onclick="toggleMobileNav()"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#approach" onclick="toggleMobileNav()">Our Approach</a>
+  <a href="#services" onclick="toggleMobileNav()">Services</a>
+  <a href="#engagement" onclick="toggleMobileNav()">Engagement</a>
+  <a href="#podcast" onclick="toggleMobileNav()">Podcast</a>
+  <a href="#about-bio" onclick="toggleMobileNav()">About</a>
+  <a href="#resources" onclick="toggleMobileNav()">Resources</a>
+  <div style="margin-top: 36px;">
+    <a href="#contact" class="btn btn-light" onclick="toggleMobileNav()">Work With Us <span class="arr">→</span></a>
+  </div>
+</div>
+
+<section id="hero">
+  <img src="assets/background.jpg" alt="Quiet K-12 school hallway or library workspace representing a thoughtful technology posture" class="hero-bg" loading="eager">
+  <div class="hero-backdrop"></div>
+  <div class="hero-rule"></div>
+  <div class="wrap hero-wrap">
+    <div class="hero-left">
+      <div>
+        <div class="hero-meta-row reveal">
+          <span class="live-dot">Independent Counsel</span>
+          <span class="sep">|</span>
+          <span>Built for K–12 Leadership</span>
+        </div>
+        <h1 class="hero-headline reveal delay-1">
+          Building <div class="rotator"><span class="rotator-word">sustainable</span></div> technology systems <span class="by">by design.</span>
+        </h1>
+        <p class="hero-lede reveal delay-2">
+          RootED K12 partners with superintendents, CFOs, and technology directors to align infrastructure with classroom instruction — protected from vendor hype.
+        </p>
+        <div class="hero-cta-row reveal delay-3">
+          <a href="#contact" class="btn btn-dark">Schedule Strategic Consultation <span class="arr">→</span></a>
+          <a href="#approach" class="btn btn-outline-light">Read Our Approach</a>
+        </div>
+      </div>
+      
+      <div class="hero-credibility reveal delay-3">
+        <div class="cred-item">
+          <div class="label">Focus</div>
+          <div class="value"><strong>100% K–12</strong> Districts</div>
+        </div>
+        <div class="cred-item">
+          <div class="label">Posture</div>
+          <div class="value"><strong>Vendor-Agnostic</strong> Advocacy</div>
+        </div>
+        <div class="cred-item">
+          <div class="label">Orientation</div>
+          <div class="value"><strong>Instructional</strong> First</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <img src="assets/supplies.png" alt="A clean arrangement of school supplies and digital tablets" class="hero-supplies">
+  
+  <div class="hero-img-meta hide-mobile">
+    Strategic Technology Counsel<br>For K–12 School Districts
+  </div>
+</section>
+
+<section id="trusted">
+  <div class="wrap">
+    <div class="trusted-label">Partnering with Leaders Across New England</div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="partner-item"><div class="pname">Mass. Association of<span>School Superintendents</span></div></div>
+        <div class="partner-item"><div class="pname">RI Association of<span>School Administrators</span></div></div>
+        <div class="partner-item"><div class="pname">Connecticut<span>Superintendents Assoc.</span></div></div>
+        <div class="partner-item"><div class="pname">VT Secondary<span>School Principals</span></div></div>
+        <div class="partner-item"><div class="pname">NH Association of<span>School Administrators</span></div></div>
+        <div class="partner-item"><div class="pname">Maine School<span>Superintendents Assoc.</span></div></div>
+        <div class="partner-item"><div class="pname">Mass. Association of<span>School Superintendents</span></div></div>
+        <div class="partner-item"><div class="pname">RI Association of<span>School Administrators</span></div></div>
+        <div class="partner-item"><div class="pname">Connecticut<span>Superintendents Assoc.</span></div></div>
+        <div class="partner-item"><div class="pname">VT Secondary<span>School Principals</span></div></div>
+        <div class="partner-item"><div class="pname">NH Association of<span>School Administrators</span></div></div>
+        <div class="partner-item"><div class="pname">Maine School<span>Superintendents Assoc.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter"><span class="roman">Cap. I</span><span class="label">Core Philosophy</span></div>
+        <h2>A stable district demands a <em>grounded</em> framework.</h2>
+      </div>
+      <div class="head-aside">
+        We do not sell software, hardware, or subscriptions. We provide clear, objective expertise to help you build resilient, high-performing educational systems.
+      </div>
+    </div>
+    
+    <div class="approach-grid">
+      <div class="principle reveal">
+        <div class="num">01</div>
+        <h3>Classroom <em>Over</em> Cloud.</h3>
+        <p>Every dollar spent on an unadopted, overly complex platform is a dollar stolen from classroom instruction. We evaluate your tech stack through the lens of teacher utility and student data impact first.</p>
+      </div>
+      <div class="principle reveal delay-1">
+        <div class="num">02</div>
+        <h3>Simplicity <em>Over</em> Scale.</h3>
+        <p>Districts often collapse under the weight of tool sprawl and fractured systems. We optimize, consolidate, and integrate your existing tools before recommending alternative software additions.</p>
+      </div>
+      <div class="principle reveal delay-2">
+        <div class="num">03</div>
+        <h3>Ownership <em>Over</em> Lock-In.</h3>
+        <p>Vendors want your technology ecosystems to remain confusing black boxes. We audit and organize your operations so your internal team understands, controls, and completely owns your data systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter"><span class="roman">Cap. II</span><span class="label">Scope of Counsel</span></div>
+        <h2>Strategic operations </h2><h2>for <em>modern</em> systems.</h2>
+      </div>
+      <div class="head-aside">
+        Targeted advisory packages designed to solve complex operational friction, modernise legacy infrastructure, and protect budgets.
+      </div>
+    </div>
+    
+    <div class="svc-list-wrap">
+      <div class="svc-row reveal">
+        <div class="svc-num-col">Svc. I</div>
+        <div class="svc-title-col">
+          <h3>Tech Stack <em>Optimization</em></h3>
+          <div class="svc-tag">Cost Control &amp; Utility</div>
+        </div>
+        <div class="svc-desc-col">
+          <p>An exhaustive audit of every software contract, software license, and subscription active in your school district. We match purchase records against true user telemetry to uncover massive wastes, redundant platforms, and immediate cost savings.</p>
+        </div>
+        <div class="svc-includes">
+          <h4>Deliverables</h4>
+          <ul>
+            <li>Software utilization analysis Matrix</li>
+            <li>Redundancy &amp; Consolidation Roadmap</li>
+            <li>Contract renegotiation blueprint</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="svc-row reveal">
+        <div class="svc-num-col">Svc. II</div>
+        <div class="svc-title-col">
+          <h3>Cybersecurity &amp; <em>Resilience</em></h3>
+          <div class="svc-tag">Risk &amp; Compliance</div>
+        </div>
+        <div class="svc-desc-col">
+          <p>Practical, actionable risk assessments built around K–12 reality, not enterprise data center environments. We analyze student privacy vulnerabilities, identify points of system failure, and guide internal compliance with federal and state regulations.</p>
+        </div>
+        <div class="svc-includes">
+          <h4>Deliverables</h4>
+          <ul>
+            <li>NIST Framework baseline grading</li>
+            <li>Incident Response playbook update</li>
+            <li>Student Data Privacy protocol audit</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="svc-row reveal">
+        <div class="svc-num-col">Svc. III</div>
+        <div class="svc-title-col">
+          <h3>Strategic <em>IT Executive</em> Guidance</h3>
+          <div class="svc-tag">Governance &amp; Staffing</div>
+        </div>
+        <div class="svc-desc-col">
+          <p>Helping cabinet leaders manage technical personnel, establish functional performance metrics, and successfully lead long-term infrastructure overhauls. Ideal for districts undergoing rapid structural growth or leadership transitions.</p>
+        </div>
+        <div class="svc-includes">
+          <h4>Deliverables</h4>
+          <ul>
+            <li>Organizational chart redesign</li>
+            <li>KPI definitions for technical teams</li>
+            <li>Capital project management support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="engagement" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter"><span class="roman">Cap. III</span><span class="label">Partnership Frameworks</span></div>
+        <h2>Structured parameters </h2><h2>for <em>impactful</em> work.</h2>
+      </div>
+      <div class="head-aside">
+        Clear, transparent pricing and engagement parameters tailored around standard administrative cadences and academic cycles.
+      </div>
+    </div>
+    
+    <div class="eng-grid">
+      <div class="eng-card reveal">
+        <div class="eng-num">Model I</div>
+        <h3>Comprehensive Tech Stack Audit</h3>
+        <div class="eng-tag">Fixed Project Basis</div>
+        <p>A rigorous, 8-to-12 week examination of your district's hardware lifecycle, software systems, contract values, and staff usage. Delivers an unvarnished diagnostic report and immediate cost-reduction recommendations.</p>
+        <div class="eng-best">Best For <strong>Districts preparing for budget cuts or facing high operational sprawl.</strong></div>
+      </div>
+      
+      <div class="eng-card reveal delay-1">
+        <div class="eng-num">Model II</div>
+        <h3>Retainer-Based Counsel</h3>
+        <div class="eng-tag">Ongoing Monthly Advisory</div>
+        <p>Continuous executive coaching and technology governance advice for your leadership cabinet. Regular strategy alignment sessions, emergency incident response advisory, and expert review of potential vendor contracts.</p>
+        <div class="eng-best">Best For <strong>Superintendents navigating major systems changes or staff transitions.</strong></div>
+      </div>
+      
+      <div class="eng-card reveal delay-2">
+        <div class="eng-num">Model III</div>
+        <h3>Targeted Technical Interventions</h3>
+        <div class="eng-tag">Scoped Intensive</div>
+        <p>Dedicated project advisory focused squarely on one critical system crunch: selecting a new Student Information System (SIS), building your multi-year dynamic capital plan, or managing major network security configurations.</p>
+        <div class="eng-best">Best For <strong>Districts needing immediate, objective oversight for an urgent IT system transition.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy-quote" class="section">
+  <div class="wrap pq-inner">
+    <div class="pq-left reveal">
+      <div class="pq-mark">“</div>
+      <div class="pq-eyebrow">A Note on Focus</div>
+      <p class="pq-quote">
+        “Technology is never an end in itself; it is an amplifier of system health. An efficient, clear system will expand instructional excellence, but an expensive, chaotic system will only amplify <em>administrative frustration</em>.”
+      </p>
+      <div class="pq-attr">— <strong>The RootED K12 Team</strong> · Strategic Counsel for School Leaders</div>
+    </div>
+  </div>
+  <svg class="pq-bg-tree" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path d="M50,10 C45,35 25,45 25,75 C25,90 35,95 50,95 C65,95 75,90 75,75 C75,45 55,35 50,10 Z" fill="none" stroke="currentColor" stroke-width="0.5"/>
+    <path d="M50,25 C40,45 32,55 32,75" fill="none" stroke="currentColor" stroke-width="0.5"/>
+    <path d="M50,40 C60,55 68,65 68,80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  </svg>
+</section>
+
+<section id="podcast" class="section">
+  <div class="wrap pod-inner">
+    <div class="pod-left reveal">
+      <div class="chapter"><span class="roman">Cap. IV</span><span class="label">Media &amp; Discourse</span></div>
+      <h2 class="pod-title">The K12 <em>Tech Posture</em> Podcast</h2>
+      <p class="pod-desc">
+        Brief, hyper-practical breakdowns of technology governance, system design, and procurement politics. No fluff, no sponsored vendor content — just honest analysis for educational administrators.
+      </p>
+      <div class="pod-episodes">
+        <a href="#" class="pod-ep">
+          <div class="pod-ep-play"><i class="fa-solid fa-play"></i></div>
+          <div>
+            <div class="pod-ep-meta">Episode 42 · 18 Min</div>
+            <div class="pod-ep-title">De-escalating the EdTech Arms Race: Contract Consolidation Tactics</div>
+          </div>
+        </a>
+        <a href="#" class="pod-ep">
+          <div class="pod-ep-play"><i class="fa-solid fa-play"></i></div>
+          <div>
+            <div class="pod-ep-meta">Episode 41 · 22 Min</div>
+            <div class="pod-ep-title">What Board Members Miss About K–12 Ransomware Preparedness</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    
+    <div class="pod-right reveal delay-1">
+      <div class="pod-graphic-box">
+        <div class="pod-g-top">RootED K12 Audio</div>
+        <div class="pod-g-mid">
+          <h4>The K12<br><em>Tech Posture</em><br>Podcast</h4>
+        </div>
+        <div class="pod-g-bot">
+          <div class="pod-g-host">Independent analysis<span>for superintendents</span></div>
+          <div class="pod-g-waves">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about-bio" class="section">
+  <div class="wrap bio-grid">
+    <div class="bio-left reveal">
+      <div class="bio-frame">
+        <img src="assets/founder.jpg" alt="Founder of RootED K12 Solutions, an experienced K-12 educator turned technology strategist" class="bio-img">
+        <div class="bio-signature">RootED K12 Advisory Team</div>
+      </div>
+    </div>
+    <div class="bio-right reveal delay-1">
+      <div class="chapter"><span class="roman">Cap. V</span><span class="label">Our Mandate</span></div>
+      <h3>Grounded in classroom reality, <em>not</em> market hype.</h3>
+      <div class="bio-text">
+        <p>
+          We founded RootED K12 Solutions to bridge a widening gap in the educational sector: the massive operational divide between technical infrastructure deployments and the actual day-to-day work of teachers in classrooms.
+        </p>
+        <p>
+          Too often, school districts buy massive, multi-year software systems pushed heavily by professional vendor networks, only to see adoption drop off within six months, leaving technical staff overwhelmed and budgets deeply strained.
+        </p>
+        <p>
+          Our team provides strict, fiercely independent advocacy. We do not accept reseller commissions, we do not maintain vendor partnerships, and we evaluate every operational issue solely by its value to your teachers, students, and institutional bottom line.
+        </p>
+        <div style="margin-top: 36px;">
+          <a href="#contact" class="linklike">Schedule an introduction session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resources" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter"><span class="roman">Cap. VI</span><span class="label">Briefings &amp; Analysis</span></div>
+        <h2>Operational <em>intelligence</em> for district leaders.</h2>
+      </div>
+      <div class="head-aside">
+        Independent whitepapers and procurement frameworks created to protect budgets and guide governance teams.
+      </div>
+    </div>
+    
+    <div class="res-grid">
+      <a href="#" class="res-card reveal">
+        <div class="res-meta">Whitepaper · PDF</div>
+        <h3>The 2026 K–12 EdTech Spill Report</h3>
+        <p>A rigorous data-driven assessment of structural software overspending in public schools and proven strategies to audit unutilized tools.</p>
+        <div class="res-action">Download Guide <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="#" class="res-card reveal delay-1">
+        <div class="res-meta">Framework · XLS</div>
+        <h3>The Vendor Contract Review Matrix</h3>
+        <p>A simple, multi-point grading rubric designed for school boards to vet incoming technology vendor promises before signature.</p>
+        <div class="res-action">Access Tool <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="#" class="res-card reveal delay-2">
+        <div class="res-meta">Briefing · HTML</div>
+        <h3>The SIS Migration Playbook</h3>
+        <p>A practical operational checklist to prevent massive data loss, downtime, and user panic when changing Student Information Systems.</p>
+        <div class="res-action">Read Briefing <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-left reveal">
+      <div class="chapter on-dark"><span class="roman">Cap. VII</span><span class="label">Initiate Counsel</span></div>
+      <h2 class="contact-title">Let us secure your <em>systems</em>.</h2>
+      <p class="contact-lede">
+        We align our diagnostic engagements with natural district planning windows. Secure your dates to organize, optimize, and future-proof your upcoming budget cycle.
+      </p>
+      
+      <div class="contact-methods">
+        <div class="c-method">
+          <div class="c-method-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="c-method-label">Direct Correspondence</div>
+            <a href="mailto:counsel@rootedk12.com" class="c-method-value">counsel@rootedk12.com</a>
+          </div>
+        </div>
+        <div class="c-method">
+          <div class="c-method-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="c-method-label">Regional Presence</div>
+            <div class="c-method-value">Boston, Massachusetts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-right reveal delay-1">
+      <div class="calendly-inline-container">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/rootedk12/30min" style="min-width:320px;height:650px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-left">
+      <a href="#hero" class="footer-logo">Root<span class="ED">ED</span> K12</a>
+      <span>© 2026 RootED K12 Solutions LLC. All rights reserved.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Protocol</a>
+      <a href="#">Terms of Engagement</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Navigation behavior
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.classList.remove('at-top');
+      // Dynamic shift based on dark/light sections
+      if (window.scrollY > 40 && window.scrollY < 800) {
+        nav.classList.remove('scrolled-light');
+        nav.classList.add('scrolled-dark');
+      } else {
+        nav.classList.remove('scrolled-dark');
+        nav.classList.add('scrolled-light');
+      }
+    } else {
+      nav.classList.add('at-top');
+      nav.classList.remove('scrolled-dark', 'scrolled-light');
     }
+  });
+
+  // Hero animation setup
+  setTimeout(() => { document.getElementById('hero')?.classList.add('loaded'); }, 200);
+
+  // Reveal everything in hero immediately
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+
+  // ── Hero rotating word ──
+  (function initRotator() {
+    const el = document.querySelector('.hero-headline .rotator-word');
+    if (!el) return;
+    const words = ['sustainable', 'scalable', 'strategic', 'secure', 'safe'];
+    let i = 0;
+    const HOLD = 2200;   // time each word stays
+    const SWAP = 500;    // matches CSS transition
+    setInterval(() => {
+      el.classList.add('out');
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        el.classList.remove('out');
+        el.classList.add('in');
+        // force reflow so the 'in' start state applies before we remove it
+        void el.offsetWidth;
+        el.classList.remove('in');
+      }, SWAP);
+    }, HOLD + SWAP);
+  })();
+
+  // Scroll animations using IntersectionObserver
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal:not(#hero .reveal)').forEach(el => {
+    obs.observe(el);
   });
 });
 
-// Hero animation
-setTimeout(()=>{ document.getElementById('hero')?.classList.add('loaded'); }, 200);
-
-// Reveal everything in hero immediately
-document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
-
-// ── Hero rotating word ──
-(function initRotator(){
-  const el = document.querySelector('.hero-headline .rotator-word');
-  if(!el) return;
-  const words = ['sustainable', 'scalable', 'strategic', 'secure', 'safe'];
-  let i = 0;
-  const HOLD = 2200;   // time each word stays
-  const SWAP = 500;    // matches CSS transition
-  setInterval(()=>{
-    el.classList.add('out');
-    setTimeout(()=>{\
-      i = (i + 1) % words.length;\
-      el.textContent = words[i];\
-      el.classList.remove('out');\
-      el.classList.add('in');\
-      // force reflow so the 'in' start state applies before we remove it\
-      void el.offsetWidth;\
-      el.classList.remove('in');\
-    }, SWAP);\
-  }, HOLD + SWAP);\
-})();
-
-const obs = new IntersectionObserver(entries=>{\
-  entries.forEach(e=>{\
-    if(e.isIntersecting){\
-      e.target.classList.add('visible');\
-      obs.unobserve(e.target);\
-    }\
-  });\
-},{threshold:0.06, rootMargin:'0px 0px -40px 0px'});\
-
-document.querySelectorAll('.reveal:not(#hero .reveal)').forEach(el=>{\
-  obs.observe(el);\
-});\
+// Mobile Nav Toggle function
+function toggleMobileNav() {
+  const mNav = document.getElementById('mobile-nav');
+  const btn = document.querySelector('.hamburger');
+  const isOpen = mNav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+}
 </script>
 </body>
 </html>
