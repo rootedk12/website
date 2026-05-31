@@ -380,6 +380,30 @@ p  { line-height: 1.65; }
   margin-bottom: 36px;
 }
 .hero-headline em { color: var(--brand-green); font-style: italic; font-weight: 300; }
+
+/* Rotating word in hero headline */
+.hero-headline .rotator {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+.hero-headline .rotator-word {
+  display: inline-block;
+  transition: opacity .5s ease, transform .5s cubic-bezier(.23,1,.32,1);
+}
+.hero-headline .rotator-word.out {
+  opacity: 0;
+  transform: translateY(-0.32em);
+}
+.hero-headline .rotator-word.in {
+  opacity: 0;
+  transform: translateY(0.32em);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline .rotator-word { transition: opacity .5s ease; }
+  .hero-headline .rotator-word.out,
+  .hero-headline .rotator-word.in { transform: none; }
+}
 .hero-headline strong { font-weight: 400; }
 .hero-headline .by { display: block; font-size: 0.65em; font-weight: 300; letter-spacing: -0.025em; color: rgba(247,243,232,0.85); margin-top: 4px; }
 
@@ -1273,14 +1297,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
-  <img class="hero-bg" src="assets/hero.png" alt="K-12 technology in the classroom">
+  <img class="hero-bg" src="assets/hero-v2.png" alt="K-12 technology in the classroom">
   <div class="hero-backdrop"></div>
   <div class="wrap hero-wrap">
     <div class="hero-left">
     <div>
       <h1 class="hero-headline reveal" style="transition-delay:.05s;">
-        The blueprint for<br>
-        <em>sustainable</em> K–12 technology.
+        The blueprint for <em class="rotator" aria-live="polite"><span class="rotator-word">sustainable</span></em><br>
+        K–12 technology.
       </h1>
 
       <p class="hero-lede reveal" style="transition-delay:.12s;">RootED partners with superintendents, principals, and IT directors to build resilient technology systems — grounded in classroom reality.</p>
@@ -1327,7 +1351,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <circle cx="22" cy="18" r="4" stroke="currentColor" stroke-width="1.4"/>
             <path d="M14 18h2M28 18h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
           </svg>
-          <span class="svc-num">01</span>
+          <span class="svc-num"></span>
         </div>
         <h3>Workshops &amp;<br><em>Professional Development</em></h3>
         <p>Research-based professional learning that connects infrastructure to classroom impact.</p>
@@ -1345,7 +1369,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <circle cx="34" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
             <path d="M4 8v32h36" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
           </svg>
-          <span class="svc-num">02</span>
+          <span class="svc-num"></span>
         </div>
         <h3>Strategy &amp;<br><em>Innovation</em></h3>
         <p>Navigating AI, automation, and emerging technologies with safety and ethics first.</p>
@@ -1364,7 +1388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M10.3 10.3l2.8 2.8M30.9 30.9l2.8 2.8M10.3 33.7l2.8-2.8M30.9 13.1l2.8-2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
             <circle cx="22" cy="22" r="10" stroke="currentColor" stroke-width="1.4" opacity=".35"/>
           </svg>
-          <span class="svc-num">03</span>
+          <span class="svc-num"></span>
         </div>
         <h3>Strategic<br><em>IT Operations</em></h3>
         <p>Foundational systems leadership — multi-year planning, cybersecurity, and operational rhythm.</p>
@@ -1377,10 +1401,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="reveal" style="margin-top: 64px; display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
-      <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/mark-rootedk12/1-1-with-mark'});return false;" class="btn btn-dark">
-        Discuss your district <span class="arr">→</span>
-      </button>
-      <a href="mailto:info@rootedk12.com" class="linklike on-dark">info@rootedk12.com</a>
+
+      <a href="mailto:info@rootedk12.com" class="linklike on-dark"></a>
     </div>
   </div>
 </section>
@@ -1653,14 +1675,14 @@ function togglePhilosophyModal(){
 
 // ── Partners marquee ──
 const partners = [
-  {img:'assets/amesbury.png', name:'Amesbury', sub:'Public Schools'},
-  {img:'assets/brockton.png', name:'Brockton', sub:'Public Schools'},
-  {img:'assets/milwaukee.png', name:'Milwaukee', sub:'Public Schools'},
-  {img:'assets/malden.png', name:'Malden', sub:'Public Schools'},
-  {img:'assets/lunenburg.png', name:'Lunenburg', sub:'Public Schools'},
-  {img:'assets/wakefield.png', name:'Wakefield', sub:'Public Schools'},
-  {img:'assets/dayofai.png', name:'', sub:''},
-  {img:'assets/k12techpro.webp', name:'', sub:''},
+  {img:'assets/amesbury-v2.png', name:'Amesbury', sub:'Public Schools'},
+  {img:'assets/brockton-v2.png', name:'Brockton', sub:'Public Schools'},
+  {img:'assets/milwaukee-v2.png', name:'Milwaukee', sub:'Public Schools'},
+  {img:'assets/malden-v2.png', name:'Malden', sub:'Public Schools'},
+  {img:'assets/lunenburg-v2.png', name:'Lunenburg', sub:'Public Schools'},
+  {img:'assets/wakefield-v2.png', name:'Wakefield', sub:'Public Schools'},
+  {img:'assets/dayofai-v2.png', name:'', sub:''},
+  {img:'assets/k12techpro-v2.webp', name:'', sub:''},
 ];
 function makePartner(p){
   const label = p.name ? `<span class="pname">${p.name}<span>${p.sub}</span></span>` : '';
@@ -1741,6 +1763,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   // Reveal everything in hero immediately
   document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+
+  // ── Hero rotating word ──
+  (function initRotator(){
+    const el = document.querySelector('.hero-headline .rotator-word');
+    if(!el) return;
+    const words = ['sustainable', 'scalable', 'strategic', 'secure', 'safe'];
+    let i = 0;
+    const HOLD = 2200;   // time each word stays
+    const SWAP = 500;    // matches CSS transition
+    setInterval(()=>{
+      el.classList.add('out');
+      setTimeout(()=>{
+        i = (i + 1) % words.length;
+        el.textContent = words[i];
+        el.classList.remove('out');
+        el.classList.add('in');
+        // force reflow so the 'in' start state applies before we remove it
+        void el.offsetWidth;
+        el.classList.remove('in');
+      }, SWAP);
+    }, HOLD + SWAP);
+  })();
 
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{
